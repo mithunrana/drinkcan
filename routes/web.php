@@ -8,23 +8,23 @@ Route::get('/camera/{url}','ProductsController@byMegaPixel');
 Route::get('/brand/{url}','ProductsController@byBrand');
 
 Route::get('/category/{url}','ProductsController@cctvSecondaryCategory');
-Route::get('/solutions','SolutionsController@index');
-Route::get('/solutions/{url}','SolutionsController@solutionView');
-Route::get('/portfolio','PortfolioController@index');
-Route::get('/portfolio/{url}','PortfolioController@portfolioView');
-Route::get('/avtech-support-bangladesh','SupportController@index');
-Route::get('/tutorial/{url}','BlogController@blogByURL');
-Route::get('/about-soshine','HomeUIController@megaTrading');
-Route::get('/avtech-importer-bangladesh','HomeUIController@importer');
-Route::get('/avtech-distributor-bangladesh','HomeUIController@distributor');
+Route::get('/order','ProductsController@order');
+Route::get('/water-and-helth','HomeUIController@waterHealth');
+Route::get('/about','HomeUIController@about');
+Route::get('/contact','ContactController@index');
+Route::get('/complaint','HomeUIController@complaint');
+Route::get('/water-purifire','HomeUIController@waterPurifire');
+
 Route::get('/login','HomeUIController@login');
 Route::get('/privacy-policy','HomeUIController@privacyPolicy');
 Route::get('/terms-condition','HomeUIController@termsCondition');
-Route::get('/contact','ContactController@index');
+
 Route::post('/contact','ContactController@sendMail');
 Route::get('/news','NewsController@index');
 Route::get('/news/{url}','NewsController@NewsView');
 Route::post('/search','ProductsController@bySearch');
+
+
 
 
 

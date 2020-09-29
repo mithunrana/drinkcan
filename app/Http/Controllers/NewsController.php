@@ -8,7 +8,7 @@ class NewsController extends Controller
 {
     public function index(){
         $Newses = News::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(12);
-        return view('UI/newsmain',compact('Newses'));
+        return view('frontend.water-in-news',compact('Newses'));
     }
 
     public function NewsView($url){

@@ -20,6 +20,11 @@ class ProductsController extends Controller
         return view('UI.productsmain',compact('LatestProduct','DiscoverProducts','SiteProfile'));
     }
 
+
+    public function order(){
+        return view('frontend.order-gkk');
+    }
+
     public function productsmain(){
         $SiteProfile = SiteProfile::first();
         $MegaPixel = CctvCameraMegaPixel::get();

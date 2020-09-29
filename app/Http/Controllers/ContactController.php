@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index(){
         $SiteProfile = SiteProfile::first();
-        return view('UI.contact',compact('SiteProfile'));
+        return view('frontend.contact',compact('SiteProfile'));
     }
 
     public function sendMail(Request $request){

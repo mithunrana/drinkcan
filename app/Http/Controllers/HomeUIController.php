@@ -8,21 +8,15 @@ class HomeUIController extends Controller
 {
 
 
-
     public function index(){
-        return view('UI.index');
+        return view('frontend.index');
     }
 
 
 
-    public function sucessHistory(){
-        return view('UI.success-history');
+    public function about(){
+        return view('frontend.about');
     }
-
-    public function megaTrading(){
-        return view('UI.about');
-    }
-
 
 
     public function contact(){
@@ -30,14 +24,18 @@ class HomeUIController extends Controller
     }
 
 
-    public function importer(){
-        return view('UI.hikvision-importer');
+    public function waterHealth(){
+        return view('frontend.water-and-helth');
     }
 
-
-    public function distributor(){
-        return view('UI.hikvision-distributor');
+    public function complaint(){
+        return view('frontend.complaint');
     }
+
+    public function waterPurifire(){
+        return view('frontend.water-purifire');
+    }
+
 
     public function login(){
         return view('UI.login');
