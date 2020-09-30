@@ -67,3 +67,5 @@
     </section>
     @include('frontend.inc.footer')
     @include('frontend.inc.footersource')
+</body>
+</html>

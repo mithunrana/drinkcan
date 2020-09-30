@@ -55,7 +55,7 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $SiteProfile = SiteProfile::first();
-        return view('UI.login',compact('SiteProfile'));
+        return view('frontend.login',compact('SiteProfile'));
     }
 
 

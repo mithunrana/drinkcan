@@ -73,32 +73,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{url('admin/solutions-manage')}}" class="nav-link">
-                        <i class="fa fa-graduation-cap"></i>
-                        <p>Solutions
-                            <span class="right badge badge-success">
-                               @php
-                                   echo count(App\Solutions::all());
-                               @endphp
-                            </span>
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{url('admin/eventsmanage')}}" class="nav-link">
-                        <i class="fa fa-handshake" style="font-size:18px"></i>
-                        <p>Events
-                            <span class="right badge badge-success">
-                               @php
-                                   echo count(App\Events::all());
-                               @endphp
-                            </span>
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
                     <a href="{{url('admin/authorised-manage')}}" class="nav-link">
                         <i class="fa fa-graduation-cap"></i>
                         <p>Certification
@@ -111,18 +85,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{url('admin/training-manage')}}" class="nav-link">
-                        <i class="fa fa-edit"></i>
-                        <p>Training
-                            <span class="right badge badge-success">
-                              @php
-                                  echo count(App\Training::all());
-                              @endphp
-                            </span>
-                        </p>
-                    </a>
-                </li>
 
                 <li class="nav-item">
                     <a href="{{url('admin/news-manage')}}" class="nav-link">
@@ -131,19 +93,6 @@
                             <span class="right badge badge-success">
                                @php
                                    echo count(App\News::all());
-                               @endphp
-                            </span>
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{url('admin/software-manage')}}" class="nav-link">
-                        <i class="fa fa-cog" ></i>
-                        <p>Software
-                            <span class="right badge badge-success">
-                               @php
-                                   echo count(App\SoftwareList::all());
                                @endphp
                             </span>
                         </p>
@@ -206,33 +155,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('admin/cctv-brand')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>CCTV Brand</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{url('admin/products-primary-category')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Primary Category</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('admin/products-secondary-category')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Secondary Category</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('admin/discoverproducts')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Discover Products</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('admin/cctvmegapixel')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Mega Pixel</p>
                             </a>
                         </li>
                         <li class="nav-item">

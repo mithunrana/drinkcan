@@ -245,18 +245,6 @@ nav {
     min-height: 424px;
 }
 
-.showcase .carousel-img-1 {
-    background: url(img/1.jpg);
-    background-size: cover;
-    background-position: center center;
-}
-
-.showcase .carousel-img-2 {
-    background: url(img/2.jpg);
-    background-size: cover;
-    background-position: center center;
-}
-
 
 .showcase .carousel-indicators li {
     height: 4px;
@@ -652,7 +640,13 @@ nav {
 
 
 
-
+.login-img {
+    background: url(img/loginbg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 426px;
+    background-position: -316px center;
+}
 
 
 

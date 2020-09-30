@@ -8,7 +8,7 @@
                     <div class="ht-contact">
                         <ul class="ht-ul">
                             <li><a href="javascript:;"><i class="fa fa-map mr-1"></i>Bangladesh</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>01755430927</a></li>
+                            <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>01611830852</a></li>
                             <li><a href="javascript:;"><i class="fa fa-search mr-1"></i>Search</a></li>
                         </ul>
                     </div>
@@ -20,16 +20,16 @@
     <nav class="navbar wow fadeInDown py-0" data-wow-duration="1s">
         <div class="container menu-area">
             <a class="navbar-brand" href="{{asset('')}}">
-                <img src="{{asset('frontend/logo/logo.png')}}" class="logo" alt="Logo">
+                <img src="{{asset('frontend/logo/drink-can.png')}}" class="logo" alt="Logo">
             </a>
 
             <div class="main-nav ml-auto">
                 <ul class="nav-ul">
                     <li><a href="{{asset('')}}">Home</a></li>
-                    <li><a href="{{asset('water-and-helth')}}">Water and helth</a></li>
-                    <li><a href="{{asset('water-purifire')}}">Water purifire</a></li>
-                    <li><a href="{{asset('order-gkk')}}">Order GKK</a></li>
-                    <li><a href="{{asset('water-in-news')}}">Water in news</a></li>
+                    <li><a href="{{asset('')}}">Water and helth</a></li>
+                    <li><a href="{{asset('')}}">Water purifire</a></li>
+                    <li><a href="{{asset('')}}">Order GKK</a></li>
+                    <li><a href="{{asset('')}}">Water in news</a></li>
                 </ul>
             </div>
             <div class="menu-icon">
@@ -57,17 +57,17 @@
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('water-and-helth')}}">Water And Helth</a>
+                    <a href="{{asset('')}}">Water And Helth</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('water-purifire')}}">Water Purifire</a>
+                    <a href="{{asset('')}}">Water Purifire</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('order-gkk')}}">Order GKK</a>
+                    <a href="{{asset('')}}">Order GKK</a>
                 </div>
             </div>
             <div class="menu-box">

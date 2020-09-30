@@ -54,27 +54,16 @@
                                             </select>
                                         </div>
 
-
                                         <div class="form-group">
-                                            <label for="Category">Primary Category</label>
+                                            <label for="Category">Category</label>
                                             <select id="primarycategory" class="form-control" id="Category" name="Category">
-                                                <option value="" selected disabled>=============Products Primary Category===========</option>
+                                                <option value="" selected disabled>=============Products Category===========</option>
                                                 @foreach(App\ProductsPrimaryCategory::all() as $cat)
-                                                    <option value="{{$cat->id}}" @if($Products->Category !== 0) {{$cat->id == $Products->secondaryCategory->primaryCategory->id ? 'selected="selected"' : ''}}@endif>{{$cat->CategoryName}}</option>
+                                                    <option value="{{$cat->id}}" @if($Products->Category !== 0) {{$cat->id == $Products->Category ? 'selected="selected"' : ''}}@endif>{{$cat->CategoryName}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
 
-
-                                        <div class="form-group">
-                                            <label for="Category">Secondary Category</label>
-                                            <select id="secondarycategory" class="form-control" id="Category" name="Category">
-                                                <option value="" selected disabled>=============Products Secondary Category===========</option>
-                                                @foreach(App\ProductsSecondaryCategory::all() as $cat)
-                                                    <option value="{{$cat->id}}" {{$cat->id == $Products->Category ? 'selected="selected"' : ''}}>{{$cat->CategoryName}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
 
                                         <div class="form-group">
                                             <label for="ProductsType">Products Type</label>
@@ -86,15 +75,6 @@
                                             </select>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="MegaPixelId">Mega Pixel</label>
-                                            <select id="MegaPixelId" class="form-control" id="MegaPixelId" name="MegaPixelId">
-                                                <option value="" selected disabled>=============SELECT MEGA PIXEL===========</option>
-                                                @foreach(App\CctvCameraMegaPixel::all() as $MegaPixel)
-                                                    <option value="{{$MegaPixel->id}}" {{$MegaPixel->id == $Products->MegaPixelId ? 'selected="selected"' : ''}}>{{$MegaPixel->MegaPixel}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
 
                                         <div class="form-group">
                                             @if($errors->has('Model'))
@@ -227,20 +207,6 @@
         })
 
 
-        $('#primarycategory').change(function(){
-            var CategoryId = $(this).val();
-            $.ajax({
-                url:"{{ url('admin/products-primary-catby-secondary-cat') }}",
-                method:'GET',
-                data:{CategoryId:CategoryId},
-                dataType:'json',
-                success:function(data)
-                {
-                    $('#secondarycategory').empty();
-                    $('#secondarycategory').html(data.totalcategory);
-                }
-            })
-        });
 
         $('#selectimagedata').click(function(){
             var imageid = $('#getimageId').val();

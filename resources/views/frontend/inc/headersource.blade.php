@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pureit || @yield('title')</title>
-    <link rel="shortcut icon" href="{{asset('frontend/logo/logo.png')}}">
+    <link rel="shortcut icon" href="{{asset('')}}frontend/logo/drink-can.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

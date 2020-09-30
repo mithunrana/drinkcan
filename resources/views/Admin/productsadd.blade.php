@@ -48,29 +48,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="primarycategory">Primary Category</label>
-                                            <select id="primarycategory" class="form-control" id="PrimaryCategory">
+                                            <label for="Category">Category</label>
+                                            <select id="Category" class="form-control" id="Category">
                                                 <option value="" selected disabled>=============Products Primary Category===========</option>
                                                 @foreach(App\ProductsPrimaryCategory::all() as $cat)
                                                     <option value="{{$cat->id}}">{{$cat->CategoryName}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="secondarycategory">Secondary Category</label>
-                                            <select id="secondarycategory" class="form-control{{$errors->has('Category') ? ' is-invalid' : ''}}" id="Category" name="Category">
-                                                <option value="" selected disabled>=============Products Secondary Category===========</option>
-                                            </select>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="ProductsType">Products Type</label>
-                                            <select id="ProductsType" class="form-control{{$errors->has('ProductsType') ? ' is-invalid' : ''}}" name="ProductsType">
-                                                <option value="" selected disabled>=============Products Type ===========</option>
-                                                @foreach(App\ProductType::all() as $type)
-                                                    <option value="{{$type->id}}">{{$type->Name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -198,20 +180,6 @@
 <script>
     $(document).ready(function() {
 
-        $('#primarycategory').change(function(){
-            var CategoryId = $(this).val();
-            $.ajax({
-                url:"{{ url('admin/products-primary-catby-secondary-cat') }}",
-                method:'GET',
-                data:{CategoryId:CategoryId},
-                dataType:'json',
-                success:function(data)
-                {
-                    $('#secondarycategory').empty();
-                    $('#secondarycategory').html(data.totalcategory);
-                }
-            })
-        });
 
         $('#selectimagedata').click(function(){
             var imageid = $('#getimageId').val();

@@ -15,11 +15,12 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            @foreach(\App\Products::orderBy('id','DESC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Products)
+            <div class="col-xl-3 col-lg-3  col-md-4 col-sm-6 col-12">
                 <div class="product-box">
                     <div class="product-img">
                         <a href="#">
-                            <img src="{{asset('frontend')}}/images/product-img.jpg" class="img-fluid" alt="Image">
+                            <img src="{{asset('')}}{{$Products->image->imageurl}}" class="img-fluid" alt="{{$Products->ImageAltText}}">
                         </a>
                     </div>
                     <div class="product-txt text-center">
@@ -37,77 +38,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="product-box">
-                    <div class="product-img">
-                        <a href="#">
-                            <img src="{{asset('frontend')}}/images/product-img.jpg" class="img-fluid" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-txt text-center">
-                        <div class="prodcut-buy">
-                            <a href="#">Buy Now</a> |
-                            <a href="#">Details</a>
-                        </div>
-                        <div class="product-title">
-                            <h5 class="my-2"><a href="#">Pureit Mineral Ultima RO + UV + MF</a></h5>
-                        </div>
-                        <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>৳25,000</del></p>
-                            <p class="product-discount-price">৳23,000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="product-box">
-                    <div class="product-img">
-                        <a href="#">
-                            <img src="{{asset('frontend')}}/images/product-img.jpg" class="img-fluid" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-txt text-center">
-                        <div class="prodcut-buy">
-                            <a href="#">Buy Now</a> |
-                            <a href="#">Details</a>
-                        </div>
-                        <div class="product-title">
-                            <h5 class="my-2"><a href="#">Pureit Mineral Ultima RO + UV + MF</a></h5>
-                        </div>
-                        <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>৳25,000</del></p>
-                            <p class="product-discount-price">৳23,000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="product-box">
-                    <div class="product-img">
-                        <a href="#">
-                            <img src="{{asset('frontend')}}/images/product-img.jpg" class="img-fluid" alt="Image">
-                        </a>
-                    </div>
-                    <div class="product-txt text-center">
-                        <div class="prodcut-buy">
-                            <a href="#">Buy Now</a> |
-                            <a href="#">Details</a>
-                        </div>
-                        <div class="product-title">
-                            <h5 class="my-2"><a href="#">Pureit Mineral Ultima RO + UV + MF</a></h5>
-                        </div>
-                        <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>৳25,000</del></p>
-                            <p class="product-discount-price">৳23,000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-
 </section>
 <!--end product section-->
+
+
 
 <!--start sticky post section-->
 <section class="sticky-post clearifix py-4 text-center">
@@ -212,3 +149,5 @@
 <!--end home contact section-->
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+</body>
+</html>
