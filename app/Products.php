@@ -12,8 +12,8 @@ class Products extends Model
         return $this->belongsTo(ProductsImage::class,'FeaturedImage');
     }
 
-    public function secondaryCategory(){
-        return $this->belongsTo(ProductsSecondaryCategory::class,'Category');
+    public function CategoryDetails(){
+        return $this->belongsTo(ProductsPrimaryCategory::class,'Category');
     }
 
     public function productBrand(){

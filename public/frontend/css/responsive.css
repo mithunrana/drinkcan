@@ -192,3 +192,10 @@
         text-align: center;
     }
 }
+
+
+@media (max-width: 767px){
+    .navbar-brand img {
+        max-width: 80px;
+    }
+}

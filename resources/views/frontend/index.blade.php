@@ -1,13 +1,33 @@
+
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
+@php
+    $title = "DrinkCAN | Water Purifier in Bangladesh";
+    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
+    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+@endphp
+
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
 @include('frontend.inc.slider')
 <!--start product section-->
 <section class="product-area clearfix py-5">
+
+    <div class="container_info">
+        <!--<p style="text-align: center">
+            A revolutionary product from the house of Unilever, Pureit is just what you need to ensure you and your loved ones always drink safe<br>
+            and pure water. Pureit is here to reach out to all your purification needs with their widest range of RO, UV and Non-electric products.
+        </p>-->
+    </div>
+
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="section-title text-center mb-4">
-                    <h3 class="text-primary">Unilever Pureit Water Purifier In Bangladesh</h3>
+                    <h3 class="text-primary">DirnkCan Water Purifier In Bangladesh</h3>
                     <h5 class="text-secondary">Choose the water purifier that best suits your needs & budget</h5>
                 </div>
             </div>
@@ -29,11 +49,13 @@
                             <a href="#">Details</a>
                         </div>
                         <div class="product-title">
-                            <h5 class="my-2"><a href="#">Pureit Mineral Ultima RO + UV + MF</a></h5>
+                            <h5 style="font-size: 15px;" class="my-2">
+                                <a href="#">{{$Products->CategoryDetails->CategoryName}}</a>
+                            </h5>
                         </div>
                         <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>৳25,000</del></p>
-                            <p class="product-discount-price">৳23,000</p>
+                            <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del></p>
+                            <p class="product-discount-price">{{$Products->CurrentPrice}}</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +88,7 @@
                 <div class="sticky-post-box card mb-3">
                     <a href="#">
                         <div class="sticky-img p-1">
-                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img1.webp" class="img-fluid" alt="Image">
+                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img3.webp" class="img-fluid" alt="Image">
                         </div>
                         <div class="sticky-txt p-2">
                             <h5 class="text-uppercase">Water and helth</h5>
@@ -78,7 +100,7 @@
                 <div class="sticky-post-box card mb-3">
                     <a href="#">
                         <div class="sticky-img p-1">
-                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img1.webp" class="img-fluid" alt="Image">
+                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img2.webp" class="img-fluid" alt="Image">
                         </div>
                         <div class="sticky-txt p-2">
                             <h5 class="text-uppercase">Water and helth</h5>
@@ -91,6 +113,8 @@
 </section>
 <!--end sticky post section-->
 
+
+
 <!--start home contact section-->
 <section class="home-contact text-center py-5">
     <div class="container">
@@ -99,7 +123,7 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('frontend')}}/images/assured_icon01.png" class="img-fluid" alt="Image">
+                            <img src="{{asset('')}}frontend/images/assured_icon01.png" class="img-fluid" alt="FAQS">
                         </div>
                     </div>
                     <div class="hc-txt">
@@ -111,11 +135,11 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('frontend')}}/images/assured_icon01.png" class="img-fluid" alt="Image">
+                            <img src="{{asset('')}}frontend/images/assured_icon02.png" class="img-fluid" alt="EASY TO REACH">
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">FAQS</h5>
+                        <h5 class="mt-2">EASY TO REACH</h5>
                     </div>
                 </div>
             </div>
@@ -123,11 +147,11 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('frontend')}}/images/assured_icon01.png" class="img-fluid" alt="Image">
+                            <img src="{{asset('')}}frontend/images/assured_icon03.png" class="img-fluid" alt="COUNTRY-WIDE NETWORK">
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">FAQS</h5>
+                        <h5 class="mt-2">COUNTRY-WIDE NETWORK</h5>
                     </div>
                 </div>
             </div>
@@ -135,11 +159,11 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('frontend')}}/images/assured_icon01.png" class="img-fluid" alt="Image">
+                            <img src="{{asset('')}}frontend/images/assured_icon04.png" class="img-fluid" alt="HIGHEST RATED SERVICE">
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">FAQS</h5>
+                        <h5 class="mt-2">HIGHEST RATED SERVICE</h5>
                     </div>
                 </div>
             </div>

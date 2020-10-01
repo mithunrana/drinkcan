@@ -8,7 +8,7 @@
                     <div class="ht-contact">
                         <ul class="ht-ul">
                             <li><a href="javascript:;"><i class="fa fa-map mr-1"></i>Bangladesh</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>01611830852</a></li>
+                            <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>{{$SiteProfile->CorporatePhone}}</a></li>
                             <li><a href="javascript:;"><i class="fa fa-search mr-1"></i>Search</a></li>
                         </ul>
                     </div>
@@ -20,9 +20,8 @@
     <nav class="navbar wow fadeInDown py-0" data-wow-duration="1s">
         <div class="container menu-area">
             <a class="navbar-brand" href="{{asset('')}}">
-                <img src="{{asset('frontend/logo/drink-can.png')}}" class="logo" alt="Logo">
+                <img src="{{asset('')}}frontend/images/drink-can.png" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
             </a>
-
             <div class="main-nav ml-auto">
                 <ul class="nav-ul">
                     <li><a href="{{asset('')}}">Home</a></li>
@@ -37,11 +36,13 @@
                 <span></span>
                 <span></span>
             </div>
-
         </div>
     </nav>
 </header>
 <!--end header-->
+
+
+
 
 <!--start mobile menu-->
 <div class="mobile-menu">

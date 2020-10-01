@@ -571,10 +571,7 @@ class ProductsController extends Controller
 
 
     public function primaryCategoryDelete($id){
-        $SecondaryCategory = ProductsSecondaryCategory::select('id')->where('PrimaryCategoryId',$id)->get()->toArray();
-        $Products = Products::select('id')->whereIn('Category',$SecondaryCategory)->get()->toArray();
-        Products::whereIn('id', $Products)->update(['ActiveStatus' => '0','Category' => '0']);
-        ProductsSecondaryCategory::where('PrimaryCategoryId', $id)->delete();
+        Products::where('Category', $id)->update(['ActiveStatus' => '0','Category' => '0']);
         $PrimaryCategory = ProductsPrimaryCategory::find($id);
         $PrimaryCategory->delete();
         return redirect()->to('admin/products-primary-category')->with('message','Category Delete Successfully');
