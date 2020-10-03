@@ -1,7 +1,7 @@
 <!--start header-->
 <header>
     <!--start header top-->
-    <section class="header-top clearfix py-3 wow fadeInDown" data-wow-duration="1s">
+    <section style="background:#00adee" class="header-top clearfix py-3 wow fadeInDown" data-wow-duration="1s">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -17,16 +17,16 @@
         </div>
     </section>
     <!--end header top-->
-    <nav class="navbar wow fadeInDown py-0" data-wow-duration="1s">
+    <nav style="background: #008abd" class="navbar wow fadeInDown py-0" data-wow-duration="1s">
         <div class="container menu-area">
             <a class="navbar-brand" href="{{asset('')}}">
-                <img src="{{asset('')}}frontend/images/drink-can.png" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
+                <img src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
             </a>
             <div class="main-nav ml-auto">
                 <ul class="nav-ul">
                     <li><a href="{{asset('')}}">Home</a></li>
-                    <li><a href="{{asset('')}}">Water and helth</a></li>
-                    <li><a href="{{asset('')}}">Water purifire</a></li>
+                    <li><a href="{{asset('')}}">Water and Health</a></li>
+                    <li><a href="{{asset('')}}">Water Purifier</a></li>
                     <li><a href="{{asset('')}}">Order GKK</a></li>
                     <li><a href="{{asset('')}}">Water in news</a></li>
                 </ul>
@@ -58,12 +58,12 @@
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('')}}">Water And Helth</a>
+                    <a href="{{asset('')}}">Water And Health</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('')}}">Water Purifire</a>
+                    <a href="{{asset('')}}">Water Purifier</a>
                 </div>
             </div>
             <div class="menu-box">

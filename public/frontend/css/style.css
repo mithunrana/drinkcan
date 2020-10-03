@@ -27,7 +27,6 @@ ul li {
 header {
     position: sticky;
     width: 100%;
-    background: #4B5BDD;
     top: 0;
     left: 0;
     z-index: 9999;
@@ -81,9 +80,9 @@ nav {
 }
 
 .logo {
-    width: 120px;
+    width: 150px;
     position: absolute;
-    top: -20px;
+    top: 4px;
 }
 
 .main-nav {
@@ -641,11 +640,11 @@ nav {
 
 
 .login-img {
-    background: url(img/loginbg.png);
+    background: url(img/drink-can.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 426px;
-    background-position: -316px center;
+    background-position: 0px center;
 }
 
 

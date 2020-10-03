@@ -1,32 +1,32 @@
 <!--start footer section-->
-<footer class="footer-section clearfix">
+<footer style="background:#00adee" class="footer-section clearfix">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="footer-item">
                     <h5>About us</h5>
                     <ul class="m-0 p-0">
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>About Pureit</a></li>
-                        <li><a href=""><i class="fa fa-angle-right mr-2"></i>Certificates</a></li>
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a></li>
+                        @foreach(\App\QuickLiinks::get() as $Links)
+                        <li><a href="{{$Links->url}}"><i class="fa fa-angle-right mr-2"></i>{{$Links->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="footer-item">
-                    <h5>Allready own a pureit</h5>
+                    <h5>Allready own a DrinkCan</h5>
                     <ul class="m-0 p-0">
                         <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Order a fresh GKK</a></li>
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Regi ster a Complaint</a></li>
+                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Register a Complaint</a></li>
                         <li><a href=""><i class="fa fa-angle-right mr-2"></i>FAQs</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="footer-item">
-                    <h5>Buy a pureit water purifier</h5>
+                    <h5>Buy a DrinkCan water purifier</h5>
                     <ul class="m-0 p-0">
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Pureit Range of Water Purifiers</a></li>
+                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>DrinkCan Range of Water Purifiers</a></li>
                     </ul>
                 </div>
             </div>
@@ -52,8 +52,9 @@
             </div>
             <div class="col-md-4">
                 <div class="copy-social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-youtube"></i></a>
+                    @foreach(\App\SocialLinks::get() as $Social)
+                    <a target="_blank" href="{{$Social->url}}">{!! html_entity_decode($Social->icon) !!}</a>
+                    @endforeach
                 </div>
             </div>
         </div>

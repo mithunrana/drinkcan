@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2020 at 03:04 PM
+-- Generation Time: Oct 03, 2020 at 06:23 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `drinkcan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_products`
+--
+
+CREATE TABLE `about_products` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ProductId` bigint(20) UNSIGNED NOT NULL,
+  `ImageId` bigint(20) UNSIGNED NOT NULL,
+  `ImageAltText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ImageTitleText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -46,8 +64,8 @@ CREATE TABLE `authorization_certificates` (
 --
 
 INSERT INTO `authorization_certificates` (`id`, `CertificateName`, `certificatedetails`, `FeaturedImage1`, `FeaturedImage2`, `ImageAltText`, `ImageTitleText`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(1, 'Avtech Sole Agency Certificate', 'Avtech Bangladesh Sole Agency Products include professional surveillance CCTV & IP Products.', 41, 41, NULL, NULL, '1', '2020-09-09 00:54:13', '2020-09-09 01:17:54'),
-(2, 'Electronics Safety & Security Association Of Bangladesh', 'Soshine Marketing company certify of Electronics Safety & Security Association Of Bangladesh.', 41, 41, NULL, NULL, '1', '2020-09-09 01:24:01', '2020-09-09 01:24:04');
+(1, 'Avtech Sole Agency Certificate', 'Avtech Bangladesh Sole Agency Products include professional surveillance CCTV & IP Products.', 42, 42, NULL, NULL, '1', '2020-09-09 00:54:13', '2020-10-03 07:35:34'),
+(2, 'Electronics Safety & Security Association Of Bangladesh', 'Soshine Marketing company certify of Electronics Safety & Security Association Of Bangladesh.', 42, 42, NULL, NULL, '1', '2020-09-09 01:24:01', '2020-10-03 07:35:23');
 
 -- --------------------------------------------------------
 
@@ -99,6 +117,15 @@ CREATE TABLE `blog_tutorials` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blog_tutorials`
+--
+
+INSERT INTO `blog_tutorials` (`id`, `BrowserTitle`, `Permalink`, `BlogName`, `SeoKeyword`, `SeoDescription`, `VideoURL`, `EmbeddedVideo`, `FeaturedImage`, `ImageAltText`, `ImageTitleText`, `BlogDetails`, `StructuredData`, `Category`, `blog_poster`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
+(4, 'Water and helth', 'water and helth', 'Water and helth', NULL, NULL, 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 45, NULL, NULL, '<p>Water and helth</p>', NULL, '1', 1, 1, '2020-10-03 07:04:03', '2020-10-03 07:49:20'),
+(5, 'Best Water Purifier For Health', 'best water purifier for health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'Best Water Purifier For Health', 47, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', 'Best Water Purifier For Health', '1', 1, 1, '2020-10-03 07:04:41', '2020-10-03 07:49:11'),
+(6, 'Best Water Purifier For Health', '#', 'Best Water Purifier For', NULL, NULL, 'https://www.youtube.com/watch?v=wqUNGhLCqnk', 'Best Water Purifier For Health', 46, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', NULL, '1', 1, 1, '2020-10-03 07:05:36', '2020-10-03 07:55:47');
 
 -- --------------------------------------------------------
 
@@ -168,6 +195,21 @@ INSERT INTO `electro_prono_sliders` (`id`, `sliderimage`, `sliderTopic`, `Active
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Question` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Answer` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ProductId` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `images`
 --
 
@@ -183,8 +225,11 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `imageurl`, `created_at`, `updated_at`) VALUES
-(41, 'images/drink-can.png', '2020-09-30 09:56:41', '2020-09-30 09:56:41'),
-(42, 'images/slider1.jpg', '2020-09-30 10:15:01', '2020-09-30 10:15:01');
+(42, 'images/slider1.jpg', '2020-09-30 10:15:01', '2020-09-30 10:15:01'),
+(44, 'images/drink-can.png', '2020-10-03 07:39:30', '2020-10-03 07:39:30'),
+(45, 'images/how-purifie-water.jpg', '2020-10-03 07:48:24', '2020-10-03 07:48:24'),
+(46, 'images/drinking-water-healthy.jpg', '2020-10-03 07:48:30', '2020-10-03 07:48:30'),
+(47, 'images/water-benefits.jpg', '2020-10-03 07:48:41', '2020-10-03 07:48:41');
 
 -- --------------------------------------------------------
 
@@ -228,7 +273,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (62, '2020_07_20_114126_create_trainings_table', 16),
 (63, '2020_07_20_114142_create_events_table', 17),
 (64, '2020_04_18_155720_create_electro_prono_sliders_table', 18),
-(65, '2020_09_10_105358_create_price_lists_table', 19);
+(65, '2020_09_10_105358_create_price_lists_table', 19),
+(66, '2020_10_03_054751_create_faqs_table', 20),
+(67, '2020_10_03_055104_create_about_products_table', 21),
+(68, '2020_10_03_061008_create_product_features_table', 22);
 
 -- --------------------------------------------------------
 
@@ -259,7 +307,7 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `BrowserTitle`, `Permalink`, `NewsName`, `SeoKeyword`, `SeoDescription`, `FeaturedImage1`, `FeaturedImage2`, `ImageAltText`, `ImageTitleText`, `FeaturedDetails`, `ProjectDetails`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(1, 'news', '#', 'news', 'news', 'news', 41, 41, NULL, NULL, '<p>news</p>', '<p>news</p>', 0, '2020-09-08 05:01:45', '2020-09-30 10:04:57');
+(1, 'news', '#', 'news', 'news', 'news', 42, 42, NULL, NULL, '<p>news</p>', '<p>news</p>', 0, '2020-09-08 05:01:45', '2020-10-03 07:38:03');
 
 -- --------------------------------------------------------
 
@@ -438,6 +486,22 @@ INSERT INTO `products_primary_categories` (`id`, `CategoryName`, `CategoryUrl`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_features`
+--
+
+CREATE TABLE `product_features` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ProductId` bigint(20) UNSIGNED NOT NULL,
+  `ImageId` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_types`
 --
 
@@ -470,6 +534,13 @@ CREATE TABLE `quick_liinks` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `quick_liinks`
+--
+
+INSERT INTO `quick_liinks` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
+(1, 'About Drinkcan', 'About Pureit', '2020-10-03 06:21:02', '2020-10-03 06:21:02');
 
 -- --------------------------------------------------------
 
@@ -508,7 +579,7 @@ CREATE TABLE `site_profiles` (
 --
 
 INSERT INTO `site_profiles` (`id`, `ShortDescription`, `SiteName`, `EditorPublisher`, `CorporateAddress`, `HeadAddress`, `CorporatePhone`, `Phone1`, `phone2`, `phone3`, `CorporateEmail`, `Email2`, `Email3`, `MainLogo`, `MainLogoTitleText`, `MainLogoAltText`, `CopyRightText`, `DomainName`, `DesignerDeveloperName`, `DesignerDeveloperDomain`, `GoogleMap`, `created_at`, `updated_at`) VALUES
-(3, 'Soshine Marketing Company : We combine excellence with top quality, integrity and timeliness to provide 24/7 quality service specially designed to facilitate our users experience beyond expectation.', 'Soshine', 'Mithun Rana', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '01678225976', '01678225976', NULL, NULL, 'info@soshinebd.com', 'info@soshinebd.com', NULL, 41, 'Soshine', 'soshine', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-09-22 02:43:53');
+(3, 'Soshine Marketing Company : We combine excellence with top quality, integrity and timeliness to provide 24/7 quality service specially designed to facilitate our users experience beyond expectation.', 'Soshine', 'Mithun Rana', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '01678225976', '01678225976', NULL, NULL, 'info@soshinebd.com', 'info@soshinebd.com', NULL, 44, 'DrinkCan', 'Drink Can', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-10-03 07:39:53');
 
 -- --------------------------------------------------------
 
@@ -604,13 +675,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `email_verified_at`, `password`, `customertype`, `partner`, `companyname`, `servicetype`, `country`, `address`, `VerifyCode`, `image`, `activestatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$TH6fku4aJwODHeGVZlMmN.xHdZlyXdGUOmBbGAjfas78HJhsFSIP6', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '434678', NULL, 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-09-13 06:31:46'),
+(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$TH6fku4aJwODHeGVZlMmN.xHdZlyXdGUOmBbGAjfas78HJhsFSIP6', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '434678', 'user image/mithunrana.developer@gmail.com.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-03 06:48:32'),
 (7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserNotActive', NULL, '2020-09-09 02:31:01', '2020-09-09 02:31:01'),
 (8, 'Kaowsher Hamid', 'MKHT', '+8801676610343', 'mkh.najim@gmail.com', NULL, '$2y$10$d5mx2KbqKFPok.Dwt9j.2eqYn6Wpar3ZbmDMpp.FAJEDQY0m7aTBm', 'Retailer', 'no', 'M K Technology', 'itservice', 'bangladesh', 'dhaka bangladesh - 1000', '242477', 'user image/MKHT.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-13 05:30:52', '2020-09-13 05:37:07');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `about_products`
+--
+ALTER TABLE `about_products`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `authorization_certificates`
@@ -651,6 +728,12 @@ ALTER TABLE `c_c_t_v_brands`
 ALTER TABLE `electro_prono_sliders`
   ADD PRIMARY KEY (`id`),
   ADD KEY `electro_prono_sliders_sliderimage_foreign` (`sliderimage`);
+
+--
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `images`
@@ -719,6 +802,12 @@ ALTER TABLE `products_primary_categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_features`
+--
+ALTER TABLE `product_features`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_types`
 --
 ALTER TABLE `product_types`
@@ -767,6 +856,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `about_products`
+--
+ALTER TABLE `about_products`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `authorization_certificates`
 --
 ALTER TABLE `authorization_certificates`
@@ -782,7 +877,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `blog_tutorials`
 --
 ALTER TABLE `blog_tutorials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cctv_camera_mega_pixels`
@@ -803,16 +898,22 @@ ALTER TABLE `electro_prono_sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -857,6 +958,12 @@ ALTER TABLE `products_primary_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
+-- AUTO_INCREMENT for table `product_features`
+--
+ALTER TABLE `product_features`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `product_types`
 --
 ALTER TABLE `product_types`
@@ -866,7 +973,7 @@ ALTER TABLE `product_types`
 -- AUTO_INCREMENT for table `quick_liinks`
 --
 ALTER TABLE `quick_liinks`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `site_profiles`

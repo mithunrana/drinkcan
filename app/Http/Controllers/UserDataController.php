@@ -20,13 +20,13 @@ class UserDataController extends Controller
 
     public function userPanel(){
         $SiteProfile = SiteProfile::first();
-        return view('UI.user-panel',compact('SiteProfile'));
+        return view('frontend.user-panel',compact('SiteProfile'));
     }
 
 
     public function userPanelInfoEdit(){
         $SiteProfile = SiteProfile::first();
-        return view('UI.user-panel-info-edit',compact('SiteProfile'));
+        return view('frontend.user-panel-info-edit',compact('SiteProfile'));
     }
 
     public function userInfoUpdate(Request $request){
@@ -66,7 +66,7 @@ class UserDataController extends Controller
 
     public function userPasswordEdit(Request $request){
         $SiteProfile = SiteProfile::first();
-        return view('UI.user-panel-password-eidt',compact('SiteProfile'));
+        return view('frontend.user-panel-password-eidt',compact('SiteProfile'));
     }
 
     public function userPasswordChange(Request $request){

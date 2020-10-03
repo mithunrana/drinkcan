@@ -39,13 +39,13 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input id="password" type="password" class="form-control mb-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder=" Enter Your Password" >
+                                <input  id="password" type="password" class="form-control mb-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder=" Enter Your Password" >
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                      <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                                <input class="btn btn-danger btn-block" type="submit" value="Login">
+                                <input style="background-color: #35b5dc;border-color: #35b5dc;" class="btn btn-danger btn-block" type="submit" value="Login">
                                 <div class="row mt-3">
                                     <div class="col-6">
                                         <a style="font-size: 14px;" href="{{asset('')}}password/reset">Forgot Password?</a>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="register-now mt-4">
                                     <label style="font-size: 15px;"><strong>Don't have an account? Register Now</strong></label>
-                                    <a class="btn btn-danger btn-block" href="{{asset('')}}register">Register</a>
+                                    <a style="background-color: #35b5dc;border-color: #35b5dc;" class="btn btn-danger btn-block" href="{{asset('')}}register">Register</a>
                                 </div>
                             </form>
                         </div>

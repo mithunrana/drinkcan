@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col">
                 <div class="section-title text-center mb-4">
-                    <h3 class="text-primary">DirnkCan Water Purifier In Bangladesh</h3>
+                    <h3 style="color:#00adee">DirnkCan Water Purifier In Bangladesh</h3>
                     <h5 class="text-secondary">Choose the water purifier that best suits your needs & budget</h5>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="product-title">
                             <h5 style="font-size: 15px;" class="my-2">
-                                <a href="#">{{$Products->CategoryDetails->CategoryName}}</a>
+                                <a style="color:#00adee" href="#">{{$Products->CategoryDetails->CategoryName}}</a>
                             </h5>
                         </div>
                         <div class="product-price">
@@ -72,42 +72,20 @@
 <section class="sticky-post clearifix py-4 text-center">
     <div class="container">
         <div class="row">
+            @foreach(\App\BlogTutorial::where('ActiveStatus',1)->orderBy('id','DESC')->skip(0)->take(3)->get() as $Blog)
             <div class="col-md-4">
                 <div class="sticky-post-box card mb-3">
                     <a href="#">
                         <div class="sticky-img p-1">
-                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img1.webp" class="img-fluid" alt="Image">
+                            <img src="{{$Blog->featuredimage->imageurl}}" class="img-fluid" alt="Image">
                         </div>
                         <div class="sticky-txt p-2">
-                            <h5 class="text-uppercase">Water and helth</h5>
+                            <h5 style="color:#00adee" class="text-uppercase">{{$Blog->BlogName}}</h5>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="sticky-post-box card mb-3">
-                    <a href="#">
-                        <div class="sticky-img p-1">
-                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img3.webp" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="sticky-txt p-2">
-                            <h5 class="text-uppercase">Water and helth</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="sticky-post-box card mb-3">
-                    <a href="#">
-                        <div class="sticky-img p-1">
-                            <img src="{{asset('frontend')}}/images/water_purifier_consumer_img2.webp" class="img-fluid" alt="Image">
-                        </div>
-                        <div class="sticky-txt p-2">
-                            <h5 class="text-uppercase">Water and helth</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
