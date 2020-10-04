@@ -27,7 +27,7 @@
                     <li><a href="{{asset('')}}">Home</a></li>
                     <li><a href="{{asset('')}}">Water and Health</a></li>
                     <li><a href="{{asset('')}}">Water Purifier</a></li>
-                    <li><a href="{{asset('')}}">Order GKK</a></li>
+                    <li><a href="{{asset('')}}water-purifier-kit-price">Order GKK</a></li>
                     <li><a href="{{asset('')}}">Water in news</a></li>
                 </ul>
             </div>

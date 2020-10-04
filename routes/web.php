@@ -8,7 +8,9 @@ Route::get('/camera/{url}','ProductsController@byMegaPixel');
 Route::get('/brand/{url}','ProductsController@byBrand');
 
 Route::get('/category/{url}','ProductsController@cctvSecondaryCategory');
-Route::get('/order','ProductsController@order');
+Route::get('/water-purifier-kit-price','ProductsController@order');
+Route::get('/categoryproduct','ProductsController@categoryProduct');
+
 Route::get('/water-and-helth','HomeUIController@waterHealth');
 Route::get('/about','HomeUIController@about');
 Route::get('/contact','ContactController@index');
@@ -68,6 +70,10 @@ Route::post('admin/price-list-store','PriceListController@store')->middleware('A
 Route::get('admin/price-list-delete/{id}','PriceListController@delete')->middleware('AdminUser');
 
 
+
+Route::post('order-gkk','OrderController@order');
+Route::get('admin/order-manage','OrderController@orderManage')->middleware('AdminUser');
+Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
 
 
 
