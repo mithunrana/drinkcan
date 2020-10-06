@@ -666,5 +666,24 @@ nav {
     height: 100%;
 }
 
+.input-field-design {
+    box-shadow: none;
+    border: none;
+    outline: #0d2a3c;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 20px;
+    height: 26px;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    background-image: none;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
 
-
+.p-compare label, input {
+    cursor: pointer;
+}

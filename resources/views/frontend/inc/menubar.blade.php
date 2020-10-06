@@ -25,9 +25,9 @@
             <div class="main-nav ml-auto">
                 <ul class="nav-ul">
                     <li><a href="{{asset('')}}">Home</a></li>
-                    <li><a href="{{asset('')}}">Water and Health</a></li>
-                    <li><a href="{{asset('')}}">Water Purifier</a></li>
-                    <li><a href="{{asset('')}}water-purifier-kit-price">Order GKK</a></li>
+                    <li><a href="{{asset('')}}blog">Water and Health</a></li>
+                    <li><a href="{{asset('')}}water-purifier-price-bd">Water Purifier</a></li>
+                    <li><a href="{{asset('')}}water-purifier-kit-price-bangladesh">Order Kit</a></li>
                     <li><a href="{{asset('')}}">Water in news</a></li>
                 </ul>
             </div>

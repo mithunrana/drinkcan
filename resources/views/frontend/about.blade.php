@@ -1,3 +1,13 @@
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
+@php
+    $title = "DrinkCAN | Water Purifier in Bangladesh";
+    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
+    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+@endphp
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
     <div class="about-header">

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\BlogTutorial;
 class HomeUIController extends Controller
 {
 
@@ -24,8 +24,9 @@ class HomeUIController extends Controller
     }
 
 
-    public function waterHealth(){
-        return view('frontend.water-and-helth');
+    public function blog(){
+        $Blogs = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(12);
+        return view('frontend.water-and-helth',compact('Blogs'));
     }
 
     public function complaint(){
@@ -36,6 +37,9 @@ class HomeUIController extends Controller
         return view('frontend.water-purifire');
     }
 
+    public function siteMap(){
+        return view('frontend.sitemap');
+    }
 
     public function login(){
         return view('UI.login');

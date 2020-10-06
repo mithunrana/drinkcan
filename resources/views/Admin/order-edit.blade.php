@@ -18,12 +18,25 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Blog Add Here</div>
+                        <div class="card-header">Order Checking</div>
                         <div class="card-body">
-                            <form action="{{url('admin/user-request-update',[$UserData->id])}}" method="post">
+                            <form action="{{url('admin/order-update',[$Order->id])}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-12">
+
+                                        <div style="border-bottom: 1px solid grey" class="row">
+                                            <div class="form-group col-lg-4">
+                                                <p style="margin-bottom:0px;font-weight: bold;">Category</p>
+                                            </div>
+                                            <div class="form-group col-lg-4">
+                                                <p style="margin-bottom:0px;font-weight: bold;">Name</p>
+                                            </div>
+                                            <div class="form-group col-lg-4">
+                                                <p style="margin-bottom:0px;font-weight: bold;">Model</p>
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="form-group col-lg-6">
                                                 <label style="color:#f50101;" for="date">Check Status
@@ -32,8 +45,8 @@
                                                     @endif
                                                 </label>
                                                 <select class="form-control" name="checkstatus">
-                                                    <option value="0" {{$UserData->checkstatus == 0 ? 'selected="selected"' : ''}} >Not Check</option>
-                                                    <option value="1" {{$UserData->checkstatus == 1 ? 'selected="selected"' : ''}} >Check</option>
+                                                    <option value="0" {{$Order->checkstatus == 0 ? 'selected="selected"' : ''}} >Not Check</option>
+                                                    <option value="1" {{$Order->checkstatus == 1 ? 'selected="selected"' : ''}} >Check</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-lg-6">
@@ -43,19 +56,19 @@
                                                     @endif
                                                 </label>
                                                 <select class="form-control" name="orderstatus">
-                                                    <option value="0" {{$UserData->orderstatus == 0 ? 'selected="selected"' : ''}} >Cancel</option>
-                                                    <option value="2" {{$UserData->orderstatus == 2 ? 'selected="selected"' : ''}} >Pending</option>
-                                                    <option value="1" {{$UserData->orderstatus == 1 ? 'selected="selected"' : ''}} >Confirm</option>
+                                                    <option value="0" {{$Order->orderstatus == 0 ? 'selected="selected"' : ''}} >Cancel</option>
+                                                    <option value="2" {{$Order->orderstatus == 2 ? 'selected="selected"' : ''}} >Pending</option>
+                                                    <option value="1" {{$Order->orderstatus == 1 ? 'selected="selected"' : ''}} >Confirm</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label style="color:#f50101;" for="name">Your Name
+                                            <label style="color:#f50101;" for="name">Name
                                                 @if($errors->has('name'))
                                                     <small style="color:red;"> {{$errors->first('name')}}</small>
                                                 @endif
                                             </label>
-                                            <input type="text" class="form-control" id="name" value="{{$UserData->name}}" name="name" aria-describedby="emailHelp" placeholder="Enter Your Name">
+                                            <input type="text" class="form-control" id="name" value="{{$Order->Name}}" name="name" aria-describedby="emailHelp" placeholder="Name">
                                         </div>
                                         <div class="form-group">
                                             <label style="color:#f50101;" for="mobile">Mobile
@@ -63,33 +76,7 @@
                                                     <small style="color:red;"> {{$errors->first('mobile')}}</small>
                                                 @endif
                                             </label>
-                                            <input type="text" class="form-control" id="mobile" value="{{$UserData->mobile}}" name="mobile" placeholder="Enter Your Mobile">
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col-lg-6">
-                                                <label style="color:#f50101;" for="date">Date
-                                                    @if($errors->has('date'))
-                                                        <small style="color:red;"> {{$errors->first('date')}}</small>
-                                                    @endif
-                                                </label>
-                                                <input type="date" class="form-control" id="date" value="{{$UserData->date}}" name="date" placeholder="Enter Your Mobile">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-                                                <label style="color:#f50101;" for="time">Time
-                                                    @if($errors->has('time'))
-                                                        <small style="color:red;"> {{$errors->first('time')}}</small>
-                                                    @endif
-                                                </label>
-                                                <input type="time" class="form-control" id="time" value="{{$UserData->time}}" name="time" placeholder="Enter Your Mobile">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label style="color:#f50101;" for="servicedetails">Service Details
-                                                @if($errors->has('servicedetails'))
-                                                    <small style="color:red;"> {{$errors->first('servicedetails')}}</small>
-                                                @endif
-                                            </label>
-                                            <textarea type="text" class="form-control" id="servicedetails" name="servicedetails" placeholder="Enter Your Service Details">{{$UserData->servicedetails}}</textarea>
+                                            <input type="text" class="form-control" id="mobile" value="{{$Order->Mobile}}" name="mobile" placeholder="Mobile">
                                         </div>
                                         <div class="form-group">
                                             <label style="color:#f50101;" for="address">Address
@@ -97,7 +84,15 @@
                                                     <small style="color:red;"> {{$errors->first('address')}}</small>
                                                 @endif
                                             </label>
-                                            <textarea type="text" class="form-control" id="address" name="address" placeholder="Enter Your Address">{{$UserData->address}}</textarea>
+                                            <textarea type="text" class="form-control" id="address" name="address" placeholder="Address">{{$Order->Address}}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label style="color:#f50101;" for="servicedetails">Comment
+                                                @if($errors->has('Comment'))
+                                                    <small style="color:red;"> {{$errors->first('Comment')}}</small>
+                                                @endif
+                                            </label>
+                                            <textarea type="text" class="form-control" id="Comment" name="Comment" placeholder="write something about the order">{{$Order->Comment}}</textarea>
                                         </div>
                                     </div>
                                 </div>

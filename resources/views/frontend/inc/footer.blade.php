@@ -7,7 +7,7 @@
                     <h5>About us</h5>
                     <ul class="m-0 p-0">
                         @foreach(\App\QuickLiinks::get() as $Links)
-                        <li><a href="{{$Links->url}}"><i class="fa fa-angle-right mr-2"></i>{{$Links->name}}</a></li>
+                        <li><a href="{{asset('')}}{{$Links->url}}"><i class="fa fa-angle-right mr-2"></i>{{$Links->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -16,7 +16,7 @@
                 <div class="footer-item">
                     <h5>Allready own a DrinkCan</h5>
                     <ul class="m-0 p-0">
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Order a fresh GKK</a></li>
+                        <li><a href="{{asset('')}}water-purifier-kit-price-bangladesh"><i class="fa fa-angle-right mr-2"></i>Order Purifier Kit</a></li>
                         <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Register a Complaint</a></li>
                         <li><a href=""><i class="fa fa-angle-right mr-2"></i>FAQs</a></li>
                     </ul>

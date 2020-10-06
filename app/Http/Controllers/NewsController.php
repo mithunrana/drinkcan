@@ -7,7 +7,7 @@ use App\News;
 class NewsController extends Controller
 {
     public function index(){
-        $Newses = News::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(12);
+        $Newses = News::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(8);
         return view('frontend.water-in-news',compact('Newses'));
     }
 
@@ -30,9 +30,8 @@ class NewsController extends Controller
     public function store(Request $request){
         $this->validate($request,[
             'FeaturedImage1' => 'required',
-            'FeaturedImage2' => 'required',
             'BrowserTitle' => 'required',
-            'Permalink' => 'required|unique:news,Permalink',
+            'Permalink' => 'required',
             'NewsName' => 'required',
         ]);
 
@@ -43,7 +42,6 @@ class NewsController extends Controller
             'SeoKeyword'=> $request->SeoKeyword,
             'SeoDescription' => $request->SeoDescription,
             'FeaturedImage1' => $request->FeaturedImage1,
-            'FeaturedImage2' => $request->FeaturedImage2,
             'ImageAltText' => $request->ImageAltText,
             'ImageTitleText' => $request->ImageTitleText,
             'FeaturedDetails' => $request->FeaturedDetails,
@@ -68,9 +66,8 @@ class NewsController extends Controller
     public function update($id,Request $request){
         $this->validate($request,[
             'FeaturedImage1' => 'required',
-            'FeaturedImage2' => 'required',
             'BrowserTitle' => 'required',
-            'Permalink' => "required|unique:news,Permalink,$id",
+            'Permalink' => "required",
             'NewsName' => 'required',
         ]);
 
@@ -81,7 +78,6 @@ class NewsController extends Controller
         $Portfolio->SeoKeyword= request('SeoKeyword');
         $Portfolio->SeoDescription = request('SeoDescription');
         $Portfolio->FeaturedImage1 = request('FeaturedImage1');
-        $Portfolio->FeaturedImage2 = request('FeaturedImage2');
         $Portfolio->ImageAltText = request('ImageAltText');
         $Portfolio->ImageTitleText = request('ImageTitleText');
         $Portfolio->FeaturedDetails = request('FeaturedDetails');

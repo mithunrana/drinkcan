@@ -36,7 +36,7 @@ class ProductsController extends Controller
                             <div class="col-md-7">
                                 <div class="media">
                                     <div class="radio_list mr-4">
-                                        <input type="radio" name="dd" id="">
+                                        <input type="radio" name="dd" value="'.$Product->id.'" class="productid">
                                     </div>
                                     <div class="media-body">
                                         <div class="select-product-title">
@@ -55,7 +55,6 @@ class ProductsController extends Controller
                         </div>
                     </div>';
         }
-
         echo $output;
     }
 
@@ -131,7 +130,7 @@ class ProductsController extends Controller
         $Products = Products::where('ActiveStatus',1)->orderBy('id', 'DESC')->get();
         $Brands = ProductsBrand::all();
         $Categories = ProductsPrimaryCategory::all();
-        return view('UI.productsview',compact('Categories','Brands','Products','MegaPixel','Products','Product','SiteProfile'));
+        return view('frontend.productview',compact('Categories','Brands','Products','MegaPixel','Products','Product','SiteProfile'));
     }
 
 

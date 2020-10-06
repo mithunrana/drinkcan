@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2020 at 06:54 PM
+-- Generation Time: Oct 06, 2020 at 06:05 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -277,7 +277,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (66, '2020_10_03_054751_create_faqs_table', 20),
 (67, '2020_10_03_055104_create_about_products_table', 21),
 (68, '2020_10_03_061008_create_product_features_table', 22),
-(69, '2020_10_04_155519_create_orders_table', 23);
+(71, '2020_10_04_155519_create_orders_table', 23);
 
 -- --------------------------------------------------------
 
@@ -293,10 +293,9 @@ CREATE TABLE `news` (
   `SeoKeyword` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `SeoDescription` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `FeaturedImage1` bigint(20) UNSIGNED NOT NULL,
-  `FeaturedImage2` bigint(20) UNSIGNED NOT NULL,
   `ImageAltText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ImageTitleText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `FeaturedDetails` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FeaturedDetails` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ProjectDetails` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ActiveStatus` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -307,8 +306,9 @@ CREATE TABLE `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `BrowserTitle`, `Permalink`, `NewsName`, `SeoKeyword`, `SeoDescription`, `FeaturedImage1`, `FeaturedImage2`, `ImageAltText`, `ImageTitleText`, `FeaturedDetails`, `ProjectDetails`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(1, 'news', '#', 'news', 'news', 'news', 42, 42, NULL, NULL, '<p>news</p>', '<p>news</p>', 0, '2020-09-08 05:01:45', '2020-10-03 07:38:03');
+INSERT INTO `news` (`id`, `BrowserTitle`, `Permalink`, `NewsName`, `SeoKeyword`, `SeoDescription`, `FeaturedImage1`, `ImageAltText`, `ImageTitleText`, `FeaturedDetails`, `ProjectDetails`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
+(1, 'news', '#', 'news', 'news', 'news', 42, NULL, NULL, '<p>news</p>', '<p>news</p>', 1, '2020-09-08 05:01:45', '2020-10-06 00:14:09'),
+(2, 'fadsf', 'asdf', 'adsfadsf', 'asdf', 'asdfadsff', 47, NULL, NULL, '<p>asdf</p>', '<p>কোভিড-১৯ মহামারীর কারণে উন্নয়ন প্রকল্পে বিলাসী ব্যয়ে লাগাম টানতে তৎপরতা চালাচ্ছে সরকার। কিন্তু এ ধরনের ব্যয় প্রস্তাব থামছেই না। &lsquo;দেশীয় প্রজাতির মাছ এবং শামুক সংরক্ষণ ও উন্নয়ন&rsquo; প্রকল্পের কর্মকর্তাদের জন্য ১১টি এসি কেনার প্রস্তাব করেছে মৎস্য অধিদফতর। সেই সঙ্গে প্রকল্পটির আওতায় জেলা মৎস্য দফতর মেরামত, সীমানা প্রাচীর মেরামতের কাজও যুক্ত করা হয়েছেে</p>', 1, '2020-10-06 00:40:27', '2020-10-06 01:48:12');
 
 -- --------------------------------------------------------
 
@@ -319,12 +319,24 @@ INSERT INTO `news` (`id`, `BrowserTitle`, `Permalink`, `NewsName`, `SeoKeyword`,
 CREATE TABLE `orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Mobile` smallint(6) NOT NULL,
+  `Mobile` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ProductId` bigint(20) UNSIGNED NOT NULL,
-  `Address` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `checkstatus` int(11) NOT NULL DEFAULT 0,
+  `orderstatus` int(11) NOT NULL DEFAULT 2,
+  `Address` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Comment` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `Name`, `Mobile`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
+(1, 'fasf', '01797744248', 377, 1, 0, 'fasdfas fasdfasdf', 'afadfasdfdasf fasdfasdf', '2020-10-05 00:22:17', '2020-10-05 00:33:58'),
+(2, 'fadf', 'asdffasdf', 373, 0, 2, 'asdfasdf', NULL, '2020-10-05 03:56:12', '2020-10-05 03:56:12'),
+(3, 'fadf', 'asdffasdffa', 377, 0, 2, 'asdfasdffa', 'order confirm', '2020-10-05 03:56:35', '2020-10-05 03:56:56');
 
 -- --------------------------------------------------------
 
@@ -556,7 +568,7 @@ CREATE TABLE `quick_liinks` (
 --
 
 INSERT INTO `quick_liinks` (`id`, `name`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'About Drinkcan', 'About Pureit', '2020-10-03 06:21:02', '2020-10-03 06:21:02');
+(1, 'About Drinkcan', 'about-drinkcan', '2020-10-03 06:21:02', '2020-10-05 05:32:36');
 
 -- --------------------------------------------------------
 
@@ -691,7 +703,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `email_verified_at`, `password`, `customertype`, `partner`, `companyname`, `servicetype`, `country`, `address`, `VerifyCode`, `image`, `activestatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$TH6fku4aJwODHeGVZlMmN.xHdZlyXdGUOmBbGAjfas78HJhsFSIP6', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '434678', 'user image/mithunrana.developer@gmail.com.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-03 06:48:32'),
+(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$JYbkUAqYTgXJEsiUJ/7SS.2Roiw3HgE0LaIyXmQ1h71SliDEc2Z8q', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '513813', 'user image/mithunrana.developer@gmail.com.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-05 04:56:33'),
 (7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserNotActive', NULL, '2020-09-09 02:31:01', '2020-09-09 02:31:01'),
 (8, 'Kaowsher Hamid', 'MKHT', '+8801676610343', 'mkh.najim@gmail.com', NULL, '$2y$10$d5mx2KbqKFPok.Dwt9j.2eqYn6Wpar3ZbmDMpp.FAJEDQY0m7aTBm', 'Retailer', 'no', 'M K Technology', 'itservice', 'bangladesh', 'dhaka bangladesh - 1000', '242477', 'user image/MKHT.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-13 05:30:52', '2020-09-13 05:37:07');
 
@@ -768,8 +780,7 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `news_featuredimage1_foreign` (`FeaturedImage1`),
-  ADD KEY `news_featuredimage2_foreign` (`FeaturedImage2`);
+  ADD KEY `news_featuredimage1_foreign` (`FeaturedImage1`);
 
 --
 -- Indexes for table `orders`
@@ -935,19 +946,19 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
@@ -1060,8 +1071,7 @@ ALTER TABLE `electro_prono_sliders`
 -- Constraints for table `news`
 --
 ALTER TABLE `news`
-  ADD CONSTRAINT `news_featuredimage1_foreign` FOREIGN KEY (`FeaturedImage1`) REFERENCES `images` (`id`),
-  ADD CONSTRAINT `news_featuredimage2_foreign` FOREIGN KEY (`FeaturedImage2`) REFERENCES `images` (`id`);
+  ADD CONSTRAINT `news_featuredimage1_foreign` FOREIGN KEY (`FeaturedImage1`) REFERENCES `images` (`id`);
 
 --
 -- Constraints for table `portfolios`

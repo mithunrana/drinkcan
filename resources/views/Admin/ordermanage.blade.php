@@ -40,8 +40,8 @@
                                 @foreach(App\Order::orderBy('id', 'DESC')->get() as $Request)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{$Request->name}}</td>
-                                        <td>{{$Request->mobile}}</td>
+                                        <td>{{$Request->Name}}</td>
+                                        <td>{{$Request->Mobile}}</td>
                                         <td>
                                             @if($Request->checkstatus==0)
                                                 <a class="btn btn-danger" href="#">NotCheck <i class="fa fa-ban" aria-hidden="true"></i></a>
@@ -52,17 +52,17 @@
                                         </td>
                                         <td>
                                             @if($Request->orderstatus==0)
-                                                <a class="btn btn-danger" href="{{url('admin/products-price-active-deactive',[$Request->orderstatus,$Request->id])}}">Cancel <i class="fa fa-ban" aria-hidden="true"></i></a>
+                                                <a class="btn btn-danger" href="">Cancel <i class="fa fa-ban" aria-hidden="true"></i></a>
                                             @endif
                                             @if($Request->orderstatus==1)
-                                                <a class="btn btn-success" href="{{url('admin/products-price-active-deactive',[$Request->orderstatus,$Request->id])}}">Confirm <i class="fa fa-check"></i></a>
+                                                <a class="btn btn-success" href="">Confirm <i class="fa fa-check"></i></a>
                                             @endif
                                             @if($Request->orderstatus==2)
-                                                <a class="btn btn-warning" href="{{url('admin/products-price-active-deactive',[$Request->orderstatus,$Request->id])}}">Pending <i class="fa fa-spinner"></i> </a>
+                                                <a class="btn btn-warning" href="">Pending <i class="fa fa-spinner"></i> </a>
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{url('admin/user-request-edit',[$Request->id])}}" class="btn btn-info"> <i style="font-size:17px;" class="fa fa-edit"></i></a>
+                                            <a href="{{url('admin/order-edit',[$Request->id])}}" class="btn btn-info"> <i style="font-size:17px;" class="fa fa-edit"></i></a>
                                             <a href="{{url('admin/user-request-delete',[$Request->id])}}" class="btn btn-danger" onclick="return ConfirmDelete();" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>

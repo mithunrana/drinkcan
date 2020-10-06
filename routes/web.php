@@ -8,14 +8,14 @@ Route::get('/camera/{url}','ProductsController@byMegaPixel');
 Route::get('/brand/{url}','ProductsController@byBrand');
 
 Route::get('/category/{url}','ProductsController@cctvSecondaryCategory');
-Route::get('/water-purifier-kit-price','ProductsController@order');
+Route::get('/water-purifier-kit-price-bangladesh','ProductsController@order');
 Route::get('/categoryproduct','ProductsController@categoryProduct');
 
-Route::get('/water-and-helth','HomeUIController@waterHealth');
-Route::get('/about','HomeUIController@about');
+Route::get('/blog','HomeUIController@blog');
+Route::get('/about-drinkcan','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');
-Route::get('/water-purifire','HomeUIController@waterPurifire');
+Route::get('/water-purifier-price-bd','HomeUIController@waterPurifire');
 
 Route::get('/login','HomeUIController@login');
 Route::get('/privacy-policy','HomeUIController@privacyPolicy');
@@ -24,7 +24,9 @@ Route::get('/terms-condition','HomeUIController@termsCondition');
 Route::post('/contact','ContactController@sendMail');
 Route::get('/news','NewsController@index');
 Route::get('/news/{url}','NewsController@NewsView');
+Route::get('/sitemap','HomeUIController@siteMap');
 Route::post('/search','ProductsController@bySearch');
+
 
 
 
@@ -74,7 +76,7 @@ Route::get('admin/price-list-delete/{id}','PriceListController@delete')->middlew
 Route::post('order-gkk','OrderController@order');
 Route::get('admin/order-manage','OrderController@orderManage')->middleware('AdminUser');
 Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
-
+Route::post('admin/order-update/{id}','OrderController@orderUpdate')->middleware('AdminUser');
 
 
 Route::get('admin/training-manage','TrainingController@trainingManage')->middleware('AdminUser');

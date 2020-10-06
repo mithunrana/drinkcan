@@ -1,8 +1,18 @@
-@include('UI.inc.headersource')
 
-<!--start header-->
-@include('UI.inc.menubar')
-<!--end header -->
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
+@php
+    $title = "DrinkCAN | Water Purifier in Bangladesh";
+    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
+    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+@endphp
+
+
+@include('frontend.inc.headersource')
+@include('frontend.inc.menubar')
+
 
 <!--start login form area-->
 <section class="login-form-area clearfix py-5 wow fadeInDown" data-wow-duration="1s">
@@ -47,10 +57,7 @@
 </section>
 <!--end login form area-->
 
-
-@include('UI.inc.footerbar')
-@include('UI.inc.sidebaricon')
-
-@include('UI.inc.footersource')
+@include('frontend.inc.footer')
+@include('frontend.inc.footersource')
 </body>
 </html>

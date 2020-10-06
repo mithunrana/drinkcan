@@ -1,10 +1,22 @@
+
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
+@php
+    $title = "DrinkCAN | Water Purifier in Bangladesh";
+    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
+    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+@endphp
+
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
     <!--start section header area-->
     <section class="section-header clearfix">
         <img src="{{asset('frontend')}}/css/img/Water-and-Health-pregnancy.webp" alt="">
         <div class="section-header-txt">
-            <h3>Best Water Purifier For Health</h3>
+            <h3>DrinkCan Best Water Purifier For Health</h3>
         </div>
     </section>
     <!--end section header area-->
@@ -20,34 +32,21 @@
     </div>
 </div>
 
-<section class="water-helth-box clearfix pb-5">
+<section style="padding-top: 10px;" class="water-helth-box clearfix pb-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            @foreach($Blogs as $Blog)
+            <div style="margin-top: 8px;" class="col-md-4">
                 <div class="water-helth-item">
-                    <img src="{{asset('frontend')}}/images/Pregnancy-small.webp" class="img-fluid" alt="">
+                    <img src="{{asset('')}}{{$Blog->featuredimage->imageurl}}" class="img-fluid" alt="{{$Blog->ImageAltText}}">
                     <div class="water-item-txt">
-                        <h4 class="m-0">Pregnancy</h4>
+                        <h4 class="m-0">{{$Blog->BlogName}}</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="water-helth-item">
-                    <img src="{{asset('frontend')}}/images/Pregnancy-small.webp" class="img-fluid" alt="">
-                    <div class="water-item-txt">
-                        <h4 class="m-0">Pregnancy</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="water-helth-item">
-                    <img src="{{asset('frontend')}}/images/Pregnancy-small.webp" class="img-fluid" alt="">
-                    <div class="water-item-txt">
-                        <h4 class="m-0">Pregnancy</h4>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
+        {{$Blogs->links()}}
     </div>
 </section>
 

@@ -60,6 +60,19 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{url('admin/order-manage')}}" class="nav-link">
+                        <i class="fa fa-graduation-cap"></i>
+                        <p>Order
+                            <span class="right badge badge-success">
+                               @php
+                                   echo count(App\Order::all());
+                               @endphp
+                            </span>
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{url('admin/portfolio-manage')}}" class="nav-link">
                         <i class="fa fa-graduation-cap"></i>
                         <p>PORTFOLIO

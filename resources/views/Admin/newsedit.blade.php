@@ -4,7 +4,7 @@
 
     <!-- Navbar -->
 @include('Admin.inc.adminHeader')
-<!-- /.navbar -->
+    <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
 @include('Admin.inc.adminSideBar')
@@ -74,13 +74,9 @@
                                     <div class="col-sm-4">
                                         <img style="width: 100%;" id="previewImage" src="/{{$News->featuredimage1->imageurl}}">
                                         <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" id="featuredimage1" data-target="#imagemodal" class="btn btn-success">Select Image One </div>
-
-                                        <img style="width: 100%;margin-top: 10px;" id="previewImage2" src="/{{$News->featuredimage2->imageurl}}">
-                                        <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" id="featuredimage2" data-target="#imagemodal" class="btn btn-success">Select Image Two</div>
                                     </div>
 
                                     <input type="hidden" value="{{$News->FeaturedImage1}}" name="FeaturedImage1" id="setimageid"/>
-                                    <input type="hidden" value="{{$News->FeaturedImage2}}" name="FeaturedImage2" id="setimageid2"/>
                                     <input type="hidden" value="{{$News->ImageTitleText}}" name="ImageTitleText" id="setImageTitleText"/>
                                     <input type="hidden" value="{{$News->ImageAltText}}"  name="ImageAltText" id="setImageAltText"/>
 
@@ -125,14 +121,6 @@
             $('#previousimage').attr('src','/'+'{{$News->featuredimage1->imageurl}}');
             $('#imagelocation').attr('value','{{$News->featuredimage1->imageurl}}');
             $('#getimageId').attr('value','{{$News->FeaturedImage1}}');
-            $('#getImageAltText').attr('value','{{$News->ImageAltText}}');
-            $('#getImageTitleText').attr('value','{{$News->ImageTitleText}}');
-        });
-
-        $('#featuredimage2').click(function(){
-            $('#previousimage').attr('src','/'+'{{$News->featuredimage2->imageurl}}');
-            $('#imagelocation').attr('value','{{$News->featuredimage2->imageurl}}');
-            $('#getimageId').attr('value','{{$News->FeaturedImage2}}');
             $('#getImageAltText').attr('value','{{$News->ImageAltText}}');
             $('#getImageTitleText').attr('value','{{$News->ImageTitleText}}');
         });

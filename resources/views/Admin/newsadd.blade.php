@@ -4,11 +4,11 @@
 
     <!-- Navbar -->
 @include('Admin.inc.adminHeader')
-<!-- /.navbar -->
+    <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
 @include('Admin.inc.adminSideBar')
-<!-- Main Sidebar Container -->
+    <!-- Main Sidebar Container -->
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -73,13 +73,9 @@
                                     <div class="col-sm-4">
                                         <img style="width: 100%;" id="previewImage" src="{{asset('images')}}/default-image.png">
                                         <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" data-target="#imagemodal" class="btn btn-success">Select Image One</div>
-
-                                        <img style="width: 100%;" id="previewImage2" src="{{asset('images')}}/default-image.png">
-                                        <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" data-target="#imagemodal" class="btn btn-success">Select Image One</div>
                                     </div>
 
                                     <input type="hidden" value="{{old('FeaturedImage1')}}" name="FeaturedImage1" id="setimageid"/>
-                                    <input type="hidden" value="{{old('FeaturedImage2')}}" name="FeaturedImage2" id="setimageid2"/>
                                     <input type="hidden" value="{{old('ImageTitleText')}}" name="ImageTitleText" id="setImageTitleText"/>
                                     <input type="hidden" value="{{old('ImageAltText')}}"  name="ImageAltText" id="setImageAltText"/>
 

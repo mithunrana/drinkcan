@@ -49,7 +49,7 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $SiteProfile = SiteProfile::first();
-        return view('UI.register',compact('SiteProfile'));
+        return view('frontend.register',compact('SiteProfile'));
     }
 
     /**

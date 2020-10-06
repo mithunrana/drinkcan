@@ -29,11 +29,17 @@
                 <div class="gkk-product-img">
                     <img src="{{asset('frontend')}}/images/3c48c93f39acfaece66f6115395005cb.webp" class="img-fluid" alt="">
                 </div>
+                @if(Session::has('message'))
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{Session::get('message')}}
+                    </div>
+                @endif
                 <div class="gkk-product-form">
                     <h4>DrinkCan Classic 23L</h4>
                     <form action="{{url('order-gkk')}}" method="post">
                         @csrf
-                        @if($errors->has('Product'))
+                        @if($errors->has('ProductId'))
                             <small style="color:red;"> Must Select Someone Product</small>
                         @endif
                         <select id="categorychange" name="category" class="form-control mb-3">
@@ -43,15 +49,15 @@
                             @endforeach
                         </select>
                         <input type="hidden" class="form-control mb-3 py-2" name="ProductId" value="" id="setproductid">
-                        <input type="text" class="form-control mb-3 py-2" placeholder="Name" name="Name">
+                        <input type="text" class="form-control mb-3 py-2" value="{{old('Name')}}" placeholder="Name" name="Name">
                         @if($errors->has('Name'))
                             <small style="color:red;"> {{$errors->first('Name')}}</small>
                         @endif
-                        <input type="text" class="form-control mb-3 py-2" placeholder="Mobile" name="Mobile">
+                        <input type="text" class="form-control mb-3 py-2" value="{{old('Mobile')}}" placeholder="Mobile" name="Mobile">
                         @if($errors->has('Mobile'))
                             <small style="color:red;"> {{$errors->first('Mobile')}}</small>
                         @endif
-                        <textarea type="text" class="form-control mb-3 py-2" placeholder="Enter Address" name="Address"></textarea>
+                        <textarea type="text" class="form-control mb-3 py-2" placeholder="Enter Address" value="{{old('Address')}}" name="Address"></textarea>
                         @if($errors->has('Address'))
                             <small style="color:red;"> {{$errors->first('Address')}}</small>
                         @endif
@@ -60,12 +66,6 @@
                         <input class="btn btn-primary" type="submit" value="Submit">
                     </form>
                 </div>
-                @if(Session::has('message'))
-                    <div class="alert alert-success alert-dismissible">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        {{Session::get('message')}}
-                    </div>
-                @endif
             </div>
             <div class="col-md-7">
                 <div class="gkk-select-product card-body">
@@ -113,8 +113,7 @@
     $(document).ready(function() {
 
 
-
-        $('.productid').click(function(){
+        $(document).on('click', '.productid', function(){
             $productid = $(this).val();
             $('#setproductid').prop('value',$productid);
         });
