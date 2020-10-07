@@ -57,7 +57,7 @@
                         @if($errors->has('Mobile'))
                             <small style="color:red;"> {{$errors->first('Mobile')}}</small>
                         @endif
-                        <textarea type="text" class="form-control mb-3 py-2" placeholder="Enter Address" value="{{old('Address')}}" name="Address"></textarea>
+                        <textarea type="text" class="form-control mb-3 py-2" placeholder="Enter Address" value="{{old('Address')}}" name="Address">{{old('Address')}}</textarea>
                         @if($errors->has('Address'))
                             <small style="color:red;"> {{$errors->first('Address')}}</small>
                         @endif
@@ -112,13 +112,10 @@
 <script>
     $(document).ready(function() {
 
-
         $(document).on('click', '.productid', function(){
             $productid = $(this).val();
             $('#setproductid').prop('value',$productid);
         });
-
-
 
         $('#categorychange').change(function(){
             var CategoryId = $('#categorychange').val();

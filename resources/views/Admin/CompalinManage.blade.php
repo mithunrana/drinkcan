@@ -37,7 +37,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach(App\Order::orderBy('id', 'DESC')->get() as $Request)
+                                @foreach(App\Complain::orderBy('id', 'DESC')->get() as $Request)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{$Request->Name}}</td>
@@ -62,8 +62,8 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{url('admin/order-edit',[$Request->id])}}" class="btn btn-info"> <i style="font-size:17px;" class="fa fa-edit"></i></a>
-                                            <a href="{{url('admin/order-delete',[$Request->id])}}" class="btn btn-danger" onclick="return ConfirmDelete();" ><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                            <a href="{{url('admin/complain-edit',[$Request->id])}}" class="btn btn-info"> <i style="font-size:17px;" class="fa fa-edit"></i></a>
+                                            <a href="{{url('admin/complain-delete',[$Request->id])}}" class="btn btn-danger" onclick="return ConfirmDelete();" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach

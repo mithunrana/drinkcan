@@ -77,6 +77,13 @@ Route::post('order-gkk','OrderController@order');
 Route::get('admin/order-manage','OrderController@orderManage')->middleware('AdminUser');
 Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
 Route::post('admin/order-update/{id}','OrderController@orderUpdate')->middleware('AdminUser');
+Route::post('admin/order-delete/{id}','OrderController@orderDelete')->middleware('AdminUser');
+
+Route::post('complain-store','ComplainController@store');
+Route::get('admin/complain-manage','ComplainController@complainManage')->middleware('AdminUser');
+Route::get('admin/complain-edit/{id}','ComplainController@complainEdit')->middleware('AdminUser');
+Route::post('admin/complain-update/{id}','ComplainController@complainUpdate')->middleware('AdminUser');
+Route::get('admin/complain-delete/{id}','ComplainController@complainDelete')->middleware('AdminUser');
 
 
 Route::get('admin/training-manage','TrainingController@trainingManage')->middleware('AdminUser');

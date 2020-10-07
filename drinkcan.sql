@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2020 at 06:05 PM
+-- Generation Time: Oct 07, 2020 at 06:20 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -159,6 +159,36 @@ INSERT INTO `cctv_camera_mega_pixels` (`id`, `MegaPixel`, `MegaPixelUrl`, `MegaP
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `complains`
+--
+
+CREATE TABLE `complains` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Mobile` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ComplainType` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ComplainDetails` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ProductId` bigint(20) UNSIGNED NOT NULL,
+  `checkstatus` int(11) NOT NULL DEFAULT 0,
+  `orderstatus` int(11) NOT NULL DEFAULT 2,
+  `Address` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Comment` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `complains`
+--
+
+INSERT INTO `complains` (`id`, `Name`, `Mobile`, `Email`, `ComplainType`, `ComplainDetails`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
+(1, 'fasdf', 'fasdf', 'fasdf', '6353', 'fasdfasdf', 375, 0, 2, 'adsfadsf', NULL, '2020-10-07 09:07:20', '2020-10-07 09:07:20'),
+(2, 'fasdf', 'adsfasd', 'fadsfa', '6353', 'fasd', 373, 0, 2, 'fadsf', NULL, '2020-10-07 09:08:22', '2020-10-07 09:08:22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `c_c_t_v_brands`
 --
 
@@ -277,7 +307,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (66, '2020_10_03_054751_create_faqs_table', 20),
 (67, '2020_10_03_055104_create_about_products_table', 21),
 (68, '2020_10_03_061008_create_product_features_table', 22),
-(71, '2020_10_04_155519_create_orders_table', 23);
+(71, '2020_10_04_155519_create_orders_table', 23),
+(72, '2020_10_07_124858_create_complains_table', 24);
 
 -- --------------------------------------------------------
 
@@ -334,8 +365,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `Name`, `Mobile`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
-(1, 'fasf', '01797744248', 377, 1, 0, 'fasdfas fasdfasdf', 'afadfasdfdasf fasdfasdf', '2020-10-05 00:22:17', '2020-10-05 00:33:58'),
-(2, 'fadf', 'asdffasdf', 373, 0, 2, 'asdfasdf', NULL, '2020-10-05 03:56:12', '2020-10-05 03:56:12'),
+(1, 'fasdf', 'fasdf', 377, 1, 1, 'adsfadsf', NULL, '2020-10-05 00:22:17', '2020-10-07 10:09:56'),
+(2, 'fasdf', 'adsfasd', 373, 0, 2, 'fadsf', NULL, '2020-10-05 03:56:12', '2020-10-07 09:32:52'),
 (3, 'fadf', 'asdffasdffa', 377, 0, 2, 'asdfasdffa', 'order confirm', '2020-10-05 03:56:35', '2020-10-05 03:56:56');
 
 -- --------------------------------------------------------
@@ -745,6 +776,12 @@ ALTER TABLE `cctv_camera_mega_pixels`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `complains`
+--
+ALTER TABLE `complains`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `c_c_t_v_brands`
 --
 ALTER TABLE `c_c_t_v_brands`
@@ -919,6 +956,12 @@ ALTER TABLE `cctv_camera_mega_pixels`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `complains`
+--
+ALTER TABLE `complains`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `c_c_t_v_brands`
 --
 ALTER TABLE `c_c_t_v_brands`
@@ -946,7 +989,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- AUTO_INCREMENT for table `news`
