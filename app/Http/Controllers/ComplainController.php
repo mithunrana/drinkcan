@@ -24,13 +24,8 @@ class ComplainController extends Controller
             'Email'=> $request->Email,
             'ComplainDetails'=> $request->ComplainDetails,
         ]);
-        return redirect()->to('admin/complain-manage')->with('message','Order Successfully Submitted');
+        return redirect()->to('complaint')->with('message','Your Complain Successfully Register');
     }
-
-
-
-
-
 
 
 
@@ -51,12 +46,13 @@ class ComplainController extends Controller
             'Address' => 'required',
         ]);
         $UserData = Complain::findOrFail($id);
-        $UserData->Name =  request('name');
-        $UserData->Mobile =  request('mobile');
+        $UserData->Name =  request('Name');
+        $UserData->Mobile =  request('Mobile');
         $UserData->Comment =  request('Comment');
-        $UserData->Address =  request('address');
+        $UserData->Address =  request('Address');
         $UserData->checkstatus =  request('checkstatus');
-        $UserData->orderstatus =  request('orderstatus');
+        $UserData->ComplainDetails =  request('ComplainDetails');
+        $UserData->Email =  request('Email');
         $UserData->save();
         return redirect()->to('admin/complain-manage')->with('message','Complain Check Successfully ...');
     }
@@ -66,4 +62,22 @@ class ComplainController extends Controller
         $Order->delete();
         return redirect()->to('admin/complain-manage')->with('message','Complain Delete Successfully ...');
     }
+
+
+
+
+
+
+
+
+
+
+
+    public function faq(){
+        return view('frontend.faq');
+    }
+
+
+
+
 }

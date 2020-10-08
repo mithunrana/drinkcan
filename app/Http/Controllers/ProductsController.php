@@ -130,7 +130,7 @@ class ProductsController extends Controller
         $Products = Products::where('ActiveStatus',1)->orderBy('id', 'DESC')->get();
         $Brands = ProductsBrand::all();
         $Categories = ProductsPrimaryCategory::all();
-        return view('frontend.productview',compact('Categories','Brands','Products','MegaPixel','Products','Product','SiteProfile'));
+        return view('frontend.productsview',compact('Categories','Brands','Products','MegaPixel','Products','Product','SiteProfile'));
     }
 
 

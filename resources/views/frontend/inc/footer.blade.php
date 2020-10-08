@@ -17,7 +17,7 @@
                     <h5>Allready own a DrinkCan</h5>
                     <ul class="m-0 p-0">
                         <li><a href="{{asset('')}}water-purifier-kit-price-bangladesh"><i class="fa fa-angle-right mr-2"></i>Order Purifier Kit</a></li>
-                        <li><a href="{{asset('')}}"><i class="fa fa-angle-right mr-2"></i>Register a Complaint</a></li>
+                        <li><a href="{{asset('')}}complaint"><i class="fa fa-angle-right mr-2"></i>Register a Complaint</a></li>
                         <li><a href=""><i class="fa fa-angle-right mr-2"></i>FAQs</a></li>
                     </ul>
                 </div>

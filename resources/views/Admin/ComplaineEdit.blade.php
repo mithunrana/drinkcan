@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="card-header">Order Checking</div>
                         <div class="card-body">
-                            <form action="{{url('admin/order-update',[$Order->id])}}" method="post">
+                            <form action="{{url('admin/complain-update',[$Order->id])}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -37,15 +37,18 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
+                                        <div style="margin-top: 5px;" class="row">
                                             <div class="form-group col-sm-4">
-                                                <input type="text" class="form-control" id="name" value="{{$Order->Name}}" name="name" aria-describedby="emailHelp" placeholder="Name">
+                                                <input type="text" class="form-control" value="{{$Order->ProductDetails->CategoryDetails->CategoryName}}" readonly>
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                <input type="text" class="form-control" id="name" value="{{$Order->Name}}" name="name" aria-describedby="emailHelp" placeholder="Name">
+                                                <input type="text" class="form-control" value="{{$Order->ProductDetails->Name}}" readonly>
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                <input type="text" class="form-control" id="name" value="{{$Order->Name}}" name="name" aria-describedby="emailHelp" placeholder="Name">
+                                                <input type="text" class="form-control" value="{{$Order->ProductDetails->Model}}" readonly>
+                                            </div>
+                                            <div>
+                                                <input type="hidden" value="{{$Order->ProductId}}" name="ProductId" placeholder="ProductId">
                                             </div>
                                         </div>
 
@@ -61,36 +64,24 @@
                                                     <option value="1" {{$Order->checkstatus == 1 ? 'selected="selected"' : ''}} >Check</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group col-lg-6">
-                                                <label style="color:#f50101;" for="time">Oder Status
-                                                    @if($errors->has('orderstatus'))
-                                                        <small style="color:red;"> {{$errors->first('orderstatus')}}</small>
-                                                    @endif
-                                                </label>
-                                                <select class="form-control" name="orderstatus">
-                                                    <option value="0" {{$Order->orderstatus == 0 ? 'selected="selected"' : ''}} >Cancel</option>
-                                                    <option value="2" {{$Order->orderstatus == 2 ? 'selected="selected"' : ''}} >Pending</option>
-                                                    <option value="1" {{$Order->orderstatus == 1 ? 'selected="selected"' : ''}} >Confirm</option>
-                                                </select>
-                                            </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="form-group col-sm-6">
                                                 <label style="color:#f50101;" for="name">Name
-                                                    @if($errors->has('name'))
-                                                        <small style="color:red;"> {{$errors->first('name')}}</small>
+                                                    @if($errors->has('Name'))
+                                                        <small style="color:red;"> {{$errors->first('Name')}}</small>
                                                     @endif
                                                 </label>
-                                                <input type="text" class="form-control" id="name" value="{{$Order->Name}}" name="name" aria-describedby="emailHelp" placeholder="Name">
+                                                <input type="text" class="form-control" id="Name" value="{{$Order->Name}}" name="Name" placeholder="Name">
                                             </div>
                                             <div class="form-group col-sm-6">
-                                                <label style="color:#f50101;" for="mobile">Mobile
-                                                    @if($errors->has('mobile'))
-                                                        <small style="color:red;"> {{$errors->first('mobile')}}</small>
+                                                <label style="color:#f50101;" for="Mobile">Mobile
+                                                    @if($errors->has('Mobile'))
+                                                        <small style="color:red;"> {{$errors->first('Mobile')}}</small>
                                                     @endif
                                                 </label>
-                                                <input type="text" class="form-control" id="mobile" value="{{$Order->Mobile}}" name="mobile" placeholder="Mobile">
+                                                <input type="text" class="form-control" id="Mobile" value="{{$Order->Mobile}}" name="Mobile" placeholder="Mobile">
                                             </div>
                                         </div>
 
@@ -101,7 +92,7 @@
                                                         <small style="color:red;"> {{$errors->first('Email')}}</small>
                                                     @endif
                                                 </label>
-                                                <input type="text" class="form-control" id="Email" value="{{$Order->Email}}" name="Email" aria-describedby="emailHelp" placeholder="Email">
+                                                <input type="text" class="form-control" id="Email" value="{{$Order->Email}}" name="Email"  placeholder="Email">
                                             </div>
                                             <div class="form-group col-sm-6">
                                                 <label style="color:#f50101;" for="ComplainType">ComplainType
@@ -115,25 +106,25 @@
 
                                         <div class="row">
                                             <div class="form-group col-sm-6">
-                                                <label style="color:#f50101;" for="address">Address
-                                                    @if($errors->has('address'))
-                                                        <small style="color:red;"> {{$errors->first('address')}}</small>
+                                                <label style="color:#f50101;" for="Address">Address
+                                                    @if($errors->has('Address'))
+                                                        <small style="color:red;"> {{$errors->first('Address')}}</small>
                                                     @endif
                                                 </label>
-                                                <textarea type="text" class="form-control" id="address" name="address" placeholder="Address">{{$Order->Address}}</textarea>
+                                                <textarea type="text" class="form-control" id="Address" name="Address" placeholder="Address">{{$Order->Address}}</textarea>
                                             </div>
                                             <div class="form-group col-sm-6">
-                                                <label style="color:#f50101;" for="servicedetails">Comment
+                                                <label style="color:#f50101;" for="Comment">Comment
                                                     @if($errors->has('Comment'))
                                                         <small style="color:red;"> {{$errors->first('Comment')}}</small>
                                                     @endif
                                                 </label>
-                                                <textarea type="text" class="form-control" id="Comment" name="Comment" placeholder="write something about the order">{{$Order->Comment}}</textarea>
+                                                <textarea type="text" class="form-control" id="Comment" name="Comment" placeholder="write something about the order">{{old('Comment')}}</textarea>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label style="color:#f50101;" for="servicedetails">Complain Details
+                                            <label style="color:#f50101;" for="ComplainDetails">Complain Details
                                                 @if($errors->has('ComplainDetails'))
                                                     <small style="color:red;"> {{$errors->first('ComplainDetails')}}</small>
                                                 @endif

@@ -12,9 +12,11 @@ Route::get('/water-purifier-kit-price-bangladesh','ProductsController@order');
 Route::get('/categoryproduct','ProductsController@categoryProduct');
 
 Route::get('/blog','HomeUIController@blog');
+Route::get('/product/{url}','ProductsController@view');
 Route::get('/about-drinkcan','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');
+Route::get('/faqs','HomeUIController@complaint');
 Route::get('/water-purifier-price-bd','HomeUIController@waterPurifire');
 
 Route::get('/login','HomeUIController@login');
@@ -62,8 +64,6 @@ Route::post('/user-panel-image-update','UserDataController@userImageUpload')->mi
 Route::get('admin/customer-mail-send','CustomerMailSystem@CustomerMail')->middleware('AdminUser');
 Route::post('admin/customer-mail-send','CustomerMailSystem@CustomerMailSend')->middleware('AdminUser');
 Route::get('admin/conditional-user-mail-count','CustomerMailSystem@ConditionalUserCount')->middleware('AdminUser');
-
-
 
 
 

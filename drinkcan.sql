@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2020 at 06:20 PM
+-- Generation Time: Oct 08, 2020 at 12:24 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -171,7 +171,6 @@ CREATE TABLE `complains` (
   `ComplainDetails` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ProductId` bigint(20) UNSIGNED NOT NULL,
   `checkstatus` int(11) NOT NULL DEFAULT 0,
-  `orderstatus` int(11) NOT NULL DEFAULT 2,
   `Address` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Comment` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -182,9 +181,11 @@ CREATE TABLE `complains` (
 -- Dumping data for table `complains`
 --
 
-INSERT INTO `complains` (`id`, `Name`, `Mobile`, `Email`, `ComplainType`, `ComplainDetails`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
-(1, 'fasdf', 'fasdf', 'fasdf', '6353', 'fasdfasdf', 375, 0, 2, 'adsfadsf', NULL, '2020-10-07 09:07:20', '2020-10-07 09:07:20'),
-(2, 'fasdf', 'adsfasd', 'fadsfa', '6353', 'fasd', 373, 0, 2, 'fadsf', NULL, '2020-10-07 09:08:22', '2020-10-07 09:08:22');
+INSERT INTO `complains` (`id`, `Name`, `Mobile`, `Email`, `ComplainType`, `ComplainDetails`, `ProductId`, `checkstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
+(2, 'fasdf', 'adsfasd', 'fadsfa', '6353', 'fasd', 373, 0, 'fadsf', NULL, '2020-10-07 09:08:22', '2020-10-07 09:08:22'),
+(4, 'mithun', '0179774248', 'mithun@gmail.com', '6350', 'complain', 376, 0, 'address', NULL, '2020-10-08 02:59:56', '2020-10-08 02:59:56'),
+(5, 'mithun', '0179774248', 'mithun@gmail.com', '6350', 'complain', 377, 0, 'address', NULL, '2020-10-08 03:00:07', '2020-10-08 03:00:07'),
+(6, 'mithun update', '0179774248 update', 'mithunran@gmail.com update', '6353', 'complain update', 376, 1, 'adress update', NULL, '2020-10-08 03:04:16', '2020-10-08 03:27:43');
 
 -- --------------------------------------------------------
 
@@ -366,7 +367,7 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `Name`, `Mobile`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
 (1, 'fasdf', 'fasdf', 377, 1, 1, 'adsfadsf', NULL, '2020-10-05 00:22:17', '2020-10-07 10:09:56'),
-(2, 'fasdf', 'adsfasd', 373, 0, 2, 'fadsf', NULL, '2020-10-05 03:56:12', '2020-10-07 09:32:52'),
+(2, 'fasdffasd update', 'adsfasdfasd update', 373, 1, 1, 'fasd update', 'fasd update', '2020-10-05 03:56:12', '2020-10-08 01:49:30'),
 (3, 'fadf', 'asdffasdffa', 377, 0, 2, 'asdfasdffa', 'order confirm', '2020-10-05 03:56:35', '2020-10-05 03:56:56');
 
 -- --------------------------------------------------------
@@ -959,7 +960,7 @@ ALTER TABLE `cctv_camera_mega_pixels`
 -- AUTO_INCREMENT for table `complains`
 --
 ALTER TABLE `complains`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `c_c_t_v_brands`

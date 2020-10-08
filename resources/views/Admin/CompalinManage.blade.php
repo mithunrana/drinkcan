@@ -32,7 +32,6 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Mobile</th>
                                     <th scope="col">Check</th>
-                                    <th scope="col">Order</th>
                                     <th scope="col">Action</th>
                                 </tr>
                                 </thead>
@@ -48,17 +47,6 @@
                                             @endif
                                             @if($Request->checkstatus==1)
                                                 <a class="btn btn-success" href="#">Check <i class="fa fa-check"></i></a>
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if($Request->orderstatus==0)
-                                                <a class="btn btn-danger" href="">Cancel <i class="fa fa-ban" aria-hidden="true"></i></a>
-                                            @endif
-                                            @if($Request->orderstatus==1)
-                                                <a class="btn btn-success" href="">Confirm <i class="fa fa-check"></i></a>
-                                            @endif
-                                            @if($Request->orderstatus==2)
-                                                <a class="btn btn-warning" href="">Pending <i class="fa fa-spinner"></i> </a>
                                             @endif
                                         </td>
                                         <td>

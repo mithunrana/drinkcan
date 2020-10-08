@@ -22,7 +22,6 @@ class CreateComplainsTable extends Migration
             $table->longText('ComplainDetails')->nullable();
             $table->bigInteger('ProductId')->unsigned();
             $table->integer('checkstatus')->default(0);
-            $table->integer('orderstatus')->default(2);
             $table->longText('Address')->nullable();
             $table->longText('Comment')->nullable();;
             $table->timestamps();
