@@ -20,27 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f101b50b-501f-4382-a85f-fe4b512560b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/faqedit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/faqmanage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/productaboutedit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/productaboutmanage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/productfeatureedit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/Admin/produtfeaturemanage.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/searchproduct.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/soshinebd-laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/soshinebd-laravel.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AboutProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AboutProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Faq.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Faq.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ProductFeature.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProductFeature.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_03_055104_create_about_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_03_055104_create_about_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_03_061008_create_product_features_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_03_061008_create_product_features_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/inc/adminSideBar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/inc/adminSideBar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +204,7 @@
       <workItem from="1601528915352" duration="1189000" />
       <workItem from="1601531109889" duration="1346000" />
       <workItem from="1601538664108" duration="1169000" />
-      <workItem from="1602232921371" duration="19510000" />
+      <workItem from="1602232921371" duration="20737000" />
     </task>
     <servers />
   </component>
