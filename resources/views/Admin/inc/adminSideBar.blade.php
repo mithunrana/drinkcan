@@ -187,6 +187,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{url('admin/product-about-manage')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>About Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/product-feature-manage')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Feature Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url('admin/product-faq-manage')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>FAQ</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{url('admin/price-list-manage')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Price List</p>

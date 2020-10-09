@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use App\AboutProduct;
 use App\CCTVBrand;
+use App\ProductFeature;
 use App\ProductsBrand;
 use App\ProductsPrimaryCategory;
 use App\ProductsSecondaryCategory;
@@ -69,6 +71,8 @@ class ProductsController extends Controller
         return view('UI.productsmain',compact('Categories','Brands','Products','MegaPixel','Products','SiteProfile'));
     }
 
+
+
     public function cctvPrimaryCategory($url){
         $SiteProfile = SiteProfile::first();
         $PrimaryCategory = ProductsPrimaryCategory::where('CategoryUrl',$url)->first();
@@ -81,6 +85,9 @@ class ProductsController extends Controller
         //print_r($SecondaryCategory);
     }
 
+
+
+
     public function cctvSecondaryCategory($url){
         $SiteProfile = SiteProfile::first();
         $Category = ProductsSecondaryCategory::where('CategoryUrl',$url)->first();
@@ -91,6 +98,9 @@ class ProductsController extends Controller
         return view('UI.productbysecondarycategory',compact('Categories','Brands','Products','MegaPixel','Products','Category','SiteProfile'));
     }
 
+
+
+
     public function byBrand($url){
         $Brand = ProductsBrand::where('BrandUrl',$url)->first();
         $Products = Products::where('ActiveStatus',1)->where('BrandId',$Brand->id)->orderBy('id', 'DESC')->paginate(21);
@@ -100,6 +110,9 @@ class ProductsController extends Controller
         return view('UI.productsbybrand',compact('Categories','Brands','Products','MegaPixel','Products','Brand','SiteProfile'));
     }
 
+
+
+
     public function byMegaPixel($url){
         $CurrentPixel = CctvCameraMegaPixel::where('MegaPixelUrl',$url)->first();
         $Products = Products::where('ActiveStatus',1)->where('MegaPixelId',$CurrentPixel->id)->orderBy('id', 'DESC')->paginate(21);
@@ -108,6 +121,9 @@ class ProductsController extends Controller
         $Categories = ProductsPrimaryCategory::all();
         return view('UI.productsbymegapixel',compact('Categories','Brands','Products','MegaPixel','Products','CurrentPixel','SiteProfile'));
     }
+
+
+
 
     public function bySearch(Request $request){
         $Keyword = $request->keyword;
@@ -123,6 +139,9 @@ class ProductsController extends Controller
     }
 
 
+
+
+
     public function view($url){
         $SiteProfile = SiteProfile::first();
         $Product = Products::where('Permalink',$url)->first();
@@ -132,6 +151,8 @@ class ProductsController extends Controller
         $Categories = ProductsPrimaryCategory::all();
         return view('frontend.productsview',compact('Categories','Brands','Products','MegaPixel','Products','Product','SiteProfile'));
     }
+
+
 
 
 
@@ -693,6 +714,112 @@ class ProductsController extends Controller
         ProductsSecondaryCategory::where('id', $id)->delete();
         return redirect()->to('admin/products-secondary-category')->with('message','Category Delete Successfully');
     }
+
+
+
+
+    public function aboutProduct(){
+        return view('admin.productaboutmanage');
+    }
+
+    public function aboutProductStore(Request $request){
+        $this->validate($request,[
+            'ProductId' => 'required',
+            'Title' => 'required',
+            'Content' => 'required',
+            'FeaturedImage' => 'required',
+        ]);
+
+        AboutProduct::create([
+            'Title' => $request->Title,
+            'Content' => $request->Content,
+            'ProductId' => $request->ProductId,
+            'FeaturedImage' => $request->FeaturedImage,
+            'ImageTitleText' => $request->ImageTitleText,
+            'ImageAltText' => $request->ImageAltText,
+        ]);
+        return redirect()->to('admin/product-about-manage')->with('message','Product About Section Added Successfully');
+    }
+
+
+
+    public function aboutProductEdit($id){
+        $About = AboutProduct::where('id',$id)->first();
+        return view('admin.productaboutedit',compact('About'));
+    }
+
+    public function aboutProductUpdate(Request $request,$id){
+        $About = AboutProduct::findOrFail($id);
+        $About->Title = request('Title');
+        $About->Content = request('Content');
+        $About->ProductId = request('ProductId');
+        $About->FeaturedImage = request('FeaturedImage');
+        $About->ImageTitleText = request('ImageTitleText');
+        $About->ImageAltText = request('ImageAltText');
+        return redirect()->to('admin/product-about-manage')->with('message','Product About Section Update Successfully');
+    }
+
+
+    public function aboutProductDelete($id){
+        $Products = AboutProduct::find($id);
+        $Products->delete();
+        return redirect()->to('admin/product-about-manage')->with('message','Product About Specification Delete Successfully');
+    }
+
+
+
+
+
+
+    public function featureProduct(){
+        return view('admin.produtfeaturemanage');
+    }
+
+    public function featureProductStore(Request $request){
+        $this->validate($request,[
+            'ProductId' => 'required',
+            'Title' => 'required',
+            'Content' => 'required',
+            'FeaturedImage' => 'required',
+        ]);
+
+        ProductFeature::create([
+            'Title' => $request->Title,
+            'Content' => $request->Content,
+            'ProductId' => $request->ProductId,
+            'FeaturedImage' => $request->FeaturedImage,
+            'ImageTitleText' => $request->ImageTitleText,
+            'ImageAltText' => $request->ImageAltText,
+        ]);
+        return redirect()->to('admin/product-feature-manage')->with('message','Product Feature Added Successfully');
+    }
+
+
+
+    public function featureProductEdit($id){
+        $Feature = ProductFeature::where('id',$id)->first();
+        return view('admin.productfeatureedit',compact('Feature'));
+    }
+
+    public function featureProductUpdate(Request $request,$id){
+        $About = ProductFeature::findOrFail($id);
+        $About->Title = request('Title');
+        $About->Content = request('Content');
+        $About->ProductId = request('ProductId');
+        $About->FeaturedImage = request('FeaturedImage');
+        $About->ImageTitleText = request('ImageTitleText');
+        $About->ImageAltText = request('ImageAltText');
+        return redirect()->to('admin/product-feature-manage')->with('message','Product Feature Update Successfully');
+    }
+
+
+    public function featureProductDelete($id){
+        $Products = ProductFeature::find($id);
+        $Products->delete();
+        return redirect()->to('admin/product-feature-manage')->with('message','Product Feature Specification Delete Successfully');
+    }
+
+
 
 }
 

@@ -158,6 +158,26 @@ Route::get('admin/news-delete/{id}','NewsController@delete')->middleware('AdminU
 Route::get('admin/news-active-deactive/{status}/{postid}','NewsController@activeDeactive')->middleware('AdminUser');
 
 
+Route::get('admin/product-about-manage','ProductsController@aboutProduct')->middleware('AdminUser');
+Route::post('admin/store-product-about','ProductsController@aboutProductStore')->middleware('AdminUser');
+Route::get('admin/product-about-edit/{id}','ProductsController@aboutProductEdit')->middleware('AdminUser');
+Route::post('admin/product-about-update/{id}','ProductsController@aboutProductUpdate')->middleware('AdminUser');
+Route::get('admin/product-about-delete/{id}','ProductsController@aboutProductDelete')->middleware('AdminUser');
+
+
+Route::get('admin/product-feature-manage','ProductsController@featureProduct')->middleware('AdminUser');
+Route::post('admin/store-product-feature','ProductsController@featureProductStore')->middleware('AdminUser');
+Route::get('admin/product-feature-edit/{id}','ProductsController@featureProductEdit')->middleware('AdminUser');
+Route::post('admin/product-feature-update/{id}','ProductsController@featureProductUpdate')->middleware('AdminUser');
+Route::get('admin/product-feature-delete/{id}','ProductsController@featureProductDelete')->middleware('AdminUser');
+
+
+
+Route::get('admin/product-faq-manage','FaqController@productFaq')->middleware('AdminUser');
+Route::post('admin/store-product-faq','FaqController@storeProductFAQ')->middleware('AdminUser');
+Route::get('admin/product-faq-edit/{id}','FaqController@productFAQEdit')->middleware('AdminUser');
+Route::post('admin/product-faq-update/{id}','FaqController@featureProduct')->middleware('AdminUser');
+Route::get('admin/product-faq-delete/{id}','FaqController@featureProduct')->middleware('AdminUser');
 
 
 Route::get('admin/products-brand','ProductsController@productsBrand')->middleware('AdminUser');

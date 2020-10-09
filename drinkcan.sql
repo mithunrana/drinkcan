@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 08, 2020 at 12:24 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.2.23
+-- Generation Time: Oct 09, 2020 at 07:32 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,12 +32,19 @@ CREATE TABLE `about_products` (
   `Title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `ProductId` bigint(20) UNSIGNED NOT NULL,
-  `ImageId` bigint(20) UNSIGNED NOT NULL,
+  `FeaturedImage` bigint(20) UNSIGNED NOT NULL,
   `ImageAltText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ImageTitleText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about_products`
+--
+
+INSERT INTO `about_products` (`id`, `Title`, `Content`, `ProductId`, `FeaturedImage`, `ImageAltText`, `ImageTitleText`, `created_at`, `updated_at`) VALUES
+(3, 'fasdfasd', 'fasdf', 375, 438, 'fasdf', 'asdadff', '2020-10-09 06:00:40', '2020-10-09 06:00:40');
 
 -- --------------------------------------------------------
 
@@ -238,6 +244,13 @@ CREATE TABLE `faqs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `Question`, `Answer`, `ProductId`, `created_at`, `updated_at`) VALUES
+(1, 'GAFG', 'ADFASDF', 373, '2020-10-09 09:11:07', '2020-10-09 09:11:07');
+
 -- --------------------------------------------------------
 
 --
@@ -307,9 +320,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (65, '2020_09_10_105358_create_price_lists_table', 19),
 (66, '2020_10_03_054751_create_faqs_table', 20),
 (67, '2020_10_03_055104_create_about_products_table', 21),
-(68, '2020_10_03_061008_create_product_features_table', 22),
 (71, '2020_10_04_155519_create_orders_table', 23),
-(72, '2020_10_07_124858_create_complains_table', 24);
+(72, '2020_10_07_124858_create_complains_table', 24),
+(74, '2020_10_03_061008_create_product_features_table', 25);
 
 -- --------------------------------------------------------
 
@@ -554,11 +567,20 @@ CREATE TABLE `product_features` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `Title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FeaturedImage` bigint(20) UNSIGNED NOT NULL,
   `ProductId` bigint(20) UNSIGNED NOT NULL,
-  `ImageId` bigint(20) UNSIGNED NOT NULL,
+  `ImageAltText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ImageTitleText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_features`
+--
+
+INSERT INTO `product_features` (`id`, `Title`, `Content`, `FeaturedImage`, `ProductId`, `ImageAltText`, `ImageTitleText`, `created_at`, `updated_at`) VALUES
+(1, 'fadsfasdf', 'asdfasdf', 439, 375, 'fasdf', 'adsf', '2020-10-09 06:04:07', '2020-10-09 06:04:07');
 
 -- --------------------------------------------------------
 
@@ -639,7 +661,7 @@ CREATE TABLE `site_profiles` (
 --
 
 INSERT INTO `site_profiles` (`id`, `ShortDescription`, `SiteName`, `EditorPublisher`, `CorporateAddress`, `HeadAddress`, `CorporatePhone`, `Phone1`, `phone2`, `phone3`, `CorporateEmail`, `Email2`, `Email3`, `MainLogo`, `MainLogoTitleText`, `MainLogoAltText`, `CopyRightText`, `DomainName`, `DesignerDeveloperName`, `DesignerDeveloperDomain`, `GoogleMap`, `created_at`, `updated_at`) VALUES
-(3, 'Soshine Marketing Company : We combine excellence with top quality, integrity and timeliness to provide 24/7 quality service specially designed to facilitate our users experience beyond expectation.', 'Soshine', 'Mithun Rana', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '01678225976', '01678225976', NULL, NULL, 'info@soshinebd.com', 'info@soshinebd.com', NULL, 44, 'DrinkCan', 'Drink Can', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-10-03 07:39:53');
+(3, 'Soshine Marketing Company : We combine excellence with top quality, integrity and timeliness to provide 24/7 quality service specially designed to facilitate our users experience beyond expectation.', 'Soshine', 'Mithun Rana', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '01611830852', '01678225976', NULL, NULL, 'info@soshinebd.com', 'info@soshinebd.com', NULL, 44, 'DrinkCan', 'Drink Can', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-10-09 06:25:28');
 
 -- --------------------------------------------------------
 
@@ -930,7 +952,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `about_products`
 --
 ALTER TABLE `about_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `authorization_certificates`
@@ -978,7 +1000,7 @@ ALTER TABLE `electro_prono_sliders`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -990,7 +1012,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -1044,7 +1066,7 @@ ALTER TABLE `products_primary_categories`
 -- AUTO_INCREMENT for table `product_features`
 --
 ALTER TABLE `product_features`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_types`

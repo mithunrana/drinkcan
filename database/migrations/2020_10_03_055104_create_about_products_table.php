@@ -17,8 +17,8 @@ class CreateAboutProductsTable extends Migration
             $table->bigIncrements('id');
             $table->text('Title');
             $table->longText('Content');
+            $table->bigInteger('FeaturedImage')->unsigned();
             $table->bigInteger('ProductId')->unsigned();
-            $table->bigInteger('ImageId')->unsigned();
             $table->text('ImageAltText')->nullable();
             $table->text('ImageTitleText')->nullable();
             $table->timestamps();
