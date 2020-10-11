@@ -1,7 +1,7 @@
 <!--start header-->
 <header>
     <!--start header top-->
-    <section style="background:#00adee" class="header-top clearfix py-3 wow fadeInDown" data-wow-duration="1s">
+    <section class="header-top clearfix wow fadeInDown" data-wow-duration="1s">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -9,7 +9,7 @@
                         <ul class="ht-ul">
                             <li><a href="javascript:;"><i class="fa fa-map mr-1"></i>Bangladesh</a></li>
                             <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>{{$SiteProfile->CorporatePhone}}</a></li>
-                            <li><a href="javascript:;"><i class="fa fa-search mr-1"></i>Search</a></li>
+                            <li><a href=""></i>Support</a></li>
                         </ul>
                     </div>
                 </div>
@@ -17,9 +17,9 @@
         </div>
     </section>
     <!--end header top-->
-    <nav style="background: #008abd" class="navbar wow fadeInDown py-0" data-wow-duration="1s">
+    <nav style="background: rgba(255,255,255,.96) none repeat scroll 0% 0%; visibility: visible; animation-duration: 1s; animation-name: fadeInDown;" class="navbar wow fadeInDown py-0" data-wow-duration="1s">
         <div class="container menu-area">
-            <a class="navbar-brand" href="{{asset('')}}">
+            <a style="padding-top: 30px;padding-bottom: 30px;" class="navbar-brand" href="{{asset('')}}">
                 <img src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
             </a>
             <div class="main-nav ml-auto">
@@ -40,6 +40,8 @@
     </nav>
 </header>
 <!--end header-->
+
+
 
 
 

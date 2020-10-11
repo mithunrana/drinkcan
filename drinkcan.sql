@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2020 at 07:32 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Oct 11, 2020 at 06:45 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -210,6 +211,88 @@ CREATE TABLE `c_c_t_v_brands` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `districts`
+--
+
+CREATE TABLE `districts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `districts`
+--
+
+INSERT INTO `districts` (`id`, `Name`, `created_at`, `updated_at`) VALUES
+(1, 'Bagerhat', NULL, NULL),
+(2, 'Bandarban', NULL, NULL),
+(3, 'Barguna', NULL, NULL),
+(4, 'Barisal', NULL, NULL),
+(5, 'Bhola', NULL, NULL),
+(6, 'Bogra', NULL, NULL),
+(7, 'Brahmanbaria', NULL, NULL),
+(8, 'Chandpur', NULL, NULL),
+(9, 'Chittagong', NULL, NULL),
+(10, 'Comilla', NULL, NULL),
+(11, 'Cox Bazar', NULL, NULL),
+(12, 'Dhaka', NULL, NULL),
+(13, 'Dinajpur', NULL, NULL),
+(14, 'Faridpur', NULL, NULL),
+(15, 'Feni', NULL, NULL),
+(16, 'Gaibandha', NULL, NULL),
+(17, 'Gazipur', NULL, NULL),
+(18, 'Gopalganj', NULL, NULL),
+(19, 'Habiganj', NULL, NULL),
+(20, 'Jaipurhat', NULL, NULL),
+(21, 'Jamalpur', NULL, NULL),
+(22, 'Jessore', NULL, NULL),
+(23, 'Jhalakati', NULL, NULL),
+(24, 'Jhenaidah', NULL, NULL),
+(25, 'Khagrachari', NULL, NULL),
+(26, 'Khulna', NULL, NULL),
+(27, 'Kishoreganj', NULL, NULL),
+(28, 'Kurigram', NULL, NULL),
+(29, 'Kushtia', NULL, NULL),
+(30, 'Lakshmipur', NULL, NULL),
+(31, 'Lalmonirhat', NULL, NULL),
+(32, 'Madaripur', NULL, NULL),
+(33, 'Magura', NULL, NULL),
+(35, 'Meherpur', NULL, NULL),
+(36, 'Moulvibazar', NULL, NULL),
+(37, 'Munshiganj', NULL, NULL),
+(38, 'Mymensingh', NULL, NULL),
+(39, 'Naogaon', NULL, NULL),
+(40, 'Narail', NULL, NULL),
+(41, 'Narayanganj', NULL, NULL),
+(42, 'Narsingdi', NULL, NULL),
+(43, 'Natore', NULL, NULL),
+(44, 'Manikganj', NULL, NULL),
+(45, 'Netrakona', NULL, NULL),
+(46, 'Nilphamari', NULL, NULL),
+(47, 'Noakhali', NULL, NULL),
+(48, 'Pabna', NULL, NULL),
+(49, 'Panchagarh', NULL, NULL),
+(50, 'Parbattya Chattagram', NULL, NULL),
+(51, 'Patuakhali', NULL, NULL),
+(52, 'Pirojpur', NULL, NULL),
+(53, 'Rajbari', NULL, NULL),
+(54, 'Rajshahi', NULL, NULL),
+(55, 'Rangpur', NULL, NULL),
+(56, 'Satkhira', NULL, NULL),
+(57, 'Shariatpur', NULL, NULL),
+(58, 'Sherpur', NULL, NULL),
+(59, 'Sirajganj', NULL, NULL),
+(60, 'Sunamganj', NULL, NULL),
+(61, 'Sylhet', NULL, NULL),
+(62, 'Tangail', NULL, NULL),
+(63, 'Thakurgaon', NULL, NULL),
+(64, 'Chuadanga', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `electro_prono_sliders`
 --
 
@@ -322,7 +405,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (67, '2020_10_03_055104_create_about_products_table', 21),
 (71, '2020_10_04_155519_create_orders_table', 23),
 (72, '2020_10_07_124858_create_complains_table', 24),
-(74, '2020_10_03_061008_create_product_features_table', 25);
+(74, '2020_10_03_061008_create_product_features_table', 25),
+(76, '2020_10_11_152658_create_thana_names_table', 27),
+(77, '2020_10_11_152601_create_districts_table', 28);
 
 -- --------------------------------------------------------
 
@@ -727,6 +812,19 @@ CREATE TABLE `support_models` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thana_names`
+--
+
+CREATE TABLE `thana_names` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -808,6 +906,12 @@ ALTER TABLE `complains`
 -- Indexes for table `c_c_t_v_brands`
 --
 ALTER TABLE `c_c_t_v_brands`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `districts`
+--
+ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -938,6 +1042,12 @@ ALTER TABLE `support_models`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `thana_names`
+--
+ALTER TABLE `thana_names`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -991,6 +1101,12 @@ ALTER TABLE `c_c_t_v_brands`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `districts`
+--
+ALTER TABLE `districts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+
+--
 -- AUTO_INCREMENT for table `electro_prono_sliders`
 --
 ALTER TABLE `electro_prono_sliders`
@@ -1012,7 +1128,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -1102,6 +1218,12 @@ ALTER TABLE `software_lists`
 -- AUTO_INCREMENT for table `support_models`
 --
 ALTER TABLE `support_models`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `thana_names`
+--
+ALTER TABLE `thana_names`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --

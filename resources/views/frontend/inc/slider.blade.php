@@ -18,12 +18,12 @@
             <div class="carousel-inner">
                 @foreach(\App\ElectroPronoSlider::orderBy('id','DESC')->where('ActiveStatus',1)->skip(0)->take(1)->get() as $Slider)
                     <div class="carousel-item carousel-img-1 active">
-                        <img style="max-width: 100%;" src="{{asset('')}}{{$Slider->image->imageurl}}">
+                        <img src="{{asset('')}}{{$Slider->image->imageurl}}">
                     </div>
                 @endforeach
                 @foreach(\App\ElectroPronoSlider::orderBy('id','DESC')->where('ActiveStatus',1)->skip(1)->take($limit)->get() as $Slider)
                     <div class="carousel-item carousel-img-1">
-                        <img style="max-width: 100%;" src="{{asset('')}}{{$Slider->image->imageurl}}">
+                        <img src="{{asset('')}}{{$Slider->image->imageurl}}">
                     </div>
                 @endforeach
             </div>
