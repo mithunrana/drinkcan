@@ -102,7 +102,7 @@ nav {
     text-transform: capitalize;
     text-decoration: none;
     color: #000;
-    font-weight: 400;
+    font-weight: 500;
     padding: 20px 24px;
     display: block;
     font-size: 14px;
@@ -301,7 +301,6 @@ nav {
 
 .product-img {
     width: 270px;
-    height: 263px;
     margin: 0 auto;
 }
 

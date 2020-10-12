@@ -1,5 +1,5 @@
 <!--start header-->
-<header>
+<header style="border-bottom: 1px solid #78909c;">
     <!--start header top-->
     <section class="header-top clearfix wow fadeInDown" data-wow-duration="1s">
         <div class="container">
@@ -9,7 +9,7 @@
                         <ul class="ht-ul">
                             <li><a href="javascript:;"><i class="fa fa-map mr-1"></i>Bangladesh</a></li>
                             <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>{{$SiteProfile->CorporatePhone}}</a></li>
-                            <li><a href=""></i>Support</a></li>
+                            <li><a href="">Support</a></li>
                         </ul>
                     </div>
                 </div>

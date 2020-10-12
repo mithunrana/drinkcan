@@ -20,4 +20,8 @@ class Products extends Model
         return $this->belongsTo(ProductsBrand::class,'BrandId');
     }
 
+    public function productAbout(){
+        return $this->hasMany(AboutProduct::class,'ProductId');
+    }
+
 }

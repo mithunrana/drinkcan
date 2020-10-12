@@ -70,29 +70,92 @@
     }
 </style>
 
+
+
 <section class="product-details-area bg-light py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="product-d-image">
-                    <img src="{{asset('')}}img/ddc2133f7cfed05b40def32a3dcb2653.webp" alt="adsf">
+    <section style="background-color: white;margin-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div style="padding: 40px 30px 0px 30px;" class="col-md-6 produci-img-left-box">
+                    <div style="text-align: center" class="product-d-image">
+                        <img  src="{{asset('')}}{{$Product->image->imageurl}}" alt="{{$Product->ImageAltText}}" title="{{$Product->ImageTitleText}}">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="product-d-details text-right">
-                    <h2 class="text-primary">Marvella Slim RO+UV+MF</h2>
-                    <h3 class="text-primary">MRP: <del>৳ 21,500</del> ৳ 20,000*</h3>
-                    <p><a style="background: #f4dc2d; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;" href="#">BUY NOW</a></p>
-                    <a style="color: #666; border-bottom: 1px solid #666; font-size: 18px" href="#">View other RO purifiers</a>
-                    <p><small>*MRP (inclusive of all taxes) for 1 unit</small></p>
+                <div style="padding: 40px 30px 0px 30px;" class="col-md-6 produci-shortcontent-right-box">
+                    <div class="product-short-info">
+                        <h1 style="font-size:20px;" class="product-name">{{$Product->CategoryDetails->CategoryName}}</h1>
+                        <table class="product-info-table">
+                            <tbody>
+                            @if($Product->PriceStatus == 1)
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;" class="product-info-label">Price</td>
+                                <td class="product-info-data product-price">{{$Product->CurrentPrice}}</td>
+                            </tr>
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Regular Price</td>
+                                <td class="product-info-data product-regular-price">{{$Product->RegularPrice}}</td>
+                            </tr>
+                            @endif
+
+                            @if(Auth::check() && Auth::user()->partner=='yes')
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Partner Price</td>
+                                <td class="product-info-data product-regular-price">{{$Product->PartnerPrice}}</td>
+                            </tr>
+                            @endif
+
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Status</td>
+                                <td class="product-info-data product-status">In Stock</td>
+                            </tr>
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Product Code</td>
+                                <td class="product-info-data product-code">13987</td>
+                            </tr>
+                            <tr class="product-info-group" itemprop="brand" itemtype="http://schema.org/Thing" itemscope="">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Brand</td>
+                                <td class="product-info-data product-brand" itemprop="name">XIAOMI</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="short-description">
+                        <h2 style="font-size: 17px;font-weight: bold;">Features</h2>
+                        <p>ইংরেজি থেকে অনুবাদ করা হয়েছে-ফিলার পাঠ্যটি এমন পাঠ্য যা সত্য লিখিত পাঠ্যের কিছু বৈশিষ্ট্য ভাগ করে, তবে এলোমেলো বা অন্যথায়
+                            উত্পন্ন হয়। এটি ফন্টের নমুনা প্রদর্শন করতে, পরীক্ষার জন্য পাঠ্য উত্পন্ন করতে বা কোনও ইমেল স্প্যাম
+                            ফিল্টার ছদ্মবেশে ব্যবহার করতে</p>
+                    </div>
+                    <div class="product-d-details text-right">
+                        <p>
+                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="#">BUY NOW</a>
+                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="#">
+                                BUY NOW
+                                View other RO purifiers</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+
+
+    <div class="container">
+        @php
+            $Counter = 0;
+        @endphp
+        @foreach($Product->productAbout as $ProductAbout)
+            @php
+                $Counter = $Counter+1;
+            @endphp
+            @if($Counter % 2 == 0)
         <div class="row my-5 py-4">
             <div class="col-md-8">
                 <div class="product-item-txt">
-                    <h3 class="text-primary">About the Device</h3>
-                    <p>Pureit brings to you the all new Marvella Slim RO+UV+MF with advanced 7 stage purification that purifies water and its mineral cartridge that enriches pure water with goodness of mineral.</p>
+                    <h3 class="text-primary">{{$ProductAbout->Title}}</h3>
+                    <p>
+                        {{$ProductAbout->Content}}
+                    </p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -101,6 +164,7 @@
                 </div>
             </div>
         </div>
+        @else
         <div class="row my-5 py-4">
             <div class="col-md-4">
                 <div class="product-item-img">
@@ -114,36 +178,15 @@
                 </div>
             </div>
         </div>
-        <div class="row my-5 py-4">
-            <div class="col-md-8">
-                <div class="product-item-txt">
-                    <h3 class="text-primary">Includes Mineral Cartridge</h3>
-                    <p>Enriches water by adding essential minerals like Calcium and Magnesium.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="product-item-img">
-                    <img src="{{asset('')}}img/111.webp" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row my-5 py-4">
-            <div class="col-md-4">
-                <div class="product-item-img">
-                    <img src="{{asset('')}}img/111.webp" class="img-fluid" alt="">
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="product-item-txt text-right">
-                    <h3 class="text-primary">8 Litres1 Storage With Water-Level Indicator</h3>
-                    <p>You will never run out of purified water.</p>
-                </div>
-            </div>
-        </div>
+        @endif
+       @endforeach
     </div>
 </section>
 
-<section class="product-feauture-section py-4 bg-light">
+
+
+
+<!--<section class="product-feauture-section py-4 bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -196,7 +239,11 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
+
+
+
+
 
 <section class="product-specification py-5 bg-light">
     <div class="container">
@@ -343,7 +390,10 @@
     </div>
 </section>
 
-<section class="product-specification-kit py-5 bg-light">
+
+
+
+<!--<section class="product-specification-kit py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -398,15 +448,23 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
+
+
+
+
 
 <section class="product-manual py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="section-title text-center mb-4">
+                    @if($Product->Datasheet !== '#')
                     <h2 class="text-primary mb-3">Product Manual</h2>
-                    <a class="pdf-download" href="#"><img src="{{asset('')}}img/downloadpdf_icon.webp" class="mr-4"> Download PDF <img src="{{asset('')}}img/downloadpdf_icon2.png" class="ml-4"></a>
+                    <a class="pdf-download" href="{{asset('')}}{{$Product->Datasheet}}">
+                        <img src="{{asset('')}}img/downloadpdf_icon.webp" class="mr-4"> Download PDF <img src="{{asset('')}}img/downloadpdf_icon2.png" class="ml-4">
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -414,7 +472,6 @@
             <div class="col" style="border: 1px solid #666;">
                 <div class="card-body">
                     <div class="card-body">
-                        <p class="text-primary">Disclaimers:</p>
                         <ul style="margin: 0; padding: 0;">
                             <li>1. 7.8 to 8.1 under running water conditions</li>
                             <li>2. Under test condition Input TDS – 750 PPM, Turbidity &lt; 1 NTU, Input pressure – 10 psi, Input Hardness – Upto 300 ppm, Temp. – Room temp. </li>
