@@ -25,6 +25,16 @@
                     @endif
                     <div class="card">
                         <div class="card-body">
+                            <form method="get" class="form-inline" action="{{url('admin/order-export')}}">
+                                @csrf
+                                <label for="email">Email address: </label>
+                                <input type="date" name="from_date"  class="form-control" placeholder="Enter email" id="email">
+                                <label for="pwd">Password: </label>
+                                <input type="date" name="to_date" class="form-control" placeholder="Enter password" id="pwd">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                            <a style="margin-bottom: 5px;" class="btn btn-success float-right" href="{{url('admin/order-export')}}">Export Excel</a>
+
                             <table id="mytable" class="table table-striped">
                                 <thead class="thead-dark">
                                 <tr>

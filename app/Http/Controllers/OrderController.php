@@ -2,10 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrderExport;
 use Illuminate\Http\Request;
 use App\Order;
+use Maatwebsite\Excel\Facades\Excel;
 class OrderController extends Controller
 {
+
+
+
+
+    public function orderExport(){
+        return Excel::download(new OrderExport(), 'order.xlsx');
+    }
+
+
+    public function orderManage(){
+        return view('Admin.ordermanage');
+    }
 
     public function order(Request $request){
         $this->validate($request,[
@@ -22,17 +36,6 @@ class OrderController extends Controller
             'Address'=> $request->Address,
         ]);
        return redirect()->to('water-purifier-kit-price')->with('message','Order Successfully Submitted');
-    }
-
-
-
-
-
-
-
-
-    public function orderManage(){
-        return view('Admin.ordermanage');
     }
 
     public function orderEdit($id){

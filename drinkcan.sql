@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2020 at 12:43 PM
+-- Generation Time: Oct 13, 2020 at 03:15 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -467,7 +467,7 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `Name`, `Mobile`, `ProductId`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
 (1, 'fasdf', 'fasdf', 377, 1, 1, 'adsfadsf', NULL, '2020-10-05 00:22:17', '2020-10-07 10:09:56'),
-(2, 'fasdffasd update', 'adsfasdfasd update', 373, 1, 1, 'fasd update', 'fasd update', '2020-10-05 03:56:12', '2020-10-08 01:49:30'),
+(2, 'Mithun Rana', '01797744248', 373, 1, 1, 'Dhaka Bangladesh', 'fasd update', '2020-10-05 03:56:12', '2020-10-08 01:49:30'),
 (3, 'fadf', 'asdffasdffa', 377, 0, 2, 'asdfasdffa', 'order confirm', '2020-10-05 03:56:35', '2020-10-05 03:56:56');
 
 -- --------------------------------------------------------

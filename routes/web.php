@@ -72,7 +72,6 @@ Route::post('admin/price-list-store','PriceListController@store')->middleware('A
 Route::get('admin/price-list-delete/{id}','PriceListController@delete')->middleware('AdminUser');
 
 
-Route::post('store-location','OrderController@order');
 Route::get('admin/thana-name-manage','StoreLocationController@thanaManage')->middleware('AdminUser');
 Route::post('admin/thana-name-store','StoreLocationController@thanaNameStore')->middleware('AdminUser');
 Route::get('admin/thana-name-edit/{id}','StoreLocationController@thanaNameEdit')->middleware('AdminUser');
@@ -81,8 +80,6 @@ Route::post('admin/thana-name-delete/{id}','StoreLocationController@thanaNameDel
 
 
 
-
-Route::post('store-location','OrderController@order');
 Route::get('admin/store-location-manage','StoreLocationController@storeLocationManage')->middleware('AdminUser');
 Route::post('admin/store-location-store','StoreLocationController@store')->middleware('AdminUser');
 Route::get('admin/store-location-edit/{id}','StoreLocationController@storeLocationEdit')->middleware('AdminUser');
@@ -97,6 +94,8 @@ Route::get('admin/order-manage','OrderController@orderManage')->middleware('Admi
 Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
 Route::post('admin/order-update/{id}','OrderController@orderUpdate')->middleware('AdminUser');
 Route::post('admin/order-delete/{id}','OrderController@orderDelete')->middleware('AdminUser');
+Route::get('admin/order-export', 'OrderController@orderExport');
+
 
 Route::post('complain-store','ComplainController@store');
 Route::get('admin/complain-manage','ComplainController@complainManage')->middleware('AdminUser');
