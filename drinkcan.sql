@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 12, 2020 at 05:09 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Oct 13, 2020 at 12:43 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -774,8 +775,10 @@ CREATE TABLE `social_links` (
 --
 
 INSERT INTO `social_links` (`id`, `visualtext`, `url`, `sitename`, `icon`, `created_at`, `updated_at`) VALUES
-(1, 'Soshine', 'https://www.facebook.com/soshinebd/', 'Facebook', '<i style=\"color:white;\" class=\"fa fa-facebook-official\"></i>', '2020-09-08 04:41:36', '2020-10-12 01:56:10'),
-(2, 'Soshine', 'https://www.linkedin.com/company/soshinebd/', 'LinkedIn', '<i style=\"color:white;\" class=\"fa fa-linkedin-square\"></i>', '2020-09-08 04:43:22', '2020-10-12 01:56:22');
+(1, 'Soshine', 'https://www.facebook.com/drinkcanbd', 'Facebook', '<i style=\"color:white;\" class=\"fa fa-facebook-official\"></i>', '2020-09-08 04:41:36', '2020-10-13 04:15:34'),
+(2, 'Soshine', 'https://www.linkedin.com/company/drinkcan/', 'LinkedIn', '<i style=\"color:white;\" class=\"fa fa-linkedin-square\"></i>', '2020-09-08 04:43:22', '2020-10-13 04:15:51'),
+(3, 'DrinkCan', 'https://www.youtube.com/channel/UChxlWU50WgRx06b3hYzll9A', 'Yotube', '<i style=\"color:white;\" class=\"fa fa-youtube-play\"></i>', '2020-10-13 04:13:15', '2020-10-13 04:13:15'),
+(4, 'DrinkCan', 'https://www.instagram.com/drinkcanbd/', 'Instagram', '<i style=\"color:white;\" class=\"fa fa-instagram\"></i>', '2020-10-13 04:15:16', '2020-10-13 04:15:16');
 
 -- --------------------------------------------------------
 
@@ -1211,7 +1214,7 @@ ALTER TABLE `site_profiles`
 -- AUTO_INCREMENT for table `social_links`
 --
 ALTER TABLE `social_links`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `software_lists`

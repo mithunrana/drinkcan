@@ -72,6 +72,25 @@ Route::post('admin/price-list-store','PriceListController@store')->middleware('A
 Route::get('admin/price-list-delete/{id}','PriceListController@delete')->middleware('AdminUser');
 
 
+Route::post('store-location','OrderController@order');
+Route::get('admin/thana-name-manage','StoreLocationController@thanaManage')->middleware('AdminUser');
+Route::post('admin/thana-name-store','StoreLocationController@thanaNameStore')->middleware('AdminUser');
+Route::get('admin/thana-name-edit/{id}','StoreLocationController@thanaNameEdit')->middleware('AdminUser');
+Route::post('admin/thana-name-update/{id}','StoreLocationController@thanaNameUpdate')->middleware('AdminUser');
+Route::post('admin/thana-name-delete/{id}','StoreLocationController@thanaNameDelete')->middleware('AdminUser');
+
+
+
+
+Route::post('store-location','OrderController@order');
+Route::get('admin/store-location-manage','StoreLocationController@storeLocationManage')->middleware('AdminUser');
+Route::post('admin/store-location-store','StoreLocationController@store')->middleware('AdminUser');
+Route::get('admin/store-location-edit/{id}','StoreLocationController@storeLocationEdit')->middleware('AdminUser');
+Route::post('admin/store-location-update/{id}','StoreLocationController@storeLocationUpdate')->middleware('AdminUser');
+Route::post('admin/store-location-delete/{id}','StoreLocationController@storeLocationDelete')->middleware('AdminUser');
+
+
+
 
 Route::post('order-gkk','OrderController@order');
 Route::get('admin/order-manage','OrderController@orderManage')->middleware('AdminUser');

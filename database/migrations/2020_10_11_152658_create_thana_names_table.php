@@ -15,6 +15,7 @@ class CreateThanaNamesTable extends Migration
     {
         Schema::create('thana_names', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('DistrictId')->unsigned();
             $table->text('Name');
             $table->timestamps();
         });
