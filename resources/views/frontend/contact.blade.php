@@ -8,23 +8,73 @@
         <div class="container">
             <div class="contact-us-box card card-body">
                 <div class="row">
+                    @if(Session::has('success'))
+                        <div style="width: 100%;" class="alert alert-success alert-dismissible">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <b>Successfully</b> Send Your Query As Soon As Possible We Contact With You....!
+                        </div>
+                    @endif
                     <div class="col-md-6">
                         <div class="contact-us-form">
                             <h4 class="text-primary font-weight-normal">Send a message to us</h4>
                             <div class="contact-form mt-4">
-                                <form action="#">
+                                <form action="{{url('contact')}}" method="post">
+                                    @csrf
+                                    <label for="name">
+                                        <b>Name</b>
+                                        @if($errors->has('name'))
+                                            <small style="color:red;"> {{$errors->first('name')}}</small>
+                                        @endif
+                                    </label>
+                                    <input class="form-control mb-2" type="text" name="name" id="name" placeholder="Enter name">
 
-                                    <label for="">Name</label>
-                                    <input class="form-control mb-2" type="text" name="last name" placeholder="Enter name">
+                                    <label for="">
+                                        <b>Email</b>
+                                        @if($errors->has('name'))
+                                            <small style="color:red;"> {{$errors->first('email')}}</small>
+                                        @endif
+                                    </label>
+                                    <input class="form-control mb-2" type="email" name="email" id="email" placeholder="Enter email">
 
-                                    <label for="">Email</label>
-                                    <input class="form-control mb-2" type="email" name="email" placeholder="Enter email">
+                                    <label for="phone_no">
+                                        <b>Phone Number</b>
+                                        @if($errors->has('phone_no'))
+                                            <small style="color:red;"> {{$errors->first('phone_no')}}</small>
+                                        @endif
+                                    </label>
+                                    <input class="form-control mb-2" type="text" name="phone_no" id="phone_no" placeholder="Enter phone number">
 
-                                    <label for="">Phone Number</label>
-                                    <input class="form-control mb-2" type="text" name="phone number" placeholder="Enter phone number">
+                                    <label for="address">
+                                        <b>Address</b>
+                                        @if($errors->has('address'))
+                                            <small style="color:red;"> {{$errors->first('address')}}</small>
+                                        @endif
+                                    </label>
+                                    <input class="form-control mb-2" type="text" name="address" id="address" placeholder="Enter address">
 
-                                    <label for="">Message</label>
-                                    <textarea placeholder="Message" class="form-control mb-2" name="" id="" cols="30" rows="2"></textarea>
+                                    <label for="enquiry_type">
+                                        <b>Contact For</b>
+                                        @if($errors->has('enquiry_type'))
+                                            <small style="color:red;">Please Select Why You Contact</small>
+                                        @endif
+                                    </label>
+                                    <select id="enquiry_type" name="enquiry_type" class="form-control">
+                                        <option value="" selected="">Select Enquiry Type</option>
+                                        <option value="job_enquiry">Job Enquiry</option>
+                                        <option value="product_quality">Product Quality</option>
+                                        <option value="technical_support">Technical Support</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="website">Website</option>
+                                    </select>
+
+                                    <label for="usermessage">
+                                        <b>Message</b>
+                                        @if($errors->has('usermessage'))
+                                            <small style="color:red;"> Please Type Something Write Here</small>
+                                        @endif
+                                    </label>
+                                    <textarea placeholder="message" class="form-control mb-2" name="usermessage" id="usermessage" cols="30" rows="2"></textarea>
                                     <button class=" btn btn-primary"><i class="fa fa-paper-plane mr-1"></i>Submit Now</button>
                                 </form>
                             </div>
@@ -36,8 +86,8 @@
                             <div class="office-address mt-4">
                                 <h5 class="mb-4 text-info">Our Office Address:</h5>
                                 <p class="mb-4 pb-2 text-muted"><i class="fa fa-map-marker mr-1 text-danger"></i><strong>Location: </strong>Baliadangi, Dhaka Bangladesh.</p>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-primary"></i><strong>Phone Number: </strong>01755430927</p>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-primary"></i><strong>Tel: </strong>0900000540</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Phone Number: </strong>01755430927</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Tel: </strong>0900000540</p>
                                 <p class="mb-4 pb-2 text-muted"><i class="fa fa-envelope mr-1 text-danger"></i><strong>Email: </strong>imranemon.developer@gmail.com</p>
                             </div>
                         </div>

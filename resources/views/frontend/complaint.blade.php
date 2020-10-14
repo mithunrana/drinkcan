@@ -128,13 +128,10 @@
 
 <script>
     $(document).ready(function() {
-
         $(document).on('click', '.productid', function(){
             $productid = $(this).val();
             $('#setproductid').prop('value',$productid);
         });
-
-
     });
 </script>
 </body>

@@ -74,11 +74,7 @@
     <li><b>Phone:</b>{{$phone_no}}</li>
     <li><b>Address:</b> {{$address}}</li>
     <li><b>Message:</b>{{$querymessage}}</li>
-    <li><b>Country:</b>{{$country}}</li>
-    <li><b>ZIP Code:</b> {{$zip_code}}</li>
-    <li><b>Inquery Type:</b>{{$enquiry_type}}</li>
-    <li><b>Company Name:</b>{{$companyname}}</li>
-    <li><b>Website Name:</b>{{$website}} </li>
+    <li><b>Message:</b>{{$enquiry_type}}</li>
 </ul>
 </body>
 </html>

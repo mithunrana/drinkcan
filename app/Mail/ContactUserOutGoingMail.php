@@ -29,7 +29,7 @@ class ContactUserOutGoingMail extends Mailable
      */
     public function build()
     {
-        $subject = "SOSHINE CONTACT";
+        $subject = "DrinkCan Contact";
         $name = $this->name;
         return $this->view('Mail.contact-user-mail-send',compact('name'))->subject($subject);
     }

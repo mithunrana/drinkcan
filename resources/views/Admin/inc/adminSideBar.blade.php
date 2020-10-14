@@ -214,6 +214,19 @@
                 </li>
 
 
+                <li class="nav-item">
+                    <a href="{{url('admin/client-feedback-manage')}}" class="nav-link">
+                        <i class="fa fa-newspaper" style="font-size:18px"></i>
+                        <p>Client FeedBack
+                            <span class="right badge badge-success">
+                               @php
+                                   echo count(App\ClientFeedBack::all());
+                               @endphp
+                            </span>
+                        </p>
+                    </a>
+                </li>
+
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">

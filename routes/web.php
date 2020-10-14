@@ -72,6 +72,15 @@ Route::post('admin/price-list-store','PriceListController@store')->middleware('A
 Route::get('admin/price-list-delete/{id}','PriceListController@delete')->middleware('AdminUser');
 
 
+Route::get('admin/client-feedback-manage','CliendFeedBack@manage')->middleware('AdminUser');
+Route::get('admin/client-feedback-add','CliendFeedBack@add')->middleware('AdminUser');
+Route::post('admin/client-feedback-store','CliendFeedBack@store')->middleware('AdminUser');
+Route::get('admin/client-feedback-edit/{id}','CliendFeedBack@edit')->middleware('AdminUser');
+Route::post('admin/client-feedback-update/{id}','CliendFeedBack@update')->middleware('AdminUser');
+Route::get('admin/client-feedback-delete/{id}','CliendFeedBack@delete')->middleware('AdminUser');
+Route::get('admin/client-feedback-active-deactive/{status}/{postid}','CliendFeedBack@activeDeactive')->middleware('AdminUser');
+
+
 Route::get('admin/thana-name-manage','StoreLocationController@thanaManage')->middleware('AdminUser');
 Route::post('admin/thana-name-store','StoreLocationController@thanaNameStore')->middleware('AdminUser');
 Route::get('admin/thana-name-edit/{id}','StoreLocationController@thanaNameEdit')->middleware('AdminUser');
