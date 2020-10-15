@@ -14,9 +14,8 @@
 @include('frontend.inc.menubar')
     <!--start section header area-->
     <section class="section-header clearfix">
-        <img src="{{asset('frontend')}}/css/img/Water-and-Health-pregnancy.webp" alt="">
-        <div class="section-header-txt">
-            <h3>DrinkCan Best Water Purifier For Health</h3>
+        <div class="about-header">
+            <img src="http://localhost:8000/frontend/images/about-drinkcan.jpg" class="img-fluid" alt="">
         </div>
     </section>
     <!--end section header area-->
@@ -62,21 +61,5 @@
     </div>
 </div>
 
-<div class="pick-of mb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="pick-of-ul">
-                    <h4>Pick of the Week</h4>
-                    <ul>
-                        <li><a href="#">The ABCDE’s of water and weight loss</a></li>
-                        <li><a href="#">Water Essential for Pregnant Women</a></li>
-                        <li><a href="#">Lose weight by drinking water</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')

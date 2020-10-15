@@ -19,19 +19,24 @@
                     <h5 style="margin-bottom: 2px;">Company</h5>
                     <ul class="m-0 p-0">
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
-                            <span data-lang="" class="cmn waterPurifiers">News</span></a>
+                            <a style="font-size:14px;" href="{{asset('')}}news">
+                            <span data-lang="" class="cmn waterPurifiers">News</span>
+                            </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
+                            <a style="font-size:14px;" href="{{asset('')}}blog">
                             <span data-lang="" class="cmn waterPurifiers">Blog</span>
-                        </a>
+                            </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
-                                <span data-lang="" class="cmn waterPurifiers">Contact Us</span></a>
+                            <a style="font-size:14px;" href="{{asset('')}}contact">
+                                <span data-lang="" class="cmn waterPurifiers">Contact Us</span>
+                            </a>
                         </li>
-                        <li><a style="font-size:14px;" href="{{asset('')}}"><span data-lang="" class="cmn waterPurifiers">About Us</span></a></li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}about-us"><span data-lang="" class="cmn waterPurifiers">About Us</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -40,12 +45,14 @@
                     <h5 style="margin-bottom: 2px;">Customer</h5>
                     <ul class="m-0 p-0">
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
-                                <span data-lang="" class="cmn waterPurifiers">Support</span></a>
+                            <a style="font-size:14px;" href="{{asset('')}}contact">
+                                <span data-lang="" class="cmn waterPurifiers">Support</span>
+                            </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
-                                <span data-lang="" class="cmn waterPurifiers">Contact</span></a>
+                            <a style="font-size:14px;" href="{{asset('')}}contact">
+                                <span data-lang="" class="cmn waterPurifiers">Contact</span>
+                            </a>
                         </li>
                         <li>
                             <a style="font-size:14px;" href="{{asset('')}}">
@@ -60,17 +67,17 @@
                     <h5 style="margin-bottom: 2px;">User Reading</h5>
                     <ul class="m-0 p-0">
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
+                            <a style="font-size:14px;" href="#">
                                 <span data-lang="" class="cmn waterPurifiers">Terms & Condition</span>
                             </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
+                            <a style="font-size:14px;" href="#">
                                 <span data-lang="" class="cmn waterPurifiers">Privacy Policy</span>
                             </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
+                            <a style="font-size:14px;" href="#">
                                 <span data-lang="" class="cmn waterPurifiers">Disclaimer</span>
                             </a>
                         </li>

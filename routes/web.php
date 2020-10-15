@@ -13,7 +13,7 @@ Route::get('/categoryproduct','ProductsController@categoryProduct');
 
 Route::get('/blog','HomeUIController@blog');
 Route::get('/product/{url}','ProductsController@view');
-Route::get('/about-drinkcan','HomeUIController@about');
+Route::get('/about-us','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');
 Route::get('/faqs','HomeUIController@complaint');

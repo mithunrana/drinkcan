@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2020 at 03:15 PM
+-- Generation Time: Oct 15, 2020 at 03:21 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.2.23
 
@@ -134,7 +134,7 @@ CREATE TABLE `blog_tutorials` (
 INSERT INTO `blog_tutorials` (`id`, `BrowserTitle`, `Permalink`, `BlogName`, `SeoKeyword`, `SeoDescription`, `VideoURL`, `EmbeddedVideo`, `FeaturedImage`, `ImageAltText`, `ImageTitleText`, `BlogDetails`, `StructuredData`, `Category`, `blog_poster`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
 (4, 'Water and helth', 'water and helth', 'Water and helth', NULL, NULL, 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 45, NULL, NULL, '<p>Water and helth</p>', NULL, '1', 1, 1, '2020-10-03 07:04:03', '2020-10-03 07:49:20'),
 (5, 'Best Water Purifier For Health', 'best water purifier for health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'Best Water Purifier For Health', 47, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', 'Best Water Purifier For Health', '1', 1, 1, '2020-10-03 07:04:41', '2020-10-03 07:49:11'),
-(6, 'Best Water Purifier For Health', '#', 'Best Water Purifier For', NULL, NULL, 'https://www.youtube.com/watch?v=wqUNGhLCqnk', 'Best Water Purifier For Health', 46, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', NULL, '1', 1, 1, '2020-10-03 07:05:36', '2020-10-03 07:55:47');
+(6, 'Best Water Purifier For Health', '#', 'Best Water Purifier For', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'https://www.youtube.com/watch?v=wqUNGhLCqnk', 'Best Water Purifier For Health', 46, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', NULL, '1', 1, 1, '2020-10-03 07:05:36', '2020-10-15 06:53:05');
 
 -- --------------------------------------------------------
 
@@ -164,6 +164,24 @@ INSERT INTO `cctv_camera_mega_pixels` (`id`, `MegaPixel`, `MegaPixelUrl`, `MegaP
 (2, '2MP HD', '2-mp-hd-cctv-camera-price-bangladesh', '2MP HD CCTV Camera Price In Bangladesh', '2MP HD CCTV Camera Price In Bangladesh', '<p>2MP HD CCTV Camera Price In Bangladesh</p>', '2MP HD CCTV Camera Price In Bangladesh', '2MP HD CCTV Camera Price In Bangladesh', '2020-09-08 07:15:49', '2020-09-08 07:31:04'),
 (3, '5 MP IP', '5-mp-ip-cctv-camera-price-bangladesh', '5 MP IP CCTV Camera Price In Bangladesh | Soshine', '5 MP IP CCTV Camera Price In Bangladesh', '<p>5 MP IP CCTV Camera Price In Bangladesh</p>', '5 MP IP CCTV Camera Price In Bangladesh', '5 MP IP CCTV Camera Price In Bangladesh', '2020-09-08 07:16:45', '2020-09-08 07:16:45'),
 (4, '2MP IP', '2-mp-ip-cctv-camera-price-bangladesh', '2 MP IP CCTV Camera Price In Bangladesh | Soshine', '2 MP IP CCTV Camera Price In Bangladesh', '<p>2 MP IP CCTV Camera Price In Bangladesh</p>', '2 MP IP CCTV Camera Price In Bangladesh', '2 MP IP CCTV Camera Price In Bangladesh', '2020-09-08 07:17:39', '2020-09-08 07:17:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client_feed_backs`
+--
+
+CREATE TABLE `client_feed_backs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `FeaturedImage` bigint(20) UNSIGNED NOT NULL,
+  `ImageAltText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ImageTitleText` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Details` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ActiveStatus` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -358,7 +376,13 @@ INSERT INTO `images` (`id`, `imageurl`, `created_at`, `updated_at`) VALUES
 (44, 'images/drink-can.png', '2020-10-03 07:39:30', '2020-10-03 07:39:30'),
 (45, 'images/how-purifie-water.jpg', '2020-10-03 07:48:24', '2020-10-03 07:48:24'),
 (46, 'images/drinking-water-healthy.jpg', '2020-10-03 07:48:30', '2020-10-03 07:48:30'),
-(47, 'images/water-benefits.jpg', '2020-10-03 07:48:41', '2020-10-03 07:48:41');
+(47, 'images/water-benefits.jpg', '2020-10-03 07:48:41', '2020-10-03 07:48:41'),
+(48, 'images/Flood-situation-deteriorates-in-Ganges-brahmaputra-basins.jpg', '2020-10-15 06:09:01', '2020-10-15 06:09:01'),
+(49, 'images/Rivers-flowing-above-danger-level-Barisal-due-o-heavy-rainfall.jpg', '2020-10-15 06:09:05', '2020-10-15 06:09:05'),
+(50, 'images/Waterlevel-Ganges-basin-remains-steady.jpg', '2020-10-15 06:09:10', '2020-10-15 06:09:10'),
+(51, 'images/scientists-fear-lasting-impact-from-mauritius-oil-spill.jpg', '2020-10-15 06:31:41', '2020-10-15 06:31:41'),
+(52, 'images/no-oil-on-dolphins-washed-up-near-mauritius-spill autopsy-report.jpg', '2020-10-15 06:31:46', '2020-10-15 06:31:46'),
+(53, 'images/no-arsenic-contamination-survey in-17-years.jpg', '2020-10-15 06:31:55', '2020-10-15 06:31:55');
 
 -- --------------------------------------------------------
 
@@ -409,7 +433,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (72, '2020_10_07_124858_create_complains_table', 24),
 (74, '2020_10_03_061008_create_product_features_table', 25),
 (76, '2020_10_11_152658_create_thana_names_table', 27),
-(77, '2020_10_11_152601_create_districts_table', 28);
+(77, '2020_10_11_152601_create_districts_table', 28),
+(80, '2020_10_14_072116_create_client_feed_backs_table', 29);
 
 -- --------------------------------------------------------
 
@@ -439,8 +464,12 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `BrowserTitle`, `Permalink`, `NewsName`, `SeoKeyword`, `SeoDescription`, `FeaturedImage1`, `ImageAltText`, `ImageTitleText`, `FeaturedDetails`, `ProjectDetails`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(1, 'news', '#', 'news', 'news', 'news', 42, NULL, NULL, '<p>news</p>', '<p>news</p>', 1, '2020-09-08 05:01:45', '2020-10-06 00:14:09'),
-(2, 'fadsf', 'asdf', 'adsfadsf', 'asdf', 'asdfadsff', 47, NULL, NULL, '<p>asdf</p>', '<p>কোভিড-১৯ মহামারীর কারণে উন্নয়ন প্রকল্পে বিলাসী ব্যয়ে লাগাম টানতে তৎপরতা চালাচ্ছে সরকার। কিন্তু এ ধরনের ব্যয় প্রস্তাব থামছেই না। &lsquo;দেশীয় প্রজাতির মাছ এবং শামুক সংরক্ষণ ও উন্নয়ন&rsquo; প্রকল্পের কর্মকর্তাদের জন্য ১১টি এসি কেনার প্রস্তাব করেছে মৎস্য অধিদফতর। সেই সঙ্গে প্রকল্পটির আওতায় জেলা মৎস্য দফতর মেরামত, সীমানা প্রাচীর মেরামতের কাজও যুক্ত করা হয়েছেে</p>', 1, '2020-10-06 00:40:27', '2020-10-06 01:48:12');
+(1, 'Rivers flowing above danger level in Barisal due to heavy rainfall', '#', 'Rivers flowing above danger level in Barisal due to heavy rainfall', 'Rivers flowing above danger level in Barisal due to heavy rainfall', 'Rivers flowing above danger level in Barisal due to heavy rainfall', 49, NULL, NULL, '<p>Because of heavy downpour during the last five days and upstream flood water, the Kirtonkhola, Burishwar, and Meghna rivers and most of their tributaries are swelling above the danger mark submerging vast areas of Barisal region.</p>', '<p>Abdul Kuddus, senior observer of the Barisal divisional weather office, informed that a total of 65 millimeter rainfall was recorded at Barisal city and surrounding areas in the last 24-hour &nbsp;till 3pm on Wednesday.</p>\r\n<p>Meanwhile, croplands, commercial and residential areas in many places went under water, confirmed Bangladesh Water Development Board (BWDB), Barisal office.&nbsp;</p>\r\n<p>Fishing boats and trawlers lie idle as the sea remains rough due to a depression over the Bay.</p>\r\n<p>Local river ports have been asked to show Cautionary Signal No 1 and marine ports 3, weather office sources said.</p>', 1, '2020-09-08 05:01:45', '2020-10-15 06:12:44'),
+(2, 'Water level in Ganges basin remains steady', '#', 'Water level in Ganges basin remains steady', 'Water level in Ganges basin remains steady', 'Water level in Ganges basin remains steady', 50, NULL, NULL, '<p>Water level in many of the rivers in the Ganges basin either recorded fall or remained steady till Tuesday morning due to the declining of onrushing floodwater from upstream hilly catchment areas in the past 24 hours after rising for the last couple of days.</p>', '<p>Goaler Char areas in Jamalpur</p>\r\n<p>&nbsp;</p>\r\n<p>District and upazila administrations distributing relief materials in the worst-affected areas continuously</p>\r\n<p>Water level in many of the rivers in the Ganges basin either recorded fall or remained steady till Tuesday morning due to the declining of onrushing floodwater from upstream hilly catchment areas in the past 24 hours after rising for the last couple of days.</p>\r\n<p>Of the 30 river points monitored in the Ganges basin on Tuesday, water levels receded at 21 points, while went up at six points, and remained stable at three points, according to data of Flood Forecasting and Warning Centre (FFWC).</p>\r\n<p>However, the rivers were flowing below the danger level at 28 points, while above the danger levels at two points.</p>\r\n<p>&ldquo;We recorded falling and steady trends in many rivers, including Mahananda, Ganges, Padma, and some of the downstream rivers and tributaries of the Ganges basin today,&rdquo; Mukhlesur Rahman, superintending engineer of Bangladesh Water Development Board (BWDB), told BSS this morning.</p>\r\n<p>He said water level of the Ganges River remained steady at Pankha in Chapainawabganj, Rajshahi and Hardinge Bridge points, while receded by two centimetres (cm) at Talbaria points afresh at 9am on Tuesday.</p>\r\n<p>&nbsp;</p>', 1, '2020-10-06 00:40:27', '2020-10-15 06:10:59'),
+(3, 'Flood situation deteriorates in Ganges, Brahmaputra basins', '#', 'Flood situation deteriorates in Ganges, Brahmaputra basins', 'Flood situation deteriorates in Ganges, Brahmaputra basins', 'Flood situation deteriorates in Ganges, Brahmaputra basins', 48, NULL, NULL, '<p>The overall flood situation in the Ganges and Brahmaputra basins have deteriorated further with inundation of fresh low-lying areas and standing crops in the Brahmaputra basin during the last 24 hours.</p>', '<p>Of the 16 river points both in Ganges and Brahmaputra Basins, being monitored in many districts under Rajshahi division regularly, water levels increased at 15 points, while declined at one point.</p>\r\n<p>The rivers were flowing below the danger level in 10 points, while above the danger mark at another six points on Tuesday.</p>\r\n<p>At Rangpur, Bangladesh Water Development Board (BWDB) officials said the Brahmaputra, Jamuna, Ghagot, Jamuneswari and Kartoa marked further rise while Dharla and Teesta fell due to onrush of water from upstream despite no rainfalls during the last 24 hours in the basin.</p>\r\n<p>According to the BWDB&rsquo;s Flood Forecasting and Warning Centre&rsquo;s flood situation bulletin, water levels of the Brahmaputra-Jamuna river systems are in rising trend which may continue in next 24 hours in the Brahmaputra basin.</p>', 1, '2020-10-15 06:14:01', '2020-10-15 06:14:05'),
+(4, 'No arsenic contamination survey in 17 years', '#', 'No arsenic contamination survey in 17 years', 'No arsenic contamination survey in 17 years', 'No arsenic contamination survey in 17 years', 53, NULL, NULL, NULL, '<p>People consider the water from the tubewell near their home to be safe for drinking. There is no way to ascertain the arsenic content of the water without testing it. Arsenic is odourless. And the effects of arsenic on the human body appear only after a few years. The skin becomes dry and breaks out in rashes and then sores appear. This can ultimately lead to cancer.</p>\r\n<p>The health directorate has no updated records on the persons affected by arsenic in the country. However, according to a 2019 survey of the Bangladesh Bureau of Statistic (BBS) and UNICEF, 11.8 per cent of the people in Bangladesh drink arsenic-contaminated water. That means, 19,835,000 (1 crore 98 lakh 35 thousand) in the country drink this contaminated water.</p>\r\n<p>According to the United National Population Fund (UNFPA)\'s annual global population report 2019, the present population of Bangladesh is 168.1 million (16 crore 81 lakh).</p>', 1, '2020-10-15 06:32:45', '2020-10-15 06:32:49'),
+(5, 'No oil on dolphins washed up near Mauritius spill: Autopsy report', '#', 'No oil on dolphins washed up near Mauritius spill: Autopsy report', 'No oil on dolphins washed up near Mauritius spill: Autopsy report', 'No oil on dolphins washed up near Mauritius spill: Autopsy report', 52, NULL, NULL, NULL, '<p>Dead dolphins that washed up in Mauritius near the site of an oil spill have so far been found to have wounds on their bodies but no trace of oil, preliminary autopsy results released on Thursday said.</p>\r\n<p>Environmentalists are urgently seeking an explanation for the mysterious deaths of 27 dolphins which washed ashore on Wednesday and Thursday, to determine whether they were killed by the spill. Scientists fear the toxic spill could hurt wildlife for many years on islands that depend on tourism.</p>', 1, '2020-10-15 06:33:29', '2020-10-15 06:33:32'),
+(6, 'Scientists fear lasting impact from Mauritius oil spill', '#', 'Scientists fear lasting impact from Mauritius oil spill', 'Scientists fear lasting impact from Mauritius oil spill', 'Scientists fear lasting impact from Mauritius oil spill', 51, NULL, NULL, NULL, '<p>Some corals have lived for centuries at the fringes of Mauritius. Now smothered for days in heavy fuel oil spilled from a wrecked Japanese tanker nearby, parts of those reefs may be in trouble.</p>\r\n<p>The full impact of the toxic spill is still unfolding, scientists say. As the Indian Ocean island\'s residents scramble to mop up the oil slicks and clumps, they are seeing dead eels and fish floating in the water, as fuel-soaked seabirds limp onto shore.</p>\r\n<p>Satellite images also show the 1,000 tonnes of spilled oil spreading northward along the coastline from the spill site in the turquoise waters of Blue Bay Marine Park.</p>', 1, '2020-10-15 06:34:10', '2020-10-15 06:34:14');
 
 -- --------------------------------------------------------
 
@@ -864,7 +893,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `email_verified_at`, `password`, `customertype`, `partner`, `companyname`, `servicetype`, `country`, `address`, `VerifyCode`, `image`, `activestatus`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$JYbkUAqYTgXJEsiUJ/7SS.2Roiw3HgE0LaIyXmQ1h71SliDEc2Z8q', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '513813', 'user image/mithunrana.developer@gmail.com.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-05 04:56:33'),
-(7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserNotActive', NULL, '2020-09-09 02:31:01', '2020-09-09 02:31:01'),
+(7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserActive', NULL, '2020-09-09 02:31:01', '2020-10-15 04:16:44'),
 (8, 'Kaowsher Hamid', 'MKHT', '+8801676610343', 'mkh.najim@gmail.com', NULL, '$2y$10$d5mx2KbqKFPok.Dwt9j.2eqYn6Wpar3ZbmDMpp.FAJEDQY0m7aTBm', 'Retailer', 'no', 'M K Technology', 'itservice', 'bangladesh', 'dhaka bangladesh - 1000', '242477', 'user image/MKHT.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-13 05:30:52', '2020-09-13 05:37:07');
 
 --
@@ -902,6 +931,12 @@ ALTER TABLE `blog_tutorials`
 -- Indexes for table `cctv_camera_mega_pixels`
 --
 ALTER TABLE `cctv_camera_mega_pixels`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `client_feed_backs`
+--
+ALTER TABLE `client_feed_backs`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1097,6 +1132,12 @@ ALTER TABLE `cctv_camera_mega_pixels`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `client_feed_backs`
+--
+ALTER TABLE `client_feed_backs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `complains`
 --
 ALTER TABLE `complains`
@@ -1130,19 +1171,19 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `orders`

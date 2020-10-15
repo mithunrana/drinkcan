@@ -60,6 +60,12 @@ return [
         'name' => env('MAIL_FROM_NAME', 'DrinkCan'),
     ],
 
+
+
+
+
+
+
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
