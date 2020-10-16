@@ -140,8 +140,6 @@ class ProductsController extends Controller
 
 
 
-
-
     public function view($url){
         $SiteProfile = SiteProfile::first();
         $Product = Products::where('Permalink',$url)->first();

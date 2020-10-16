@@ -33,12 +33,14 @@
     </div>
 </section>
 
+
+
 <section style="background-color:white;margin-top:30px;" class="product-area clearfix py-5">
     <div class="container">
         @php
         $Counter = 0;
         @endphp
-        @foreach(\App\Products::orderBy('id','ASC')->get() as $Product)
+        @foreach(\App\Products::orderBy('id','ASC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Product)
             @php
             $Counter = $Counter+1;
             @endphp
@@ -50,7 +52,7 @@
                     <div class="product-main__desc">
                         <p>10 glasses of fresh drinking water in a gracefully shaped design.</p>
                     </div>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="#">Details</a>
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
                 </div>
             </div>
             <div class="col-sm-5">
@@ -68,7 +70,7 @@
                     <div class="product-main__desc">
                         <p>10 glasses of fresh drinking water in a gracefully shaped design.</p>
                     </div>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="#">Details</a>
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
                 </div>
             </div>
         </div>
@@ -77,9 +79,11 @@
     </div>
 </section>
 
+
+
 <section style="background-color: #f6f6f6;margin-top:30px;" class="product-area clearfix py-5">
     <div style="width: 90%;" class="container-fluid">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             @foreach(\App\Products::orderBy('id','DESC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Products)
             <div style="margin-top: 20px;" class="col-xl-3 col-lg-3  col-md-4 col-sm-6 col-12">
                 <div style="border: 1px solid #e9e9e9;background-color: #fff;position:relative;" class="product-box">
@@ -146,11 +150,11 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('')}}frontend/images/assured_icon01.png" class="img-fluid" alt="FAQS">
+                            <img src="{{asset('')}}frontend/images/quality product.png" class="img-fluid" alt="FAQS">
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">FAQS</h5>
+                        <h5 class="mt-2">Good Quality Product</h5>
                     </div>
                 </div>
             </div>
@@ -158,11 +162,11 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('')}}frontend/images/assured_icon02.png" class="img-fluid" alt="EASY TO REACH">
+                            <img src="{{asset('')}}frontend/images/support.png" class="img-fluid" alt="EASY TO REACH">
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">EASY TO REACH</h5>
+                        <h5 class="mt-2">24/7 Quick Support</h5>
                     </div>
                 </div>
             </div>
@@ -170,7 +174,7 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('')}}frontend/images/assured_icon03.png" class="img-fluid" alt="COUNTRY-WIDE NETWORK">
+                            <img src="{{asset('')}}frontend/images/area.png" class="img-fluid" alt="HIGHEST RATED SERVICE">
                         </div>
                     </div>
                     <div class="hc-txt">
@@ -182,11 +186,12 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
-                            <img src="{{asset('')}}frontend/images/assured_icon04.png" class="img-fluid" alt="HIGHEST RATED SERVICE">
+                            <img src="{{asset('')}}frontend/images/client-satisfication.png" class="img-fluid" alt="COUNTRY-WIDE NETWORK">
+
                         </div>
                     </div>
                     <div class="hc-txt">
-                        <h5 class="mt-2">HIGHEST RATED SERVICE</h5>
+                        <h5 class="mt-2"> Client Satisfaction</h5>
                     </div>
                 </div>
             </div>

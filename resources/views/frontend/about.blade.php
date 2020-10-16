@@ -76,34 +76,40 @@
     <div class="container">
         <div class="client-feedback">
             <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
-                <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing
+                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
+                <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
+                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                        recently with desktop publishing
+                    </div>
+                    <h4>Mithun Rana</h4>
                 </div>
-                <h4>Mithun Rana</h4>
             </div>
             <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
-                <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing
+                <img style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
+                <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
+                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                        recently with desktop publishing
+                    </div>
+                    <h4>Mithun Rana</h4>
                 </div>
-                <h4>Mithun Rana</h4>
             </div>
             <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
-                <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged.
-                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing
+                <img style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
+                <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
+                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        but also the leap into electronic typesetting, remaining essentially unchanged.
+                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                        recently with desktop publishing
+                    </div>
+                    <h4>Mithun Rana</h4>
                 </div>
-                <h4>Mithun Rana</h4>
             </div>
         </div>
     </div>
@@ -114,7 +120,7 @@
     <script>
         $(document).ready(function() {
             $('.client-feedback').slick({
-                autoplay: true,
+                autoplay: false,
                 arrows:false
             });
         });

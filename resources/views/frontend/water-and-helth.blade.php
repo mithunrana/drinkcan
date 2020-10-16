@@ -20,12 +20,17 @@
     </section>
     <!--end section header area-->
 
-<div class="water-helth-txt text-center py-3">
+<div style="background: #deeff7;" class="water-helth-txt text-center py-3">
     <div class="container">
         <div class="row">
             <div class="col">
-                <p style="">Every day, your body needs water to rejuvenate and stay hydrated.
-                    The water you drink is the core essence of life so it’s always important to drink pure.</p>
+                <p style="">Drinkcan water purifier is best water purifier by price and quality. drinkcan water purifier
+                    publish daily bangla and english news in bangladesh.</p>
+                <span style="text-align: center;font-weight: bold;">
+                        <a style="color:#0049bc" href="{{asset('')}}">Home</a>
+                        |
+                        <a style="color:#0049bc" href="{{asset('')}}blog">Blog</a>
+                </span>
             </div>
         </div>
     </div>

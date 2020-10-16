@@ -18,12 +18,17 @@
         <img src="http://localhost:8000/frontend/images/about-drinkcan.jpg" class="img-fluid" alt="">
     </div>
 
-    <div class="water-helth-txt text-center py-3">
+    <div style="background: #deeff7;" class="water-helth-txt text-center py-3">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p style="">Every day, your body needs water to rejuvenate and stay hydrated.
-                        The water you drink is the core essence of life so it’s always important to drink pure.</p>
+                    <p style="">Drinkcan water purifier is best water purifier by price and quality. drinkcan water purifier
+                        publish daily bangla and english news in bangladesh.</p>
+                    <span style="text-align: center;font-weight: bold;">
+                        <a style="color:#0049bc" href="{{asset('')}}">Home</a>
+                        |
+                        <a style="color:#0049bc" href="{{asset('')}}news">News</a>
+                    </span>
                 </div>
             </div>
         </div>
@@ -36,7 +41,7 @@
             display: block;
             height: 5px;
             width: 50px;
-            background: #d71920;
+            background: #0049bc;
             position: absolute;
             left: 0;
             bottom: -2px;
@@ -50,14 +55,14 @@
                     <div style="border-radius: 0;" class="sh-box">
                         <div class="sh-img">
                             <a href="{{asset('')}}news/{{$News->Permalink}}">
-                                <img src="{{asset('')}}{{$News->featuredimage1->imageurl}}" class="img-fluid" alt="{{$News->featuredimage1->imageurl}}">
-                                <h4 style="position: relative;padding: 5px;padding-bottom: 10px;font-size: 22px;margin-top: 10px;border-bottom: 1px solid #ddd;font-weight: 400;color: #d30411 !important;" class="text-custom">
-                                    Pan Pacific Sonargaon Hotel
+                                <img src="{{asset('')}}{{$News->featuredimage1->imageurl}}" class="img-fluid" alt="{{$News->ImageAltText}}" title="{{$News->ImageTitleText}}">
+                                <h4 style="position: relative;padding: 5px;padding-bottom: 10px;font-size: 22px;margin-top: 10px;border-bottom: 1px solid #ddd;font-weight: 400;color: #0049bc !important;" class="text-custom">
+                                    {{$News->NewsName}}
                                 </h4>
                             </a>
                         </div>
                         <div class="sh-txt">
-                            <a style="color:#d30411" href="http://localhost/soshine-bd-laravel/public/portfolio/#">Learn More →</a>
+                            <a style="color:#0049bc" href="{{asset('')}}news/{{$News->Permalink}}">Learn More →</a>
                         </div>
                     </div>
                 </div>

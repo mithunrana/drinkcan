@@ -12,7 +12,6 @@ Route::get('/water-purifier-kit-price-bangladesh','ProductsController@order');
 Route::get('/categoryproduct','ProductsController@categoryProduct');
 
 Route::get('/blog','HomeUIController@blog');
-Route::get('/product/{url}','ProductsController@view');
 Route::get('/about-us','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');

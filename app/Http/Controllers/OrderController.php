@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Exports\OrderExport;
+use App\Products;
 use Illuminate\Http\Request;
 use App\Order;
+use Mail;
+use App\Mail\OrderMail;
 use Maatwebsite\Excel\Facades\Excel;
 class OrderController extends Controller
 {
-
-
-
 
     public function orderExport(){
         return Excel::download(new OrderExport(), 'order.xlsx');
@@ -35,7 +35,14 @@ class OrderController extends Controller
             'Mobile' => $request->Mobile,
             'Address'=> $request->Address,
         ]);
-       return redirect()->to('water-purifier-kit-price')->with('message','Order Successfully Submitted');
+        $Products = Products::where('id',$request->ProductId)->first();
+        $incomeMailAddress = "drinkcanbd@gmail.com";
+        $Name = $request->Name;
+        $Mobile = $request->Mobile;
+        $Address = $request->Address;
+        $Model = $Products->Model;
+        Mail::to($incomeMailAddress)->send(new OrderMail($Name,$Mobile,$Address,$Model));
+       return redirect()->to('water-purifier-kit-price-bangladesh')->with('message','Order Successfully Submitted');
     }
 
     public function orderEdit($id){

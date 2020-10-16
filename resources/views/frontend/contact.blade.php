@@ -1,7 +1,11 @@
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
     <div class="contact-header">
-        <img src="{{asset('frontend')}}/images/Header_Contact-us.webp" class="img-fluid" alt="">
+        <img style="width:100%;" src="{{asset('frontend')}}/images/drinkcan-water-purifier.jpg" class="img-fluid" alt="Drinkcan Water Purifier">
     </div>
 
     <section class="contact-us py-5">
@@ -85,10 +89,12 @@
                             <h4 class="text-primary font-weight-normal">Help &amp; information</h4>
                             <div class="office-address mt-4">
                                 <h5 class="mb-4 text-info">Our Office Address:</h5>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-map-marker mr-1 text-danger"></i><strong>Location: </strong>Baliadangi, Dhaka Bangladesh.</p>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Phone Number: </strong>01755430927</p>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Tel: </strong>0900000540</p>
-                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-envelope mr-1 text-danger"></i><strong>Email: </strong>imranemon.developer@gmail.com</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-map-marker mr-1 text-danger"></i><strong>Head Office: </strong>{{$SiteProfile->HeadAddress}}</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-map-marker mr-1 text-danger"></i><strong>Local Office: </strong>{{$SiteProfile->CorporateAddress}}</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Phone Number: </strong>{{$SiteProfile->CorporatePhone}}</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-phone mr-1 text-danger"></i><strong>Support: </strong>{{$SiteProfile->Phone1}}</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-envelope mr-1 text-danger"></i><strong>Email: </strong>{{$SiteProfile->CorporateEmail}}</p>
+                                <p class="mb-4 pb-2 text-muted"><i class="fa fa-envelope mr-1 text-danger"></i><strong>Email: </strong>{{$SiteProfile->Email2}}</p>
                             </div>
                         </div>
                     </div>
