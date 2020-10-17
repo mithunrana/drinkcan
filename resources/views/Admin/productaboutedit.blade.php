@@ -49,7 +49,7 @@
                                                 <select class="form-control{{$errors->has('ProductId') ? ' is-invalid' : ''}}" id="ProductId" name="ProductId">
                                                     <option value="" selected disabled>=============Select Product Model===========</option>
                                                     @foreach(App\Products::all() as $Product)
-                                                        <option value="{{$Product->id}}" {{$Product->id == $About->ProductId ? 'selected="selected"' : ''}}>{{$Product->Model}}</option>
+                                                        <option value="{{$Product->id}}" {{$Product->id == $About->products_id ? 'selected="selected"' : ''}}>{{$Product->Model}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

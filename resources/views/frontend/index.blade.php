@@ -41,45 +41,59 @@
         $Counter = 0;
         @endphp
         @foreach(\App\Products::orderBy('id','ASC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Product)
+
             @php
+                $check = App\AboutProduct::where('products_id',$Product->id)->first();
+                if($check!==null){
+                 $ProductAbout =  App\AboutProduct::where('products_id',$Product->id)->orderBy('products_id','ASC')->first();
+                }
+
             $Counter = $Counter+1;
             @endphp
         @if($Counter % 2 == 0)
-        <div class="row">
-            <div class="col-sm-7">
-                <div style="margin: 170px 0 150px;" class="info-box-product">
-                    <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
-                    <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
-                    <h6 class="product-main__title">{{$Product->productAboutSingle->Title}}</h6>
-                    <!--<div class="product-main__desc">
-                        <p>dsfadsfadsf</p>
-                    </div>-->
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+            <div class="row">
+                <div class="col-sm-7">
+                    <div style="margin: 170px 0 150px;" class="info-box-product">
+                        <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
+                        <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
+
+                        @if($check!==null)
+                        <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
+                        <div class="product-main__desc">
+                            <p>{{$ProductAbout->Content}}</p>
+                        </div>
+                        @endif
+
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
                 </div>
             </div>
-            <div class="col-sm-5">
-                <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
-            </div>
-        </div>
-        @else
-        <div class="row">
-            <div class="col-sm-5">
-                <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
-            </div>
-            <div class="col-sm-7">
-                <div style="margin: 170px 0 150px;" class="info-box-product">
-                    <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
-                    <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
-                    <!--<h6 class="product-main__title">fdasfadsf</h6>
-                    <div class="product-main__desc">
-                        <p>dsfadsfadsf</p>
-                    </div>-->
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+            @else
+            <div class="row">
+                <div class="col-sm-5">
+                    <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
+                </div>
+                <div class="col-sm-7">
+                    <div style="margin: 170px 0 150px;" class="info-box-product">
+                        <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
+                        <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
+
+                        @if($check!==null)
+                        <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
+                        <div class="product-main__desc">
+                            <p>{{$ProductAbout->Content}}</p>
+                        </div>
+                       @endif
+
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+                    </div>
                 </div>
             </div>
-        </div>
         @endif
         @endforeach
     </div>

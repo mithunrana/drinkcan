@@ -9,7 +9,7 @@ class AboutProduct extends Model
     protected $guarded=[];
 
     public function ProdutDetails(){
-       return $this->belongsTo(products::class,'ProductId');
+       return $this->belongsTo(products::class,'products_id');
     }
 
 

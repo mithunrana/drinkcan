@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use DB;
 class Products extends Model
 {
     protected $guarded=[];
@@ -21,11 +21,12 @@ class Products extends Model
     }
 
     public function productAbout(){
-        return $this->hasMany(AboutProduct::class,'ProductId');
+        return $this->hasMany(AboutProduct::class,'products_id');
     }
 
     public function productAboutSingle(){
-        return $this->belongsToMany(AboutProduct::class,'ProductId');
+       return $this->hasOne(AboutProduct::class,'products_id');
+        //return $this->hasOne(AboutProduct::class)->latest()->select('Title','Content');
     }
 
 }
