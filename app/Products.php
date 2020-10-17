@@ -24,4 +24,8 @@ class Products extends Model
         return $this->hasMany(AboutProduct::class,'ProductId');
     }
 
+    public function productAboutSingle(){
+        return $this->belongsToMany(AboutProduct::class,'ProductId');
+    }
+
 }

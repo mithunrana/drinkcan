@@ -25,15 +25,21 @@
                     @endif
                     <div class="card">
                         <div class="card-body">
-                            <form method="get" class="form-inline" action="{{url('admin/order-export')}}">
+
+                            <form class="form-inline float-sm-right" method="POST" action="{{url('admin/order-export')}}">
                                 @csrf
-                                <label for="email">Email address: </label>
-                                <input type="date" name="from_date"  class="form-control" placeholder="Enter email" id="email">
-                                <label for="pwd">Password: </label>
-                                <input type="date" name="to_date" class="form-control" placeholder="Enter password" id="pwd">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div class="form-group mb-2">
+                                    <label for="startdate" class="sr-only">From</label>
+                                    <input type="date" class="form-control" id="startdate" name="startdate" placeholder="DD-MM-YYYY" >
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <label for="enddate" class="sr-only">To</label>
+                                    <input type="date" class="form-control" id="enddate" name="enddate" placeholder="DD-MM-YYYY">
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-2 ">Export Excel</button>
                             </form>
-                            <a style="margin-bottom: 5px;" class="btn btn-success float-right" href="{{url('admin/order-export')}}">Export Excel</a>
+
+                            <!--<a style="margin-bottom: 5px;" class="btn btn-success float-right" href="{{url('admin/order-export')}}">Export Excel</a>-->
 
                             <table id="mytable" class="table table-striped">
                                 <thead class="thead-dark">

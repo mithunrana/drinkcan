@@ -9,12 +9,9 @@ use App\Order;
 use Mail;
 use App\Mail\OrderMail;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Carbon;
 class OrderController extends Controller
 {
-
-    public function orderExport(){
-        return Excel::download(new OrderExport(), 'order.xlsx');
-    }
 
 
     public function orderManage(){
@@ -42,7 +39,7 @@ class OrderController extends Controller
         $Address = $request->Address;
         $Model = $Products->Model;
         Mail::to($incomeMailAddress)->send(new OrderMail($Name,$Mobile,$Address,$Model));
-       return redirect()->to('water-purifier-kit-price-bangladesh')->with('message','Order Successfully Submitted');
+       return redirect()->back()->with('message','Order Successfully Submitted');
     }
 
     public function orderEdit($id){
@@ -72,5 +69,20 @@ class OrderController extends Controller
         $Order->delete();
         return redirect()->to('admin/order-manage')->with('message','Order Delete Successfully ...');
     }
+
+
+
+
+    public function orderExport(Request $request){
+        $from = "";
+        $to="";
+        if($request->startdate !=null && $request->to !=null){
+            $from    = Carbon::parse($request->startdate)->startOfDay()->toDateTimeString();
+            $to      = Carbon::parse($request->to)->endOfDay()->toDateTimeString();
+        }
+        //$Orders = Order::whereBetween('created_at', [$from, $to])->get();
+        return Excel::download(new OrderExport($from,$to), 'order.xlsx');
+    }
+
 
 }

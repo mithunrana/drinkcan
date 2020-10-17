@@ -72,19 +72,20 @@
                         </a>
                     </div>
                     <div class="product-txt text-center">
-                        <div class="prodcut-buy">
-                            <a href="#">Buy Now</a> |
-                            <a href="#">Details</a>
-                        </div>
                         <div class="product-title">
-                            <h5 class="my-2">
-                                <a style="color:#00adee" href="{{asset('')}}{{$Products->CategoryDetails->CategoryUrl}}">{{$Products->CategoryDetails->CategoryName}}</a>
+                            <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
+                            <h5 style="font-size: 15px;" class="my-2">
+                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->CategoryDetails->CategoryName}}</a>
                             </h5>
                         </div>
                         <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>৳25,000</del></p>
-                            <p class="product-discount-price">৳23,000</p>
+                            <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del> | <span>{{$Products->CurrentPrice}}</span></p>
                         </div>
+                    </div>
+                    <div style="text-align: center;padding: 10px;background-color: #0049bc;" class="details-button">
+                        <a href="{{asset('')}}{{$Products->Permalink}}">
+                            <span style="color:white;"><i class="fa fa-shopping-cart"></i> Buy Now</span>
+                        </a>
                     </div>
                 </div>
             </div>

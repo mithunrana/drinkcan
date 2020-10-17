@@ -102,7 +102,7 @@ Route::get('admin/order-manage','OrderController@orderManage')->middleware('Admi
 Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
 Route::post('admin/order-update/{id}','OrderController@orderUpdate')->middleware('AdminUser');
 Route::post('admin/order-delete/{id}','OrderController@orderDelete')->middleware('AdminUser');
-Route::get('admin/order-export', 'OrderController@orderExport');
+Route::post('admin/order-export', 'OrderController@orderExport');
 
 
 Route::post('complain-store','ComplainController@store');

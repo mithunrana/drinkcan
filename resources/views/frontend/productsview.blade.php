@@ -72,9 +72,60 @@
 
 
 
+<section class="modal-section">
+    <div style="top: 110px; padding-right: 17px;" class="modal fade show" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="{{url('order-gkk')}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label style="color:#0049bc;" for="name">Your Name
+                            </label>
+                            <input type="text" class="form-control" id="name" name="Name" placeholder="Enter Your Name">
+                            <input type="hidden" class="form-control" id="name" name="ProductId" value="{{$Product->id}}">
+                        </div>
+                        <div class="form-group">
+                            <label style="color:#0049bc;" for="mobile">Mobile
+                            </label>
+                            <input type="text" class="form-control" id="mobile" name="Mobile" placeholder="Enter Your Mobile">
+                        </div>
+                        <div class="form-group">
+                            <label style="color:#0049bc;" for="address">Address
+                            </label>
+                            <textarea type="text" class="form-control" id="address" name="Address" placeholder="Enter Your Address"></textarea>
+                        </div>
+                        <button style="width:100%;background-color:#0049bc;border-color:black;" type="submit" class="btn btn-primary">Submit Order</button>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="product-details-area bg-light py-5">
     <section style="background-color: white;margin-top: 30px;">
         <div class="container">
+            @if(Session::has('message'))
+                <div class="alert alert-success alert-dismissible" style="width: 100%;">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{Session::get('message')}}
+                </div>
+            @endif
             <div class="row">
                 <div style="padding: 40px 30px 0px 30px;" class="col-md-6 produci-img-left-box">
                     <div style="text-align: center" class="product-d-image">
@@ -103,18 +154,14 @@
                                 <td class="product-info-data product-regular-price">{{$Product->PartnerPrice}}</td>
                             </tr>
                             @endif
-
                             <tr class="product-info-group">
                                 <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Status</td>
                                 <td class="product-info-data product-status">In Stock</td>
                             </tr>
-                            <tr class="product-info-group">
-                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Product Code</td>
-                                <td class="product-info-data product-code">13987</td>
-                            </tr>
-                            <tr class="product-info-group" itemprop="brand" itemtype="http://schema.org/Thing" itemscope="">
+
+                            <tr class="product-info-group"  itemscope="">
                                 <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;"  class="product-info-label">Brand</td>
-                                <td class="product-info-data product-brand" itemprop="name">XIAOMI</td>
+                                <td class="product-info-data product-brand">{{$Product->productBrand->BrandName}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -127,10 +174,8 @@
                     </div>
                     <div class="product-d-details text-right">
                         <p>
-                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="#">BUY NOW</a>
-                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="#">
-                                BUY NOW
-                                View other RO purifiers</a>
+                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" data-toggle="modal" data-target="#myModal">BUY NOW</a>
+                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="{{asset('')}}water-purifier-price-bd">View other RO purifiers</a>
                         </p>
                     </div>
                 </div>

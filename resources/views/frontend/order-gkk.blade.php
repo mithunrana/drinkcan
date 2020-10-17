@@ -71,7 +71,7 @@
                 <div class="gkk-select-product card-body">
                     <h4 style="border-bottom: 2px solid #ccc;color: #00adee;" class="pt-3 pb-2 mb-5">Select Germkill Kit</h4>
                     @php
-                    $Products = \App\Products::where('ProductsType',2)->orderBy('id','DESC')->get()
+                    $Products = \App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->get()
                     @endphp
                     <div id="productsection">
                         @foreach($Products as $Product)

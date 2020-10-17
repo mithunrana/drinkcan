@@ -26,6 +26,26 @@
         </p>
     </div>
 
+
+    <section>
+        <div class="container">
+            <fieldset style="border: 1px solid #0049bc;padding: 5px;">
+                <legend style="background-color:#0049bc;padding:5px;max-width: 200px;margin-left: 20px;color: white;">ISO Member</legend>
+                <p>Drinkcan is a ISO Certified company Water Quality Association Bangladesh Drinkcan
+                    water purifier meet's all the quality requiremt's and ensure that every drop of water is pure and safe for drinking
+                </p>
+            </fieldset>
+
+            <fieldset style="border: 1px solid #0049bc;padding: 5px;margin-top: 10px;">
+                <legend style="background-color:#0049bc;padding:5px;max-width: 200px;margin-left: 20px;color: white;">Free Pre-Filter</legend>
+                <p>
+                    Drinkcan R O System come with complimentary Free Pre-filter to ensure safety and long life or filter. pre-filter witll remove hard dust partcal's which increase the life of inline filters.
+                    the drinkcan purifier is sutable for purification of brackish, tap & municipal water upto 2000ppm
+                </p>
+            </fieldset>
+        </div>
+    </section>
+
     <section class="about-us clearfix py-5">
         <div class="container">
                 <ul style="list-style: none;padding-left:0px;" class="list">

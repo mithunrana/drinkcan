@@ -48,11 +48,14 @@
         <div class="row">
             <div class="col-sm-7">
                 <div style="margin: 170px 0 150px;" class="info-box-product">
-                    <h2 class="product-main__title">A blown jug to blow away water impurities</h2>
-                    <div class="product-main__desc">
-                        <p>10 glasses of fresh drinking water in a gracefully shaped design.</p>
-                    </div>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                    <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
+                    <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
+                    <h6 class="product-main__title">{{$Product->productAboutSingle->Title}}</h6>
+                    <!--<div class="product-main__desc">
+                        <p>dsfadsfadsf</p>
+                    </div>-->
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
                 </div>
             </div>
             <div class="col-sm-5">
@@ -66,11 +69,14 @@
             </div>
             <div class="col-sm-7">
                 <div style="margin: 170px 0 150px;" class="info-box-product">
-                    <h2 class="product-main__title">A blown jug to blow away water impurities</h2>
+                    <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
+                    <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
+                    <!--<h6 class="product-main__title">fdasfadsf</h6>
                     <div class="product-main__desc">
-                        <p>10 glasses of fresh drinking water in a gracefully shaped design.</p>
-                    </div>
-                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;border-radius:8px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                        <p>dsfadsfadsf</p>
+                    </div>-->
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
+                    <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
                 </div>
             </div>
         </div>
@@ -90,14 +96,15 @@
                     <!--<div style="height:50px;width:50px;position:absolute;border-radius: 50%;background-color: red;top:-15px;right:-15px;" class="price-box">
                     </div>-->
                     <div class="">
-                        <a href="#">
-                            <img style="display: block;margin-left: auto;margin-right: auto;max-width:80%;" src="{{asset('')}}{{$Products->image->imageurl}}"  alt="{{$Products->ImageAltText}}">
+                        <a href="{{asset('')}}{{$Products->Permalink}}">
+                            <img style="display: block;margin-left: auto;margin-right: auto;max-width:80%;" src="{{asset('')}}{{$Products->image->imageurl}}"  alt="{{$Products->ImageAltText}}" title="{{$Products->ImageTitleText}}">
                         </a>
                     </div>
                     <div class="product-txt text-center">
                         <div class="product-title">
+                            <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
                             <h5 style="font-size: 15px;" class="my-2">
-                                <a style="color:#00adee" href="#">{{$Products->CategoryDetails->CategoryName}}</a>
+                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->CategoryDetails->CategoryName}}</a>
                             </h5>
                         </div>
                         <div class="product-price">
@@ -105,7 +112,9 @@
                         </div>
                     </div>
                     <div style="text-align: center;padding: 10px;background-color: #0049bc;" class="details-button">
-                        <span style="color:white;"><i class="fa fa-shopping-cart"></i> Buy Now</span>
+                        <a href="{{asset('')}}{{$Products->Permalink}}">
+                            <span style="color:white;"><i class="fa fa-shopping-cart"></i> Buy Now</span>
+                        </a>
                     </div>
                 </div>
             </div>

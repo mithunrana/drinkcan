@@ -285,14 +285,6 @@ nav {
 
 }
 
-.showcase .carousel-img-1 {
-    background-size: cover;
-    background-position: center center;
-}
-
-.showcase .carousel-item {
-    min-height: 424px;
-}
 
 /*product area styles*/
 .product-box {

@@ -6,10 +6,7 @@
 
 @media all and (max-width: 1450px) {
 
-    .showcase .carousel-item {
-        height: 68vh;
-    }
-
+    
     .search-item {
         left: 67%;
         width: 30% !important;
@@ -67,17 +64,9 @@
     .country-btn {
         display: none !important;
     }
-
-        .showcase .carousel-item {
-        height: 56vh;
-    }
 }
 
 @media all and (max-width: 1080px) {
-
-    .showcase .carousel-item {
-        height: 51vh;
-    }
 
     .news-events-box {
         height: 150px;
@@ -95,9 +84,6 @@
         height: 0;
         opacity: 0;
 
-    }
-    .showcase .carousel-item {
-        height: 47vh;
     }
 
     .cat-btn {
@@ -146,10 +132,6 @@
         margin-top: 5px;
     }
 
-    .showcase .carousel-item {
-        height: 36vh;
-    }
-
     .our-certification-area {
         margin-bottom: 20px;
     }
@@ -175,18 +157,11 @@
     .dp-img img {
         width: 100%;
     }
-    .showcase .carousel-item {
-        height: 27vh;
-    }
 
 }
 
 
 @media all and (max-width: 400px) {
-    .showcase .carousel-item {
-        height: 17vh;
-    }
-
     .fm {
         width: 50% !important;
         text-align: center;
