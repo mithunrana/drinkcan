@@ -1,0 +1,47 @@
+@php
+    $SiteProfile = App\SiteProfile::first();
+@endphp
+
+@php
+    $title = "DrinkCAN | Water Purifier in Bangladesh";
+    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
+    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+@endphp
+
+
+@include('frontend.inc.headersource')
+@include('frontend.inc.menubar')
+<!--start news section-->
+<section class="water-news clearfix " style="padding-bottom: 30px;">
+
+    <div class="about-header">
+        <img src="http://localhost:8000/frontend/images/about-drinkcan.jpg" class="img-fluid" alt="">
+    </div>
+
+    <div style="background: #deeff7;" class="water-helth-txt text-center py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p style="">Drinkcan water purifier is best water purifier by price and quality. drinkcan water purifier
+                        publish daily bangla and english news in bangladesh.</p>
+                    <span style="text-align: center;font-weight: bold;">
+                        <a style="color:#0049bc" href="{{asset('')}}">Home</a>
+                        |
+                        <a style="color:#0049bc" href="{{asset('')}}news">News</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+
+    </div>
+
+</section>
+<!--end news section-->
+
+@include('frontend.inc.footer')
+@include('frontend.inc.footersource')
+</body>
+</html>

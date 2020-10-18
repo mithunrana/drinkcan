@@ -146,9 +146,14 @@
                 </div>
                 <div style="padding: 40px 30px 0px 30px;" class="col-md-6 produci-shortcontent-right-box">
                     <div class="product-short-info">
-                        <h1 style="font-size:20px;" class="product-name">{{$Product->CategoryDetails->CategoryName}}</h1>
+                        <h1 style="font-size: 18px;padding:4px 0px;">{{$Product->SeoHeading}}</h1>
+                        <h5 style="font-size: 16px;color:#0049bc"><strong>{{$Product->Name}}</strong></h5>
                         <table class="product-info-table">
                             <tbody>
+                            <tr class="product-info-group">
+                                <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;" class="product-info-label">Model</td>
+                                <td class="product-info-data product-price">{{$Product->Model}}</td>
+                            </tr>
                             @if($Product->PriceStatus == 1)
                             <tr class="product-info-group">
                                 <td style="font-weight: bold;display: block;position: relative;margin-right: 20px;" class="product-info-label">Price</td>
@@ -306,14 +311,6 @@
 
 <section class="product-specification py-5 bg-light">
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="section-title mb-4 text-center">
-                    <h2 class="text-primary">Specifications</h2>
-                    <h4 class="text-primary">Specification for Water Purifier</h4>
-                </div>
-            </div>
-        </div>
         <div class="row d-flex justify-content-center">
             @foreach($Product->productFeature as $Feature)
                 <div class="box-8" style="border-left: 1px solid #666;">
@@ -394,7 +391,7 @@
 
 
 
-<section class="product-manual py-5 bg-light">
+<section class="product-manual">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -409,32 +406,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col" style="border: 1px solid #666;">
-                <div class="card-body">
-                    <div class="card-body">
-                        <ul style="margin: 0; padding: 0;">
-                            <li>1. 7.8 to 8.1 under running water conditions</li>
-                            <li>2. Under test condition Input TDS – 750 PPM, Turbidity &lt; 1 NTU, Input pressure – 10 psi, Input Hardness – Upto 300 ppm, Temp. – Room temp. </li>
-                            <li>3. Assumption: 5 membered family needing 20 litres of water every day (4 litres per person per day).</li>
-                            <li>4. For all water contact parts.</li>
-                            <li>5. Permeate flow rate and recovery are based on standard test conditions and may vary depending on input water quality, TDS, pressure and life of Filter elements.</li>
-                            <li>6. Input water quality and TDS content are important determinants of output water quality.</li>
-                            <li>7. If input pressure exceeds 30 PSI, please install a company provided pressure reducing valve at an additional cost.<br>
-                                If the pressure is less than 10 PSI then you need to buy ‘Pressure enhancing pump’ at an additional cost.
-                                Device should not be installed in a house where input pressure is greater than 60 PSI. <br>
-                                Post-RO Carbon Filter fitted in the device may need to be changed intermittently at extra cost in case you face smell issues. <br>
-                                Technical specifications are subject to change or improvement without prior notice.</li>
-                            <li>8. In case the TDS is &gt;1000 PPM, a company provided anti-scalant is recommended to be installed This has to be purchased at extra cost.</li>
-                            <li>9. If the iron content in the input water is high, it is recommended to install a company provided iron removal filter at an additional cost.</li>
-                            <li>10. Physical product may vary from the image on the website</li>
-                        </ul>
-                    </div>
+                <div style="margin-bottom: 20px;" class="manual-infobox col-sm-12">
+                    {!! html_entity_decode($Product->Specification) !!}
                 </div>
-            </div>
         </div>
     </div>
 </section>
-
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
 </body>

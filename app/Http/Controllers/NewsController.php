@@ -14,7 +14,7 @@ class NewsController extends Controller
     public function NewsView($url){
         $RelatedNews = News::where('ActiveStatus',1)->orderBy('id', 'DESC')->skip(1)->take(4)->get();
         $News = News::where('Permalink',$url)->first();
-        return view('UI/newsview',compact('News','RelatedNews'));
+        return view('frontend.news-view',compact('News','RelatedNews'));
     }
 
 
