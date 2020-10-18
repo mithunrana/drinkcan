@@ -8,6 +8,12 @@ class ProductFeature extends Model
 {
     protected $guarded=[];
 
+
+    public function image(){
+        return $this->belongsTo(ProductsImage::class,'FeaturedImage');
+    }
+
+
     public function ProdutDetails(){
         return $this->belongsTo(products::class,'ProductId');
     }

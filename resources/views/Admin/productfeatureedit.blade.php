@@ -80,7 +80,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach(App\AboutProduct::all() as $Category)
+                                        @foreach(App\ProductFeature::all() as $Category)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{$Category->ProdutDetails->Model}}</td>

@@ -54,33 +54,51 @@
             <div class="row">
                 <div class="col-sm-7">
                     <div style="margin: 170px 0 150px;" class="info-box-product">
-                        <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
-                        <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
-
+                        <h3 style="color:#0049bc;" class="product-main__title">
+                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->Model}}
+                            </a>
+                        </h3>
+                        <h5 class="product-main__title">
+                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->CategoryDetails->CategoryName}}
+                            </a>
+                        </h5>
                         @if($check!==null)
                         <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
                         <div class="product-main__desc">
                             <p>{{$ProductAbout->Content}}</p>
                         </div>
                         @endif
-
                         <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
-                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Order Now</a>
                     </div>
                 </div>
                 <div class="col-sm-5">
-                    <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
+                    <a href="{{asset('')}}{{$Product->Permalink}}">
+                        <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
+                    </a>
                 </div>
             </div>
             @else
             <div class="row">
                 <div class="col-sm-5">
-                    <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
+                    <a href="{{asset('')}}{{$Product->Permalink}}">
+                        <img style="max-width: 100%" src="{{asset('')}}{{$Product->image->imageurl}}">
+                    </a>
                 </div>
                 <div class="col-sm-7">
                     <div style="margin: 170px 0 150px;" class="info-box-product">
-                        <h3 style="color:#0049bc;" class="product-main__title">{{$Product->Model}}</h3>
-                        <h5 class="product-main__title">{{$Product->CategoryDetails->CategoryName}}</h5>
+                        <h3 style="color:#0049bc;" class="product-main__title">
+                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->Model}}
+                            </a>
+                        </h3>
+                        <h5 class="product-main__title">
+                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->CategoryDetails->CategoryName}}
+                            </a>
+                        </h5>
 
                         @if($check!==null)
                         <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
@@ -90,7 +108,7 @@
                        @endif
 
                         <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Details</a>
-                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Buy</a>
+                        <a style="display: inline-block;background-color:#0049bc;padding: 10px 15px;color:white;font-weight: bold;" href="{{asset('')}}{{$Product->Permalink}}">Order Now</a>
                     </div>
                 </div>
             </div>

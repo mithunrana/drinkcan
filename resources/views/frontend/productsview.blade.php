@@ -15,9 +15,7 @@
     .box-8 {
         width: 12.5%;
         padding: 10px;
-        border-right: 1px solid #666;
-        border-bottom: 1px solid #666;
-        min-height: 350px;
+        border: 1px solid #666;
         text-align: center;
     }
 
@@ -72,6 +70,8 @@
 
 
 
+
+
 <section class="modal-section">
     <div style="top: 110px; padding-right: 17px;" class="modal fade show" id="myModal" role="dialog">
         <div class="modal-dialog">
@@ -116,8 +116,20 @@
     </div>
 </section>
 
+<section style="background-color: #cee7ff">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol style="background-color: #cee7ff" class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{asset('')}}water-purifier-price-bd">Purifier</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{$Product->Model}}</li>
+            </ol>
+        </nav>
+    </div>
+</section>
 
-<section class="product-details-area bg-light py-5">
+
+
+<section class="product-details-area bg-light">
     <section style="background-color: white;margin-top: 30px;">
         <div class="container">
             @if(Session::has('message'))
@@ -182,6 +194,8 @@
             </div>
         </div>
     </section>
+
+
 
 
 
@@ -300,137 +314,18 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="box-8" style="border-left: 1px solid #666;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
+        <div class="row d-flex justify-content-center">
+            @foreach($Product->productFeature as $Feature)
+                <div class="box-8" style="border-left: 1px solid #666;">
+                    <div class="sp-img">
+                        <img src="{{asset('')}}{{$Feature->image->imageurl}}" alt="img">
+                    </div>
+                    <div class="sp-txt">
+                        <h6>{{$Feature->Title}}</h6>
+                        <p>{{$Feature->Content}}</p>
+                    </div>
                 </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-
-
-            <div class="box-8" style="border-left: 1px solid #666; border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
-            <div class="box-8" style="border-bottom: none;">
-                <div class="sp-img">
-                    <img src="{{asset('')}}img/weight.png" alt="img">
-                </div>
-                <div class="sp-txt">
-                    <p>Lorem ipsum dolor sit amet</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

@@ -24,6 +24,10 @@ class Products extends Model
         return $this->hasMany(AboutProduct::class,'products_id');
     }
 
+    public function productFeature(){
+        return $this->hasMany(ProductFeature::class,'ProductId');
+    }
+
     public function productAboutSingle(){
        return $this->hasOne(AboutProduct::class,'products_id');
         //return $this->hasOne(AboutProduct::class)->latest()->select('Title','Content');

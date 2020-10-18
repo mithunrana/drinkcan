@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2020 at 08:23 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Oct 18, 2020 at 03:22 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -656,7 +657,16 @@ INSERT INTO `products_images` (`id`, `imageurl`, `created_at`, `updated_at`) VAL
 (435, 'productsImage/drink-product.png', '2020-09-30 09:03:33', '2020-09-30 09:03:33'),
 (440, 'productsImage/drinkcan-grand.png', '2020-10-16 08:00:29', '2020-10-16 08:00:29'),
 (441, 'productsImage/drinkcan-premio.png', '2020-10-16 08:00:36', '2020-10-16 08:00:36'),
-(442, 'productsImage/drinkcan-supreme.png', '2020-10-16 08:00:41', '2020-10-16 08:00:41');
+(442, 'productsImage/drinkcan-supreme.png', '2020-10-16 08:00:41', '2020-10-16 08:00:41'),
+(443, 'productsImage/dimensions.png', '2020-10-18 02:21:28', '2020-10-18 02:21:28'),
+(444, 'productsImage/duty-cycle.png', '2020-10-18 02:21:34', '2020-10-18 02:21:34'),
+(445, 'productsImage/input-power.png', '2020-10-18 02:21:38', '2020-10-18 02:21:38'),
+(446, 'productsImage/Max-Duty-Dycle.png', '2020-10-18 02:21:43', '2020-10-18 02:21:43'),
+(447, 'productsImage/operating-voltage.png', '2020-10-18 02:21:48', '2020-10-18 02:21:48'),
+(448, 'productsImage/power.png', '2020-10-18 02:21:56', '2020-10-18 02:21:56'),
+(449, 'productsImage/storage-capacity.png', '2020-10-18 02:22:04', '2020-10-18 02:22:04'),
+(450, 'productsImage/water-pressure.png', '2020-10-18 02:22:09', '2020-10-18 02:22:09'),
+(451, 'productsImage/weight.png', '2020-10-18 02:22:13', '2020-10-18 02:22:13');
 
 -- --------------------------------------------------------
 
@@ -707,11 +717,15 @@ CREATE TABLE `product_features` (
 --
 
 INSERT INTO `product_features` (`id`, `Title`, `Content`, `FeaturedImage`, `ProductId`, `ImageAltText`, `ImageTitleText`, `created_at`, `updated_at`) VALUES
-(1, 'fadsfasdf', 'asdfasdf', 435, 375, 'fasdf', 'adsf', '2020-10-09 06:04:07', '2020-10-09 06:04:07'),
-(2, 'Includes Mineral Cartridge', 'Enriches water by adding essential minerals like Calcium and Magnesium.', 435, 375, 'fasdfa', 'sdfasdf', '2020-10-12 08:00:54', '2020-10-12 08:00:54'),
-(3, '100% RO Purified Water', 'll water passes through RO ensuring no mixing of purified and impure water. Only RO can remove harmful chemicals like Lead,', 435, 377, NULL, NULL, '2020-10-12 08:02:58', '2020-10-12 08:02:58'),
-(4, 'Includes Mineral Cartridge', 'Enriches water by adding essential minerals like Calcium and Magnesium.', 435, 375, 'fasdf', NULL, '2020-10-12 08:09:20', '2020-10-12 08:09:20'),
-(5, 'Includes Mineral Cartridge', 'Enriches water by adding essential minerals like Calcium and Magnesium.', 435, 375, NULL, NULL, '2020-10-12 08:09:45', '2020-10-12 08:09:45');
+(17, 'Operating Voltage', '24 V DC', 448, 375, NULL, NULL, '2020-10-18 05:49:43', '2020-10-18 05:49:43'),
+(18, 'Input Voltage', '160 – 300 V AC (50 Hz)', 445, 375, NULL, NULL, '2020-10-18 05:50:40', '2020-10-18 05:50:40'),
+(19, 'Dimensions', 'L 395 W 256 H 551', 443, 375, NULL, NULL, '2020-10-18 05:55:02', '2020-10-18 05:55:02'),
+(20, 'Net Weight', '10.5 Kg.', 451, 375, NULL, NULL, '2020-10-18 05:56:02', '2020-10-18 05:56:02'),
+(21, 'Min. Inlet Water Pressure', '0.3 Kg / cm2', 450, 375, NULL, NULL, '2020-10-18 06:01:52', '2020-10-18 06:01:52'),
+(22, 'Purification Capacity', '20* Liters / Hour', 449, 375, NULL, NULL, '2020-10-18 06:03:21', '2020-10-18 06:03:21'),
+(23, 'Max. Duty Cycle', ' 200 Liters / Day', 444, 375, NULL, NULL, '2020-10-18 06:06:33', '2020-10-18 06:06:33'),
+(24, 'Storage Tank Capacity', '10 Liters', 449, 375, NULL, NULL, '2020-10-18 06:11:13', '2020-10-18 06:11:13'),
+(25, 'UV Lamp Power', '11 W', 448, 375, NULL, NULL, '2020-10-18 06:12:10', '2020-10-18 06:12:10');
 
 -- --------------------------------------------------------
 
@@ -1230,7 +1244,7 @@ ALTER TABLE `products_brands`
 -- AUTO_INCREMENT for table `products_images`
 --
 ALTER TABLE `products_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=452;
 
 --
 -- AUTO_INCREMENT for table `products_primary_categories`
@@ -1242,7 +1256,7 @@ ALTER TABLE `products_primary_categories`
 -- AUTO_INCREMENT for table `product_features`
 --
 ALTER TABLE `product_features`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `product_types`
