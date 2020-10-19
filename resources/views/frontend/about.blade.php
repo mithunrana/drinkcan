@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Abut Drinkcan | Water Filter in Bangladesh";
+    $keywords =  "water, purifier, filter, price, bangladesh, cartridge, BD, purifier machine";
+    $description =  "Drinkcan is the best water purifier in bangladesh. drinkcan provide best product in cheap price";
 @endphp
 
 @include('frontend.inc.headersource')
