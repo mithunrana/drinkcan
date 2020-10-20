@@ -1,8 +1,5 @@
 @php
     $SiteProfile = App\SiteProfile::first();
-@endphp
-
-@php
     $title = $Blog->BrowserTitle;
     $keywords =  $Blog->SeoKeyword;
     $description =  $Blog->SeoDescription;

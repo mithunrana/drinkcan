@@ -1,12 +1,10 @@
 
 @php
     $SiteProfile = App\SiteProfile::first();
-@endphp
 
-@php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Water Purifier Kit Price In Bangladesh | Drinkcan";
+    $keywords =  "drinkit water purifier kit price in bangladesh, water filter stand price in bd, water filter price in bangladesh";
+    $description =  "Drinkcan provide Water Purifier Kit Price In Bangladesh also drincan sell water purifier in bangladesh";
 @endphp
 
 @include('frontend.inc.headersource')
@@ -16,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 style="background-color:#00adee" class="text-light p-1" style="color: #00adee;">Order DrinkCan Classic Germ kill Kit</h2>
+                <h1 style="background-color:#0049bc;text-align: center;color: white;font-size: 21px;" class="text-light p-1" style="color: #00adee;">Water Purifier Kit Price In Bangladesh</h1>
             </div>
         </div>
     </div>
@@ -36,7 +34,7 @@
                     </div>
                 @endif
                 <div class="gkk-product-form">
-                    <h4>DrinkCan Classic 23L</h4>
+                    <h4>Drinkcan Water Purifier</h4>
                     <form action="{{url('order-gkk')}}" method="post">
                         @csrf
                         @if($errors->has('ProductId'))

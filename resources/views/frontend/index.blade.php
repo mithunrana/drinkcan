@@ -4,10 +4,11 @@
 @endphp
 
 @php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Drinkcan | Water Purifier in Bangladesh";
+    $keywords =  "Drinkcan, Water Purifier in Bangladesh, water filter price in bangladesh, water filter price in bd";
+    $description =  "Drinkcan The best Water Purifier in Bangladesh, water filter price in bangladesh contact with us";
 @endphp
+
 
 
 @include('frontend.inc.headersource')
@@ -15,10 +16,13 @@
 @include('frontend.inc.slider')
 <!--start product section-->
 <section style="background-color: #f6f6f6;margin-top:30px;" class="product-area clearfix py-5">
-    <div class="container_info">
+    <div class="container">
         <p style="text-align: center">
-            A revolutionary product from the house of Unilever, Pureit is just what you need to ensure you and your loved ones always drink safe<br>
-            and pure water. Pureit is here to reach out to all your purification needs with their widest range of RO, UV and Non-electric products.
+            Drinkcan is one of the leading brands in water purification machines in Bangladesh introduced by Syntax Technology. The brand,
+            Drinkcan is designed and configured with the latest water purification technology to deliver the best drinkable water for our consumers.
+            It is stylish and lucrative at outlook that can add an extra move for your aesthetic sense among your community and at the same time it will
+            ensure best purified water without everyday hassle like boiling water or pouring water in existing filter machine.  It is empowered with Reverse
+            Osmosis (RO) technology along with UV, Alkaline,TDS and MF filtration technology which are smartly tuned to deliver hygienic, safe and healthy water
         </p>
     </div>
     <div class="container">

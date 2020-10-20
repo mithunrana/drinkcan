@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "Login | Soshine Marketing Company";
-    $keywords =  "soshine marketing company, login, registration, avtech cctv camera price in bangladesh, avtech distributor in bangladesh";
-    $description =  "Login soshine marketing company website, avtech cctv camera dealer price";
+    $title = "Complaint for Drinkcan Water Purifier In Bangladesh";
+    $keywords =  "Drinkcan water purifier in bangladesh, water filter price in bangladesh, water purifier price in bangladesh";
+    $description =  "Complaint here about drinkcan water purifier. or if you want to purchase the purifier contact with us get best price with best product";
 @endphp
 
 @include('frontend.inc.headersource')

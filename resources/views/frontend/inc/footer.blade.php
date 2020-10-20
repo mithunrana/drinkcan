@@ -55,8 +55,23 @@
                             </a>
                         </li>
                         <li>
-                            <a style="font-size:14px;" href="{{asset('')}}">
+                            <a style="font-size:14px;" href="{{asset('')}}water-purifier-kit-price-bangladesh">
                                 <span data-lang="" class="cmn waterPurifiers">Order Water Purifier</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}water-filter-price-bangladesh">
+                                <span data-lang="" class="cmn waterPurifiers">Product</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}complaint">
+                                <span data-lang="" class="cmn waterPurifiers">Complaint</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}drinkcan-office-address-bangladesh">
+                                <span data-lang="" class="cmn waterPurifiers">Store Location</span>
                             </a>
                         </li>
                     </ul>

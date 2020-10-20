@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Drinkcan Office Address In Bangladesh";
+    $keywords =  "water purifier, drinkcan, price, bangladesh, address, office";
+    $description =  "Drinkcan is the world wide water purifier brand. also drinkcan have hold bangladesh office easily search drinkcan office address from here";
 @endphp
 
 
@@ -20,6 +20,9 @@
 <div style="margin-top: 30px;margin-bottom: 20px;" class="container">
     <div class="row">
         <div class="col-sm-12">
+            <h1 style="font-size: 25px;text-align: center;">Drinkcan Office address In Bangladesh | Country Wide Drinkcan Network</h1>
+            <p style="text-align: center;font-size: 19px;">Drinkcan is the world wide water purifier brand. also drinkcan
+                have hold bangladesh office easily search drinkcan office address from here</p>
             <form>
                 <div class="row">
                     <div class="form-group col-sm-6">

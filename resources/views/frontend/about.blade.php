@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "About DrinkCan | Water Purifier";
-    $keywords =  "about us, drinkcan, water filter stand price in bd, water filter price in bangladesh, water purifier price in bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Abut Drinkcan | Water Filter in Bangladesh";
+    $keywords =  "water, purifier, filter, price, bangladesh, cartridge, BD, purifier machine";
+    $description =  "Drinkcan is the best water purifier in bangladesh. drinkcan provide best product in cheap price";
 @endphp
 
 @include('frontend.inc.headersource')
@@ -17,12 +17,13 @@
 
     <div style="margin-top:25px;" class="container">
         <h1 style="text-align: center;margin-top: 5px;">DrinkCan Water Purifier In Bangladesh</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veritatis expedita, omnis vero, excepturi deleniti
-            debitis tempora atque voluptatem harum quaerat dolorum rem, dolores, laudantium alias. Nobis quibusdam vero recusandae possimus
-            repudiandae neque, ipsum quo maiores quam culpa aspernatur aliquid unde assumenda ut ullam ex architecto reiciendis tenetur laudantium animi! Animi,
-            recusandae, incidunt modi magni esse eligendi saepe impedit dolore cum nisi aut architecto quo in! Voluptatibus provident est, porro temporibus. Eius
-            architecto ad natus ratione minima incidunt repellat laborum necessitatibus
-            soluta explicabo et totam eligendi earum qui, harum dolorum nam velit voluptatibus ipsa. Quia consequatur optio voluptatem architecto facilis.
+        <p style="text-align: center;"><b>Our Main Company Is Syntex Technology</b> Syntax Technology is a technology based business hub which mainly deals with products
+            that ensures safety and security. Syntax aims at delivering products related to safety and security which are innovative
+            and at the same time widely used in developed countries. Bangladesh is heading towards middle income countries status and it
+            needs various types of technology based products to adapt. We are working as a bridge between modern world and third world.
+            We dream for a civilized community as well as country that is capable to keep pace with the most modern and sophisticated world.
+            We are struggling to connect our people with superhighway of ultra-modern technologies that save our time, reduce labor and make
+            worthy to our money. Syntax Technology is here to ensure a safe, secure and better life.
         </p>
     </div>
 

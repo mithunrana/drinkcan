@@ -18,7 +18,7 @@ Route::get('/about-us','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');
 Route::get('/faqs','HomeUIController@complaint');
-Route::get('/water-purifier-price-bd','HomeUIController@waterPurifire');
+Route::get('/water-filter-price-bangladesh','HomeUIController@waterPurifire');
 
 Route::get('/login','HomeUIController@login');
 Route::get('/privacy-policy','HomeUIController@privacyPolicy');
@@ -29,7 +29,7 @@ Route::get('/news','NewsController@index');
 Route::get('/news/{url}','NewsController@NewsView');
 Route::get('/sitemap','HomeUIController@siteMap');
 
-Route::get('/drinkcan-office-bangladesh','StoreLocationController@location');
+Route::get('/drinkcan-office-address-bangladesh','StoreLocationController@location');
 Route::get('/districtby-thana','StoreLocationController@districtByThana');
 Route::get('/thanaby-store','StoreLocationController@thanaByStoreLocation');
 
