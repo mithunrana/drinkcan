@@ -3,16 +3,16 @@
 @endphp
 
 @php
-    $title = "Login | Soshine Marketing Company";
-    $keywords =  "soshine marketing company, login, registration, avtech cctv camera price in bangladesh, avtech distributor in bangladesh";
-    $description =  "Login soshine marketing company website, avtech cctv camera dealer price";
+    $title = "Complaint for Drinkcan Water Purifier In Bangladesh";
+    $keywords =  "Drinkcan water purifier in bangladesh, water filter price in bangladesh, water purifier price in bangladesh";
+    $description =  "Complaint here about drinkcan water purifier. or if you want to purchase the purifier contact with us get best price with best product";
 @endphp
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
 
-<div class="customer-complaint-header">
-    <img src="{{('frontend')}}/images/Header_Complaint.webp" class="img-fluid" alt="">
+<div class="about-header">
+    <img src="{{asset('frontend')}}/images/about-drinkcan.jpg" class="img-fluid" alt="drinkcan">
 </div>
 
 
@@ -21,6 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <h1 style="text-align: center;">Drinkcan water purifier product Complaint</h1>
                 <div class="section-header ">
                     <h5 class="text-muted">Select Product:</h5>
                 </div>
@@ -36,16 +37,17 @@
                     <div class="products-slider-width">
                         <div class="products-slider products-slider-custom">
                             <!--product-item-->
-                            @foreach(\App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->get() as $Product)
-                            <div style="padding: 2px;" class="products-item">
+                            @foreach(\App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->get() as $Products)
+                            <div style="padding: 10px;" class="products-item">
                                 <div style="background-color: #f1f1f1;">
-                                    <input type="radio" name="dd" value="{{$Product->id}}" class="productid" style="height: 20px;width: 20px;">
+                                    <input type="radio" name="dd" value="{{$Products->id}}" class="productid" style="height: 20px;width: 20px;">
                                     <div class="product-item text-center">
                                         <div class="product-s-img">
-                                            <img src="{{('frontend')}}/images/3c48c93f39acfaece66f6115395005cb.webp" alt="Image">
+                                            <img src="{{asset('')}}{{$Products->image->imageurl}}" class="img-fluid" alt="{{$Products->ImageAltText}}">
                                         </div>
                                         <div class="product-s-txt p-2">
-                                            <h5 style="color:#00adee;display: inline-block;width: 100%;text-align: center;">Pureit Classic 23L Pureit Classic 23L Pureit Classic 23L</h5>
+                                            <h5 style="color:#0049bc;display: inline-block;width: 100%;text-align: center;">{{$Products->Model}}</h5>
+                                            <h6 style="text-align: center;">{{$Products->Name}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -69,7 +71,7 @@
                     <img src="{{('frontend')}}/images/complaintreg_icon.png" class="img-fluid" alt="Image" style="width: 62px;margin-right: 10px;">
                     <div class="media-body">
                         <p class="text-muted">
-                            Having a problem with your Pureit Purifier?
+                            Having a problem with your Drinkcan water Purifier?
                             Fill in the details of your issue below and we’ll make sure we fix it for you!
                         </p>
                     </div>

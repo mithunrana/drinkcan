@@ -7,9 +7,9 @@
                 <div class="col">
                     <div class="ht-contact">
                         <ul class="ht-ul">
-                            <li><a href="javascript:;"><i class="fa fa-map mr-1"></i>Bangladesh</a></li>
+                            <li><a href="javascript:;"></i>{{$SiteProfile->CorporateEmail}}</a></li>
                             <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>{{$SiteProfile->CorporatePhone}}</a></li>
-                            <li><a href="">Support</a></li>
+                            <li><a href="{{asset('')}}contact">Support</a></li>
                         </ul>
                     </div>
                 </div>
@@ -19,16 +19,16 @@
     <!--end header top-->
     <nav style="background: rgba(255,255,255,.96) none repeat scroll 0% 0%; visibility: visible; animation-duration: 1s; animation-name: fadeInDown;" class="navbar wow fadeInDown py-0" data-wow-duration="1s">
         <div class="container menu-area">
-            <a style="padding-top: 30px;padding-bottom: 30px;" class="navbar-brand" href="{{asset('')}}">
-                <img src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
+            <a style="padding-top: 7px;padding-bottom: 7px;" class="navbar-brand" href="{{asset('')}}">
+                <img style="max-width: 167px;" src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="{{$SiteProfile->MainLogoTitleText}}">
             </a>
             <div class="main-nav ml-auto">
                 <ul class="nav-ul">
                     <li><a href="{{asset('')}}">Home</a></li>
-                    <li><a href="{{asset('')}}blog">Water and Health</a></li>
-                    <li><a href="{{asset('')}}water-purifier-price-bd">Water Purifier</a></li>
-                    <li><a href="{{asset('')}}water-purifier-kit-price-bangladesh">Order Kit</a></li>
-                    <li><a href="{{asset('')}}">Water in news</a></li>
+                    <li><a href="{{asset('')}}water-filter-price-bangladesh">Water Purifier</a></li>
+                    <li><a href="{{asset('')}}water-purifier-kit-price-bangladesh">Purifier Kit</a></li>
+                    <li><a href="{{asset('')}}contact">Contact</a></li>
+                    <li><a href="{{asset('')}}about-us">About Us</a></li>
                 </ul>
             </div>
             <div class="menu-icon">
@@ -48,8 +48,15 @@
 
 <!--start mobile menu-->
 <div class="mobile-menu">
-    <div class="mm-logo" style="padding: 15px;">
-        <a style="color: #fff; font-size: 20px;display: block;" href="#"><i class="mr-2 fa fa-map-o"></i>Pureit</a>
+    <div class="mm-logo">
+        <a style="color: #fff; font-size: 20px;" href="#">
+            <img src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="drinkcan" title="Drinkcan">
+        </a>
+        <div style="margin:6px 15px;" class="menu-icon res-menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
     <div class="mm-menu">
         <div class="accordion" id="accordionExample">

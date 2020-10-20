@@ -82,7 +82,7 @@
                                         <select id="activestatus" class="form-control" name="activestatus">
                                             <option selected disabled>SELECT CUSTOMER TYPE</option>/
                                             <option value="TechRegister" {{$UserData->activestatus == 'TechRegister' ? 'selected="selected"' : ''}} >Tech Register</option>/
-                                            <option value="EndUserNotActive	" {{$UserData->activestatus == '	EndUserNotActive	' ? 'selected="selected"' : ''}} >End User Deactive</option>
+                                            <option value="EndUserNotActive	" {{$UserData->activestatus == 'EndUserNotActive' ? 'selected="selected"' : ''}} >End User Deactive</option>
                                             <option value="EndUserActive" {{$UserData->activestatus == 'EndUserActive' ? 'selected="selected"' : ''}} >End User Active</option>
                                             <option value="TechHelpInfoAdmin" {{$UserData->activestatus == 'TechHelpInfoAdmin' ? 'selected="selected"' : ''}}>Admin</option>
                                             <option value="TechHelpInfoSiteEditor" {{$UserData->activestatus == 'TechHelpInfoSiteEditor' ? 'selected="selected"' : ''}} >Editor</option>

@@ -2,6 +2,13 @@
     $SiteProfile = App\SiteProfile::first();
 @endphp
 
+@php
+    $title = "Contact | Drinkcan Bangladesh";
+    $keywords =  "drinkcan, support, bangladesh, help line, purifier, contact, contact number";
+    $description =  "Drinkcan support in bangladesh, fetch problem about drinkcan product fell free to contact with us";
+@endphp
+
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
     <div class="contact-header">

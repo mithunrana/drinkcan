@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\File;
 class UserDataController extends Controller
 {
 
-
     public function userPanel(){
         $SiteProfile = SiteProfile::first();
         return view('frontend.user-panel',compact('SiteProfile'));
@@ -193,7 +192,7 @@ class UserDataController extends Controller
 
     public function userVerify(){
         $SiteProfile = SiteProfile::first();
-        return view('UI.userverify',compact('SiteProfile'));
+        return view('frontend.user-verify',compact('SiteProfile'));
     }
 
     public function checkVerify(Request $request){
@@ -204,7 +203,7 @@ class UserDataController extends Controller
           $Profile = User::findOrFail($Result->id);
           $Profile->activestatus = "EndUserActive";
           $Profile->save();
-          return redirect()->to('/login')->with(array('message'=>'Account Verification Successfull Login Here'));
+          return redirect()->to('/login')->with(array('message'=>'Account Verification Successfully Login Here'));
       }
     }
 

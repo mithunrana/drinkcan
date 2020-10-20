@@ -1,11 +1,8 @@
 @php
     $SiteProfile = App\SiteProfile::first();
-@endphp
-
-@php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = $News->BrowserTitle;
+    $keywords =  $News->SeoKeyword;
+    $description =  $News->SeoDescription;
 @endphp
 
 
@@ -22,8 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p style="">Drinkcan water purifier is best water purifier by price and quality. drinkcan water purifier
-                        publish daily bangla and english news in bangladesh.</p>
+                    <h1 style="font-size: 21px;">{{$News->NewsName}}</h1>
                     <span style="text-align: center;font-weight: bold;">
                         <a style="color:#0049bc" href="{{asset('')}}">Home</a>
                         |
@@ -34,8 +30,35 @@
         </div>
     </div>
 
-    <div class="">
-
+    <div style="margin-top: 10px;" class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <img src="{{asset('')}}{{$News->featuredimage1->imageurl}}" alt="{{$News->ImageAltText}}" class="img-fluid">
+                <div style="margin-top: 10px;" class="content">
+                    {!! $News->ProjectDetails !!}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    @foreach($RelatedNews as $EachNews)
+                    <div class="col-sm-12">
+                        <div style="margin-top: 5px;margin-bottom: 5px;border: 1px solid #0049bc;" class="news-box">
+                            <a href="{{asset('')}}news/{{$EachNews->Permalink}}">
+                                <img src="{{asset('')}}{{$EachNews->featuredimage1->imageurl}}" alt="{{$EachNews->ImageAltText}}">
+                            </a>
+                            <div class="news-title">
+                                <h4 style="font-size: 18px;padding: 5px;">
+                                    <a style="color:#0049bc" href="{{asset('')}}news/{{$EachNews->Permalink}}">
+                                    {{$EachNews->NewsName}}
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </div>
 
 </section>

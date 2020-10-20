@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Registration | Drinkcan Bangladesh";
+    $keywords =  "drinkcan, bangladesh, Registration, user login, sign up, user signup, how to register drinkcan bangladesh";
+    $description =  "Registration drinkcan bangladesh official website get more information about water purifier in bangladesh. and get all kinds of update notification";
 @endphp
 
 
@@ -17,7 +17,7 @@
     <div class="row">
         <div style="margin: 0 auto;width: 100%" class="col-12 col-sm-12 col-md-10 col-lg-10">
             <div style="box-shadow: 1px 1px 7px 1px #787878;" class="card">
-                <div style="color:#00adee;font-weight: bold" class="card-header">Registration Here</div>
+                <div style="color: white;font-weight: bold;background-color: #0049bc;" class="card-header">Registration Here</div>
                 <div class="card-body">
                     <form action="{{url('admin/userregister')}}" method="POST">
                         @csrf
@@ -103,7 +103,7 @@
                                 <textarea type="text" class="input-field-design" value="" id="address" name="address" >{{old('address')}}</textarea>
                             </div>
                         </div>
-                        <button style="background-color:#00adee" type="submit" class="btn">Register</button>
+                        <button style="background-color:#0049bc;font-weight: bold;color:white;" type="submit" class="btn">Register</button>
                     </form>
                 </div>
             </div>

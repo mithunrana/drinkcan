@@ -10,15 +10,19 @@
 @endphp
 
 
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
 @include('frontend.inc.slider')
 <!--start product section-->
 <section style="background-color: #f6f6f6;margin-top:30px;" class="product-area clearfix py-5">
-    <div class="container_info">
+    <div class="container">
         <p style="text-align: center">
-            A revolutionary product from the house of Unilever, Pureit is just what you need to ensure you and your loved ones always drink safe<br>
-            and pure water. Pureit is here to reach out to all your purification needs with their widest range of RO, UV and Non-electric products.
+            Drinkcan is one of the leading brands in water purification machines in Bangladesh introduced by Syntax Technology. The brand,
+            Drinkcan is designed and configured with the latest water purification technology to deliver the best drinkable water for our consumers.
+            It is stylish and lucrative at outlook that can add an extra move for your aesthetic sense among your community and at the same time it will
+            ensure best purified water without everyday hassle like boiling water or pouring water in existing filter machine.  It is empowered with Reverse
+            Osmosis (RO) technology along with UV, Alkaline,TDS and MF filtration technology which are smartly tuned to deliver hygienic, safe and healthy water
         </p>
     </div>
     <div class="container">
@@ -26,7 +30,7 @@
             <div class="col">
                 <div class="section-title text-center mb-4">
                     <h3 style="color:#00adee">DirnkCan Water Purifier In Bangladesh</h3>
-                    <h5 class="text-secondary">Choose the water purifier that best suits your needs & budget</h5>
+                    <h5 style="" class="text-secondary">In your budget price buy best water purifier</h5>
                 </div>
             </div>
         </div>
@@ -59,11 +63,11 @@
                                 {{$Product->Model}}
                             </a>
                         </h3>
-                        <h5 class="product-main__title">
-                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
-                                {{$Product->CategoryDetails->CategoryName}}
+                        <h3 style="font-size: 20px;" class="product-main__title">
+                            <a style="color:#0a367b;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->Name}}
                             </a>
-                        </h5>
+                        </h3>
                         @if($check!==null)
                         <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
                         <div class="product-main__desc">
@@ -94,11 +98,11 @@
                                 {{$Product->Model}}
                             </a>
                         </h3>
-                        <h5 class="product-main__title">
-                            <a style="color:#0049bc;" href="{{asset('')}}{{$Product->Permalink}}">
-                                {{$Product->CategoryDetails->CategoryName}}
+                        <h3 style="font-size: 20px;" class="product-main__title">
+                            <a style="color:#0a367b;" href="{{asset('')}}{{$Product->Permalink}}">
+                                {{$Product->Name}}
                             </a>
-                        </h5>
+                        </h3>
 
                         @if($check!==null)
                         <h6 class="product-main__title">{{$ProductAbout->Title}}</h6>
@@ -121,6 +125,7 @@
 
 <section style="background-color: #f6f6f6;margin-top:30px;" class="product-area clearfix py-5">
     <div style="width: 90%;" class="container-fluid">
+        <h2 style="text-align: center;color: grey">Drinkcan Discover Water Purifier Filter</h2>
         <div class="row d-flex justify-content-center">
             @foreach(\App\Products::orderBy('id','DESC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Products)
             <div style="margin-top: 20px;" class="col-xl-3 col-lg-3  col-md-4 col-sm-6 col-12">
@@ -136,7 +141,7 @@
                         <div class="product-title">
                             <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
                             <h5 style="font-size: 15px;" class="my-2">
-                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->CategoryDetails->CategoryName}}</a>
+                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Name}}</a>
                             </h5>
                         </div>
                         <div class="product-price">
@@ -161,16 +166,21 @@
 <!--start sticky post section-->
 <section class="sticky-post clearifix py-4 text-center">
     <div class="container">
+        <h2 style="text-align: center;color: grey">Benefits Of Pure Drinking Water</h2>
         <div class="row">
             @foreach(\App\BlogTutorial::where('ActiveStatus',1)->orderBy('id','DESC')->skip(0)->take(3)->get() as $Blog)
             <div class="col-md-4">
                 <div class="sticky-post-box card mb-3">
                     <a href="#">
                         <div class="sticky-img p-1">
-                            <img src="{{$Blog->featuredimage->imageurl}}" class="img-fluid" alt="Image">
+                            <a href="{{asset('')}}blog/{{$Blog->Permalink}}">
+                                <img src="{{$Blog->featuredimage->imageurl}}" class="img-fluid" alt="{{$Blog->ImageAltText}}">
+                            </a>
                         </div>
                         <div class="sticky-txt p-2">
-                            <h5 style="color:#00adee" class="text-uppercase">{{$Blog->BlogName}}</h5>
+                            <a href="{{asset('')}}blog/{{$Blog->Permalink}}">
+                            <h5 style="color:#0049bc" class="text-uppercase">{{$Blog->BlogName}}</h5>
+                            </a>
                         </div>
                     </a>
                 </div>

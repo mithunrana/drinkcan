@@ -27,7 +27,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header"><a style="color:white;" href="{{url('admin/blog-add')}}" class="btn btn-success pull-right">Add New +</a></div>
+                        <div class="card-header"><a style="color:white;" href="{{url('admin/client-feedback-add')}}" class="btn btn-success pull-right">Add New +</a></div>
                         <div class="card-body">
                             <table id="mytable" class="table table-striped">
                                 <thead class="thead-dark">

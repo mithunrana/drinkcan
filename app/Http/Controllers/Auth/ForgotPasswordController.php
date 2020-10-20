@@ -93,7 +93,7 @@ class ForgotPasswordController extends Controller
         ]);
 
         if (Session::has('passwordchange')){
-            echo $request->password;
+            $request->password;
             $User = User::where('email',Session::get('passwordchange'))->first();
             $User->password = Hash::make($request->password);
             $User->save();

@@ -1,12 +1,10 @@
 
 @php
     $SiteProfile = App\SiteProfile::first();
-@endphp
 
-@php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "DrinkCAN Bangladesh | Best Water Purifier in Bangladesh";
+    $keywords =  "drinkcan, bangladesh, purifier, water, price";
+    $description =  "Drinkcan water purifier best water purifier in bangladesh";
 @endphp
 
 

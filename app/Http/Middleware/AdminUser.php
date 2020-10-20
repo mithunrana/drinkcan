@@ -24,6 +24,8 @@ class AdminUser
                 return redirect('user-panel');
             }elseif(Auth::user()->activestatus =='EndUserActive'){
                 return redirect('user-panel');
+            }elseif(Auth::user()->activestatus =='EndUserNotActive'){
+                return redirect('verify');
             }
         }
         return $next($request);

@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "Login | Soshine Marketing Company";
-    $keywords =  "soshine marketing company, login, registration, avtech cctv camera price in bangladesh, avtech distributor in bangladesh";
-    $description =  "Login soshine marketing company website, avtech cctv camera dealer price";
+    $title = "Drinkcan Bangladesh User Panel";
+    $keywords =  "drinkcan";
+    $description =  "login drinkcan bangladesh website";
 @endphp
 
 @include('frontend.inc.headersource')

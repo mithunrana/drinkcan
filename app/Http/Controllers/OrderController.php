@@ -76,12 +76,14 @@ class OrderController extends Controller
     public function orderExport(Request $request){
         $from = "";
         $to="";
-        if($request->startdate !=null && $request->to !=null){
+        if($request->startdate !=null && $request->enddate !=null){
             $from    = Carbon::parse($request->startdate)->startOfDay()->toDateTimeString();
             $to      = Carbon::parse($request->to)->endOfDay()->toDateTimeString();
+            return Excel::download(new OrderExport($from,$to), 'order.xlsx');
+        }else{
+            return Excel::download(new OrderExport($from,$to), 'order.xlsx');
         }
         //$Orders = Order::whereBetween('created_at', [$from, $to])->get();
-        return Excel::download(new OrderExport($from,$to), 'order.xlsx');
     }
 
 

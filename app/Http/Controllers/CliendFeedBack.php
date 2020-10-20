@@ -19,8 +19,6 @@ class CliendFeedBack extends Controller
             'Name' => 'required',
             'Details' => 'required',
             'FeaturedImage' => 'required',
-            'ImageAltText' => 'required',
-            'ImageTitleText' => 'required',
         ]);
 
         ClientFeedBack::create([
@@ -43,8 +41,6 @@ class CliendFeedBack extends Controller
             'Name' => 'required',
             'Details' => 'required',
             'FeaturedImage' => 'required',
-            'ImageAltText' => 'required',
-            'ImageTitleText' => 'required',
         ]);
         $Blog = ClientFeedBack::findOrFail($id);
         $Blog->Name = request('Name');

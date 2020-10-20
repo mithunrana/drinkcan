@@ -3,9 +3,9 @@
 @endphp
 
 @php
-    $title = "Login | Soshine Marketing Company";
-    $keywords =  "soshine marketing company, login, registration, avtech cctv camera price in bangladesh, avtech distributor in bangladesh";
-    $description =  "Login soshine marketing company website, avtech cctv camera dealer price";
+    $title = $Product->BrowserTitle;
+    $keywords =  $Product->SeoKeyword;
+    $description =  $Product->SeoDescription;
 @endphp
 
 @include('frontend.inc.headersource')
@@ -79,7 +79,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Modal Heading</h4>
+                    <h4 class="modal-title">Order Water Purifier</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -120,7 +120,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol style="background-color: #cee7ff" class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{asset('')}}water-purifier-price-bd">Purifier</a></li>
+                <li class="breadcrumb-item"><a href="{{asset('')}}water-filter-price-bangladesh">Purifier</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{$Product->Model}}</li>
             </ol>
         </nav>
@@ -185,14 +185,12 @@
                     </div>
                     <div class="short-description">
                         <h2 style="font-size: 17px;font-weight: bold;">Features</h2>
-                        <p>ইংরেজি থেকে অনুবাদ করা হয়েছে-ফিলার পাঠ্যটি এমন পাঠ্য যা সত্য লিখিত পাঠ্যের কিছু বৈশিষ্ট্য ভাগ করে, তবে এলোমেলো বা অন্যথায়
-                            উত্পন্ন হয়। এটি ফন্টের নমুনা প্রদর্শন করতে, পরীক্ষার জন্য পাঠ্য উত্পন্ন করতে বা কোনও ইমেল স্প্যাম
-                            ফিল্টার ছদ্মবেশে ব্যবহার করতে</p>
+                        {!! html_entity_decode($Product->ProductShortDescription) !!}
                     </div>
                     <div class="product-d-details text-right">
                         <p>
                             <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" data-toggle="modal" data-target="#myModal">BUY NOW</a>
-                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="{{asset('')}}water-purifier-price-bd">View other RO purifiers</a>
+                            <a style="background:#0049bc; padding: 5px 20px; display: inline-block;margin-top: 15px; font-size: 22px; border-radius: 5px;color:white;" href="{{asset('')}}water-filter-price-bangladesh">View other RO purifiers</a>
                         </p>
                     </div>
                 </div>
@@ -216,7 +214,7 @@
         <div class="row my-5 py-4">
             <div class="col-md-8">
                 <div class="product-item-txt">
-                    <h3 class="text-primary">{{$ProductAbout->Title}}</h3>
+                    <h3 style="color:#063567" >{{$ProductAbout->Title}}</h3>
                     <p>
                         {{$ProductAbout->Content}}
                     </p>
@@ -224,7 +222,7 @@
             </div>
             <div class="col-md-4">
                 <div class="product-item-img">
-                    <img src="{{asset('')}}img/111.webp" class="img-fluid" alt="">
+                    <img src="{{asset('')}}{{$ProductAbout->featuredimage->imageurl}}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -232,13 +230,15 @@
         <div class="row my-5 py-4">
             <div class="col-md-4">
                 <div class="product-item-img">
-                    <img src="{{asset('')}}img/111.webp" class="img-fluid" alt="">
+                    <img src="{{asset('')}}{{$ProductAbout->featuredimage->imageurl}}" class="img-fluid" alt="">
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="product-item-txt text-right">
-                    <h3 class="text-primary">100% RO Purified Water</h3>
-                    <p>All water passes through RO ensuring no mixing of purified and impure water. Only RO can remove harmful chemicals like Lead, Mercury, etc.</p>
+                    <h3 style="color:#063567" >{{$ProductAbout->Title}}</h3>
+                    <p>
+                        {{$ProductAbout->Content}}
+                    </p>
                 </div>
             </div>
         </div>

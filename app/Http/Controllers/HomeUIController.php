@@ -24,11 +24,6 @@ class HomeUIController extends Controller
     }
 
 
-    public function blog(){
-        $Blogs = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(12);
-        return view('frontend.water-and-helth',compact('Blogs'));
-    }
-
     public function complaint(){
         return view('frontend.complaint');
     }

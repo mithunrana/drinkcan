@@ -45,14 +45,14 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <img style="width: 100%;" id="previewImage" src="/{{$feedback->featuredimage->imageurl}}">
-                                        <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" data-target="#imagemodal" class="btn btn-success">Select Image One</div>
+                                        <img id="previewImage" style="width: 100%;margin-top: 27px;" src="/{{$feedback->featuredimage->imageurl}}">
+                                        <div style="width:100%;border-top-left-radius: 0px;border-top-right-radius: 0px;" data-toggle="modal" id="featuredimage" data-target="#imagemodal" class="btn btn-success">Select Image One</div>
                                     </div>
                                     <input type="hidden" name="FeaturedImage" id="setimageid" value="{{$feedback->FeaturedImage}}">
                                     <input type="hidden" name="ImageAltText" id="setImageAltText"  value="{{$feedback->ImageAltText}}">
                                     <input type="hidden" name="ImageTitleText" id="setImageTitleText" value="{{$feedback->ImageTitleText}}">
                                 </div>
-                                <button type="submit" class="btn btn-success">Save</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </form>
                         </div>
                     </div>

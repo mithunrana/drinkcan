@@ -77,11 +77,6 @@ nav {
     position: relative;
 }
 
-.logo {
-    width: 150px;
-    position: absolute;
-    top: 13px;
-}
 
 .main-nav {
     float: right;
@@ -135,6 +130,15 @@ nav {
 
 }
 
+.res-menu-icon span{
+    width: 100%;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    display: block;
+    transition: .3s;
+}
+
 .menu-icon.active span {
     position: absolute;
     width: calc(100% - 16px);
@@ -176,7 +180,7 @@ nav {
     transition: .3s;
     z-index: 9999;
     border-right: 1px solid #ddd;
-    background: #4B5BDD;
+    background: #0049bc;
 }
 
 .mobile-menu.active {
@@ -185,13 +189,9 @@ nav {
 
 .mm-logo {
     border-bottom: 1px solid #ddd;
-    background: #3444C0;
+    background: #0049bc;
 }
 
-.mm-logo .logo {
-    width: 130px;
-    padding: 10px 15px;
-}
 
 .menu-link a {
     display: block;
@@ -672,7 +672,7 @@ nav {
     box-shadow: none;
     border: none;
     outline: #0d2a3c;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #0049bc;
     border-radius: 0;
     padding: 0;
     font-size: 14px;

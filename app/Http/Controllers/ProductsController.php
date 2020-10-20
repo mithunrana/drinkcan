@@ -731,7 +731,7 @@ class ProductsController extends Controller
         AboutProduct::create([
             'Title' => $request->Title,
             'Content' => $request->Content,
-            'ProductId' => $request->ProductId,
+            'products_id' => $request->ProductId,
             'FeaturedImage' => $request->FeaturedImage,
             'ImageTitleText' => $request->ImageTitleText,
             'ImageAltText' => $request->ImageAltText,
@@ -747,13 +747,20 @@ class ProductsController extends Controller
     }
 
     public function aboutProductUpdate(Request $request,$id){
+        $this->validate($request,[
+            'ProductId' => 'required',
+            'Title' => 'required',
+            'Content' => 'required',
+            'FeaturedImage' => 'required',
+        ]);
         $About = AboutProduct::findOrFail($id);
         $About->Title = request('Title');
         $About->Content = request('Content');
-        $About->ProductId = request('ProductId');
+        $About->products_id = request('ProductId');
         $About->FeaturedImage = request('FeaturedImage');
         $About->ImageTitleText = request('ImageTitleText');
         $About->ImageAltText = request('ImageAltText');
+        $About->save();
         return redirect()->to('admin/product-about-manage')->with('message','Product About Section Update Successfully');
     }
 

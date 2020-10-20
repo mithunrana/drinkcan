@@ -17,12 +17,13 @@
 
     <div style="margin-top:25px;" class="container">
         <h1 style="text-align: center;margin-top: 5px;">DrinkCan Water Purifier In Bangladesh</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veritatis expedita, omnis vero, excepturi deleniti
-            debitis tempora atque voluptatem harum quaerat dolorum rem, dolores, laudantium alias. Nobis quibusdam vero recusandae possimus
-            repudiandae neque, ipsum quo maiores quam culpa aspernatur aliquid unde assumenda ut ullam ex architecto reiciendis tenetur laudantium animi! Animi,
-            recusandae, incidunt modi magni esse eligendi saepe impedit dolore cum nisi aut architecto quo in! Voluptatibus provident est, porro temporibus. Eius
-            architecto ad natus ratione minima incidunt repellat laborum necessitatibus
-            soluta explicabo et totam eligendi earum qui, harum dolorum nam velit voluptatibus ipsa. Quia consequatur optio voluptatem architecto facilis.
+        <p style="text-align: center;"><b>Our Main Company Is Syntex Technology</b> Syntax Technology is a technology based business hub which mainly deals with products
+            that ensures safety and security. Syntax aims at delivering products related to safety and security which are innovative
+            and at the same time widely used in developed countries. Bangladesh is heading towards middle income countries status and it
+            needs various types of technology based products to adapt. We are working as a bridge between modern world and third world.
+            We dream for a civilized community as well as country that is capable to keep pace with the most modern and sophisticated world.
+            We are struggling to connect our people with superhighway of ultra-modern technologies that save our time, reduce labor and make
+            worthy to our money. Syntax Technology is here to ensure a safe, secure and better life.
         </p>
     </div>
 
@@ -95,42 +96,15 @@
 <section style="margin-top: 10px;">
     <div class="container">
         <div class="client-feedback">
+            @foreach(\App\ClientFeedBack::where('ActiveStatus',1)->orderBy('id','DESC')->get() as $Feedback)
             <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
+                <img class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" src="{{asset('')}}{{$Feedback->featuredimage->imageurl}}" alt="{{$Feedback->ImageAltText}}">
                 <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
-                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                        recently with desktop publishing
-                    </div>
-                    <h4>Mithun Rana</h4>
+                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">{{$Feedback->Details}}</div>
+                    <h4>{{$Feedback->Name}}</h4>
                 </div>
             </div>
-            <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
-                <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
-                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                        recently with desktop publishing
-                    </div>
-                    <h4>Mithun Rana</h4>
-                </div>
-            </div>
-            <div style="width: 100%;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 10px;">
-                <img style="max-width: 280px;height: auto;margin: 0 auto;border: 2px solid #1f8fff;" class="img-thumbnail" style="max-width: 280px;height: auto;margin: 0 auto;" src="{{asset('')}}frontend/images/1598534374_09.jpg">
-                <div style="padding: 20px;border: 3px solid #0049bc;margin-top: 10px;" class="feedback-box">
-                    <div style="text-align: center;padding-top: 10px;margin: 0 auto;">industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                        took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                        recently with desktop publishing
-                    </div>
-                    <h4>Mithun Rana</h4>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -140,7 +114,7 @@
     <script>
         $(document).ready(function() {
             $('.client-feedback').slick({
-                autoplay: false,
+                autoplay: true,
                 arrows:false
             });
         });

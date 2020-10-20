@@ -45,6 +45,11 @@
                 <li class="list-group-item">
                     <a style="text-decoration: none;" href="{{asset('')}}contact">Support</a>
                 </li>
+                @if(Auth::check() && Auth::user()->activestatus=='TechHelpInfoAdmin')
+                    <li class="list-group-item">
+                        <a style="text-decoration: none;" href="{{asset('')}}admin/admin-panel">Admin Panel</a>
+                    </li>
+                @endif
                 <li class="list-group-item">
                     <a style="text-decoration: none;" href="{{url('logout')}}">Logout</a>
                 </li>

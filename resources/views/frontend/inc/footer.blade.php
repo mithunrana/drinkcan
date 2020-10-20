@@ -6,9 +6,9 @@
                 <div class="footer-item">
                     <h5 style="margin-bottom: 2px;">Products</h5>
                     <ul class="m-0 p-0">
-                        @foreach(\App\ProductsPrimaryCategory::all() as $Category)
-                        <a style="font-size:14px;" href="{{asset('')}}products/{{$Category->CategoryName}}">
-                            <span data-lang="" class="cmn waterPurifiers">{{$Category->CategoryName}}</span>
+                        @foreach(\App\Products::all() as $Products)
+                        <a style="font-size:14px;" href="{{asset('')}}{{$Products->Permalink}}">
+                            <span data-lang="" class="cmn waterPurifiers">{{$Products->Name}}</span>
                         </a>
                         @endforeach
                     </ul>
@@ -67,6 +67,16 @@
                         <li>
                             <a style="font-size:14px;" href="{{asset('')}}complaint">
                                 <span data-lang="" class="cmn waterPurifiers">Complaint</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}drinkcan-office-address-bangladesh">
+                                <span data-lang="" class="cmn waterPurifiers">Store Location</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}sitemap">
+                                <span data-lang="" class="cmn waterPurifiers">Sitemap</span>
                             </a>
                         </li>
                     </ul>

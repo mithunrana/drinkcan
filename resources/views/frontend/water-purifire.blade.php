@@ -3,15 +3,17 @@
 @endphp
 
 @php
-    $title = "DrinkCAN | Water Purifier in Bangladesh";
-    $keywords =  "DrinkCAN | Water Purifier in Bangladesh";
-    $description =  "DrinkCAN | Water Purifier in Bangladesh";
+    $title = "Water Purifier Filter Price In Bangladesh | Drinkcan";
+    $keywords =  "drinkcan, water, purifier, filter, price, bangladesh, stand, bd, RO, UV, TDS CONTROLLER, UF, MINERAL, CARTAGE";
+    $description =  "Water Purifier Filter Price In Bangladesh, Drinkcan is the best water purifier filter in bangladesh cheap rate best product";
 @endphp
 
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
-
+<div class="about-header">
+    <img src="{{asset('frontend')}}/images/about-drinkcan.jpg" class="img-fluid" alt="">
+</div>
 
 
 <div class="purifire-header py-4">
@@ -19,27 +21,13 @@
         <div class="row">
             <div class="col">
                 <div class="ph-txt mb-4">
-                    <h3 style="color:#00adee">A purity promise that will last you a lifetime</h3>
-                    <h5>Choose the water purifier that best suits your needs & budget</h5>
+                    <h1 style="color:#0049bc;text-align:center;">Water Purifier Filter Price In Bangladesh</h1>
+                    <p style="text-align: center;">drinkcan is the best water purifier in bangladesh. It is empowered with Reverse Osmosis (RO) technology along with UV, Alkaline,TDS and MF filtration technology
+                        which are smartly tuned to deliver hygienic, safe and healthy water.
+                        also drinkcan provide cheap price in best product.<br>
+                        water purifier machine price in bangladesh contact 01611830852
+                    </p>
                 </div>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <div class="purifire-category mb-3 mb-md-0">
-                    <img src="{{asset('frontend')}}/images/allproductsliststabs_img01-new.webp" class="img-fluid" alt="">
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="purifire-category mb-3 mb-md-0">
-                    <img src="{{asset('frontend')}}/images/allproductsliststabs_img01-new.webp" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col mt-4 text-muted">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, dolorum incidunt deserunt veritatis odio, labore non. Fuga consequatur pariatur nisi voluptatibus, deleniti perferendis doloribus earum ipsum incidunt suscipit, nostrum ducimus dolores autem esse at iste velit nesciunt, quisquam. Adipisci, recusandae? Hic voluptate molestiae quo eligendi, necessitatibus aliquam, eaque atque nisi.</p>
             </div>
         </div>
     </div>
@@ -47,7 +35,8 @@
 
 <!--start product section-->
 <section class="product-area clearfix py-5">
-    <div class="container">
+
+    <!--<div class="container">
         <div class="row">
             <div class="col-md-5 mb-4">
                 <select id="categorychange" name="category" class="form-control mb-3">
@@ -58,7 +47,7 @@
                 </select>
             </div>
         </div>
-    </div>
+    </div>-->
 
 
     <div class="container">
@@ -67,7 +56,7 @@
             <div style="margin-top: 10px;" class="col-md-4">
                 <div class="product-box">
                     <div class="product-img">
-                        <a href="#">
+                        <a href="{{asset('')}}{{$Products->Permalink}}">
                             <img src="{{asset('')}}{{$Products->image->imageurl}}" class="img-fluid" alt="{{$Products->ImageAltText}}">
                         </a>
                     </div>
@@ -75,7 +64,7 @@
                         <div class="product-title">
                             <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
                             <h5 style="font-size: 15px;" class="my-2">
-                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->CategoryDetails->CategoryName}}</a>
+                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Name}}</a>
                             </h5>
                         </div>
                         <div class="product-price">
@@ -94,7 +83,30 @@
         <div class="row">
             <div class="col mt-4">
                 <h3 style="color:#00adee" >Why do you need a water purifier?</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, itaque eius nam facere similique dolorem. Ducimus repudiandae quisquam eum fugit culpa quo hic reiciendis architecto laboriosam. Non unde, laudantium, laboriosam quibusdam harum officia deserunt. Perferendis dolorem assumenda iusto delectus tempore veniam quod a dolore nostrum officiis eaque illo reiciendis harum cumque ad quo, sapiente, aperiam nam provident unde, modi. Blanditiis ad doloremque, laudantium eveniet nam nobis, natus sit sunt laborum ducimus quasi quos ex neque dolorem odio, officia pariatur repellendus?</p>
+                <p>আমরা সবাই জানি পানির অপর নাম জীবন । তাই বলে কি যে কোন পানি পান করলেই আমরা বেচে যাব ? তা কখোনই না । পানি যেমন আমাদের জীবনের
+                    জন্য খুব উপকারী একটা উপাদান । ঠিক তেমনি পানি অনেক সময় আমাদের জীবনের হুমকির কারণ হয়ে দারাই । সেটা হলো সেই পানি যদি বিসুদ্ধ না হয় ।
+                    আর তাই পানির পানি পান করার আগে অব্যশই পানির বিশুদ্ধা নিশ্চিত করতে
+                    হবে । আর তার জন্য আছে আমাদের Drinkcan water purifier. যা আপনার পানিকে বিশুদ্ধ করবে ১০০%
+                </p>
+
+                <p>
+                    We all know water is another name for life. So do we drink any water to survive? Never. Water is a very beneficial element for our
+                    lives. In the same way, water is often a threat to our lives. That is if the water is not pure. And so before drinking water,
+                    you must ensure the purity of the water. And for that we have Drinkcan water purifier. Which will purify your water 100%
+                </p>
+
+                <h3>10 Benefits of Drinking Water</h3>
+                <p><strong>1. It lubricates the joints</strong></p>
+                <p><strong>2. It forms saliva and mucus</strong></p>
+                <p><strong>3. </strong><strong>It delivers oxygen throughout the body</strong></p>
+                <p><strong>4. It boosts skin health and beauty</strong></p>
+                <p><strong>5. It cushions the brain, spinal cord, and other sensitive tissues</strong></p>
+                <p><strong>6. It regulates body temperature</strong></p>
+                <p><strong>7, The digestive system depends on it</strong></p>
+                <p><strong>8. It flushes body waste</strong></p>
+                <p><strong>9. It helps maintain blood pressure</strong></p>
+                <p><strong>10. The airways need it</strong></p>
+                <a href="https://www.medicalnewstoday.com/articles/290814#benefits" target="_blank">For more details 10 Benefits of Drinking Water visit</a>
             </div>
         </div>
     </div>
