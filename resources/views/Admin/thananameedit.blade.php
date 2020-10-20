@@ -27,7 +27,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-7">
-                                    <form action="{{url('admin/thana-name-store')}}" method="POST">
+                                    <form action="{{url('admin/thana-name-update',[$Thana->id])}}" method="POST">
                                         @csrf
                                         <div class="form-group">
                                             <label for="DistrictId">Select District</label>

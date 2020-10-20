@@ -11,27 +11,14 @@ class BlogController extends Controller
 
 
     public function index(){
-        $Categories = BlogCategory::all();
-        $count = BlogTutorial::count();
-        if($count<3){
-            $skip = 0;
-        }else{
-            $skip = 3;
-        }
-        $gettotal = $count-$skip;
-        $SiteProfile = SiteProfile::first();
-        $HighLights = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->skip(0)->take(1)->first();
-        $RecentTwo = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->skip(1)->take(2)->get();
-        $Tutorials =  BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->skip(3)->take($gettotal)->get();
-        return view('UI.tutorialmain',compact('Categories','HighLights','Tutorials','RecentTwo','SiteProfile'));
+        $Blogs = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(12);
+        return view('frontend.water-and-helth',compact('Blogs'));
     }
 
-    public function blogByURL($url){
-        $Categories = BlogCategory::all();
-        $SiteProfile = SiteProfile::first();
-        $HighLights =  BlogTutorial::where('Permalink',$url)->first();
-        $Tutorials = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->paginate(9);
-        return view('UI.support-view',compact('Categories','HighLights','Tutorials','RecentFive','SiteProfile'));
+    public function blogView($url){
+        $RelatedBlog = BlogTutorial::where('ActiveStatus',1)->orderBy('id', 'DESC')->skip(1)->take(4)->get();
+        $Blog = BlogTutorial::where('Permalink',$url)->first();
+        return view('frontend.blog-view',compact('Blog','RelatedBlog'));
     }
 
     public function blogByCategory($url){

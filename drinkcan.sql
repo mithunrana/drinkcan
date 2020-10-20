@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2020 at 09:26 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Oct 19, 2020 at 03:20 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -131,7 +132,7 @@ CREATE TABLE `blog_tutorials` (
 --
 
 INSERT INTO `blog_tutorials` (`id`, `BrowserTitle`, `Permalink`, `BlogName`, `SeoKeyword`, `SeoDescription`, `VideoURL`, `EmbeddedVideo`, `FeaturedImage`, `ImageAltText`, `ImageTitleText`, `BlogDetails`, `StructuredData`, `Category`, `blog_poster`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(4, 'Water and helth', 'water and helth', 'Water and helth', NULL, NULL, 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 45, NULL, NULL, '<p>Water and helth</p>', NULL, '1', 1, 1, '2020-10-03 07:04:03', '2020-10-03 07:49:20'),
+(4, 'Water and helth', 'test', 'Water and helth', 'fadsf', 'fadsfadsf', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 45, NULL, NULL, '<p>Water and helth</p>', NULL, '1', 1, 1, '2020-10-03 07:04:03', '2020-10-03 07:49:20'),
 (5, 'Best Water Purifier For Health', 'best water purifier for health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'https://www.youtube.com/watch?v=tcMxFdYDejw', 'Best Water Purifier For Health', 47, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', 'Best Water Purifier For Health', '1', 1, 1, '2020-10-03 07:04:41', '2020-10-03 07:49:11'),
 (6, 'Best Water Purifier For Health', '#', 'Best Water Purifier For', 'Best Water Purifier For Health', 'Best Water Purifier For Health', 'https://www.youtube.com/watch?v=wqUNGhLCqnk', 'Best Water Purifier For Health', 46, NULL, NULL, '<h1 class=\"wow animated fadeInDownslow animated animated\">Best Water Purifier For Health</h1>', NULL, '1', 1, 1, '2020-10-03 07:05:36', '2020-10-15 06:53:05');
 
@@ -210,8 +211,8 @@ CREATE TABLE `complains` (
 INSERT INTO `complains` (`id`, `Name`, `Mobile`, `Email`, `ComplainType`, `ComplainDetails`, `ProductId`, `checkstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
 (2, 'fasdf', 'adsfasd', 'fadsfa', '6353', 'fasd', 373, 0, 'fadsf', NULL, '2020-10-07 09:08:22', '2020-10-07 09:08:22'),
 (4, 'mithun', '0179774248', 'mithun@gmail.com', '6350', 'complain', 376, 0, 'address', NULL, '2020-10-08 02:59:56', '2020-10-08 02:59:56'),
-(5, 'mithun', '0179774248', 'mithun@gmail.com', '6350', 'complain', 377, 0, 'address', NULL, '2020-10-08 03:00:07', '2020-10-08 03:00:07'),
-(6, 'mithun update', '0179774248 update', 'mithunran@gmail.com update', '6353', 'complain update', 376, 1, 'adress update', NULL, '2020-10-08 03:04:16', '2020-10-08 03:27:43');
+(5, 'mithun', '0179774248', 'mithun@gmail.com', '6350', 'complain', 377, 0, 'address', 'comment update', '2020-10-08 03:00:07', '2020-10-18 23:57:33'),
+(6, 'mithun update', '0179774248 update', 'mithunran@gmail.com update', '6353', 'complain update', 376, 1, 'adress update', 'comment', '2020-10-08 03:04:16', '2020-10-18 23:57:49');
 
 -- --------------------------------------------------------
 
@@ -434,9 +435,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (71, '2020_10_04_155519_create_orders_table', 23),
 (72, '2020_10_07_124858_create_complains_table', 24),
 (74, '2020_10_03_061008_create_product_features_table', 25),
-(76, '2020_10_11_152658_create_thana_names_table', 27),
 (77, '2020_10_11_152601_create_districts_table', 28),
-(80, '2020_10_14_072116_create_client_feed_backs_table', 29);
+(80, '2020_10_14_072116_create_client_feed_backs_table', 29),
+(81, '2020_10_11_152658_create_thana_names_table', 30),
+(82, '2020_10_13_051352_create_store_locations_table', 31);
 
 -- --------------------------------------------------------
 
@@ -860,6 +862,29 @@ INSERT INTO `software_lists` (`id`, `SoftwareName`, `DownloadLink`, `ActiveStatu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `store_locations`
+--
+
+CREATE TABLE `store_locations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ThanaId` bigint(20) UNSIGNED NOT NULL,
+  `LocationName` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FullAddress` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `store_locations`
+--
+
+INSERT INTO `store_locations` (`id`, `ThanaId`, `LocationName`, `FullAddress`, `created_at`, `updated_at`) VALUES
+(2, 3, 'dhaka bagnaldesh head office', 'dhaka bagnaldesh head office', '2020-10-19 03:39:26', '2020-10-19 03:39:26'),
+(3, 3, 'test purpose', 'test purpose', '2020-10-19 05:35:20', '2020-10-19 05:35:20');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `support_models`
 --
 
@@ -877,10 +902,19 @@ CREATE TABLE `support_models` (
 
 CREATE TABLE `thana_names` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `DistrictId` bigint(20) UNSIGNED NOT NULL,
   `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `thana_names`
+--
+
+INSERT INTO `thana_names` (`id`, `DistrictId`, `Name`, `created_at`, `updated_at`) VALUES
+(2, 12, 'Dhamrai', '2020-10-19 03:23:38', '2020-10-19 03:29:03'),
+(3, 3, 'Pathar Ghata', '2020-10-19 03:37:31', '2020-10-19 03:37:31');
 
 -- --------------------------------------------------------
 
@@ -915,9 +949,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `email_verified_at`, `password`, `customertype`, `partner`, `companyname`, `servicetype`, `country`, `address`, `VerifyCode`, `image`, `activestatus`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$JYbkUAqYTgXJEsiUJ/7SS.2Roiw3HgE0LaIyXmQ1h71SliDEc2Z8q', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '513813', 'user image/mithunrana.developer@gmail.com.png', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-17 05:36:13'),
-(7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserActive', NULL, '2020-09-09 02:31:01', '2020-10-15 04:16:44'),
-(8, 'Kaowsher Hamid', 'MKHT', '+8801676610343', 'mkh.najim@gmail.com', NULL, '$2y$10$d5mx2KbqKFPok.Dwt9j.2eqYn6Wpar3ZbmDMpp.FAJEDQY0m7aTBm', 'Retailer', 'no', 'M K Technology', 'itservice', 'bangladesh', 'dhaka bangladesh - 1000', '242477', 'user image/MKHT.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-13 05:30:52', '2020-09-13 05:37:07');
+(1, 'Mithun Rana', 'mithunrana.developer@gmail.com', '0179777', 'mithunrana.developer@gmail.com', NULL, '$2y$10$fHDP5wb5GZVAchHfKpptweuUylGQBGqDosBEMDqAOzHbmyVVZEieG', 'Retailer', 'no', 'asdfasdfasdf', 'softwareservice', 'Bangladesh', 'Dhaka Bangladesh', '661787', 'user image/mithunrana.developer@gmail.com.jpg', 'TechHelpInfoAdmin', NULL, '2020-09-01 07:32:22', '2020-10-19 02:28:20'),
+(7, 'Mithun Rana', 'mithunranabd', '01797744248', 'mithunrana139@gmail.com', NULL, '$2y$10$xtJg6Uvq1XxUjvmR6HoP/.aSQpisLC.81xGnG.NxPCsyOBwTL87PS', 'End User', 'no', 'b', NULL, 'bangladesh', 'dhaka bangladesh', '537576', NULL, 'EndUserNotActive', NULL, '2020-09-09 02:31:01', '2020-10-15 04:16:44'),
+(8, 'Kaowsher Hamid', 'MKHT', '+8801676610343', 'mkh.najim@gmail.com', NULL, '$2y$10$d5mx2KbqKFPok.Dwt9j.2eqYn6Wpar3ZbmDMpp.FAJEDQY0m7aTBm', 'Retailer', 'no', 'M K Technology', 'itservice', 'bangladesh', 'dhaka bangladesh - 1000', '242477', 'user image/MKHT.jpg', 'EndUserActive', NULL, '2020-09-13 05:30:52', '2020-10-19 02:19:26');
 
 --
 -- Indexes for dumped tables
@@ -927,7 +961,9 @@ INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `email_verified
 -- Indexes for table `about_products`
 --
 ALTER TABLE `about_products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FeaturedImage` (`FeaturedImage`),
+  ADD KEY `products_id` (`products_id`);
 
 --
 -- Indexes for table `authorization_certificates`
@@ -1068,7 +1104,9 @@ ALTER TABLE `products_primary_categories`
 -- Indexes for table `product_features`
 --
 ALTER TABLE `product_features`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FeaturedImage` (`FeaturedImage`),
+  ADD KEY `product_features_ibfk_1` (`ProductId`);
 
 --
 -- Indexes for table `product_types`
@@ -1099,6 +1137,12 @@ ALTER TABLE `social_links`
 -- Indexes for table `software_lists`
 --
 ALTER TABLE `software_lists`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `store_locations`
+--
+ALTER TABLE `store_locations`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1200,7 +1244,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -1287,6 +1331,12 @@ ALTER TABLE `software_lists`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `store_locations`
+--
+ALTER TABLE `store_locations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `support_models`
 --
 ALTER TABLE `support_models`
@@ -1296,7 +1346,7 @@ ALTER TABLE `support_models`
 -- AUTO_INCREMENT for table `thana_names`
 --
 ALTER TABLE `thana_names`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1307,6 +1357,13 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `about_products`
+--
+ALTER TABLE `about_products`
+  ADD CONSTRAINT `about_products_ibfk_1` FOREIGN KEY (`FeaturedImage`) REFERENCES `products_images` (`id`),
+  ADD CONSTRAINT `about_products_ibfk_2` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `authorization_certificates`
@@ -1351,6 +1408,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `products_brands`
   ADD CONSTRAINT `products_brands_featuredimage_foreign` FOREIGN KEY (`FeaturedImage`) REFERENCES `products_images` (`id`);
+
+--
+-- Constraints for table `product_features`
+--
+ALTER TABLE `product_features`
+  ADD CONSTRAINT `product_features_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `site_profiles`

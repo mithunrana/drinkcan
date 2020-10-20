@@ -11,7 +11,9 @@ Route::get('/category/{url}','ProductsController@cctvSecondaryCategory');
 Route::get('/water-purifier-kit-price-bangladesh','ProductsController@order');
 Route::get('/categoryproduct','ProductsController@categoryProduct');
 
-Route::get('/blog','HomeUIController@blog');
+Route::get('/blog','BlogController@index');
+Route::get('/blog/{url}','BlogController@blogView');
+
 Route::get('/about-us','HomeUIController@about');
 Route::get('/contact','ContactController@index');
 Route::get('/complaint','HomeUIController@complaint');
@@ -26,6 +28,11 @@ Route::post('/contact','ContactController@sendMail');
 Route::get('/news','NewsController@index');
 Route::get('/news/{url}','NewsController@NewsView');
 Route::get('/sitemap','HomeUIController@siteMap');
+
+Route::get('/drinkcan-office-bangladesh','StoreLocationController@location');
+Route::get('/districtby-thana','StoreLocationController@districtByThana');
+Route::get('/thanaby-store','StoreLocationController@thanaByStoreLocation');
+
 Route::post('/search','ProductsController@bySearch');
 
 
@@ -80,11 +87,13 @@ Route::get('admin/client-feedback-delete/{id}','CliendFeedBack@delete')->middlew
 Route::get('admin/client-feedback-active-deactive/{status}/{postid}','CliendFeedBack@activeDeactive')->middleware('AdminUser');
 
 
+
+
 Route::get('admin/thana-name-manage','StoreLocationController@thanaManage')->middleware('AdminUser');
 Route::post('admin/thana-name-store','StoreLocationController@thanaNameStore')->middleware('AdminUser');
 Route::get('admin/thana-name-edit/{id}','StoreLocationController@thanaNameEdit')->middleware('AdminUser');
 Route::post('admin/thana-name-update/{id}','StoreLocationController@thanaNameUpdate')->middleware('AdminUser');
-Route::post('admin/thana-name-delete/{id}','StoreLocationController@thanaNameDelete')->middleware('AdminUser');
+Route::get('admin/thana-name-delete/{id}','StoreLocationController@thanaNameDelete')->middleware('AdminUser');
 
 
 
@@ -92,8 +101,7 @@ Route::get('admin/store-location-manage','StoreLocationController@storeLocationM
 Route::post('admin/store-location-store','StoreLocationController@store')->middleware('AdminUser');
 Route::get('admin/store-location-edit/{id}','StoreLocationController@storeLocationEdit')->middleware('AdminUser');
 Route::post('admin/store-location-update/{id}','StoreLocationController@storeLocationUpdate')->middleware('AdminUser');
-Route::post('admin/store-location-delete/{id}','StoreLocationController@storeLocationDelete')->middleware('AdminUser');
-
+Route::get('admin/store-location-delete/{id}','StoreLocationController@storeLocationDelete')->middleware('AdminUser');
 
 
 
@@ -105,11 +113,15 @@ Route::post('admin/order-delete/{id}','OrderController@orderDelete')->middleware
 Route::post('admin/order-export', 'OrderController@orderExport');
 
 
+
+
 Route::post('complain-store','ComplainController@store');
 Route::get('admin/complain-manage','ComplainController@complainManage')->middleware('AdminUser');
 Route::get('admin/complain-edit/{id}','ComplainController@complainEdit')->middleware('AdminUser');
 Route::post('admin/complain-update/{id}','ComplainController@complainUpdate')->middleware('AdminUser');
 Route::get('admin/complain-delete/{id}','ComplainController@complainDelete')->middleware('AdminUser');
+
+
 
 
 Route::get('admin/training-manage','TrainingController@trainingManage')->middleware('AdminUser');
