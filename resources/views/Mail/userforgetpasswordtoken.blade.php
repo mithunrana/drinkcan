@@ -77,15 +77,16 @@
                         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                             <tr>
                                 <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                                    <img src="https://www.soshinebd.com/images/soshine.png" width="125" height="120" style="display: block; border: 0px;" />
+                                    <img src="https://www.drinkcan.com.bd/images/drink-can.png" width="125" height="120" style="display: block; border: 0px;" />
                                     <br>
-                                    <h2 style="font-size: 30px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">Forget Password Verification Code! </h2>
+                                    <h2 style="font-size: 23px; font-weight: 800; line-height: 36px; color: #333333; margin: 0;">Forget Password Verification Code! </h2>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 10px;">
                                     <p style="font-size: 16px; font-weight: 400; line-height: 24px; color: #777777;text-align:center;">
-                                        Soshine Marketing Company Is The Largest IT Solutions Company In Bangladesh. We provide Total CCTV Solution, HD, IP CCTV Camera, NVR, DVR etc.
+                                        Drinkcan is the world wide water purifier brand.
+                                        drinkcan provide various type of water purification machine in bangladesh. for more details visit our website
                                     </p>
                                 </td>
                             </tr>
@@ -103,7 +104,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td align="center" style=" padding: 35px; background-color: #ff7361;" bgcolor="#1b9ba3">
+                    <td align="center" style=" padding: 35px; background-color: #ff7361;" bgcolor="#0d50da">
                         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
                             <tr>
                                 <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
@@ -114,7 +115,9 @@
                                 <td align="center" style="padding: 25px 0 15px 0;">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td align="center" style="border-radius: 5px;" bgcolor="#66b3b7"> <a href="https://www.soshinebd.com" target="_blank" style="font-size: 18px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 5px; background-color: #F44336; padding: 15px 30px; border: 1px solid #F44336; display: block;">Soshine</a> </td>
+                                            <td align="center" style="border-radius: 5px;" bgcolor="#66b3b7">
+                                                <a href="https://www.drinkcan.com.bd/" target="_blank" style="font-size: 18px; font-family: Open Sans, Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; border-radius: 5px; background-color: #F44336; padding: 15px 30px; border: 1px solid #F44336; display: block;">DRINKCAN</a>
+                                            </td>
                                         </tr>
                                     </table>
                                 </td>

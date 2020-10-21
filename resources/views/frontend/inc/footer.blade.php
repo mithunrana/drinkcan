@@ -75,6 +75,16 @@
                             </a>
                         </li>
                         <li>
+                            <a style="font-size:14px;" href="{{asset('')}}register">
+                                <span data-lang="" class="cmn waterPurifiers">Register</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="font-size:14px;" href="{{asset('')}}login">
+                                <span data-lang="" class="cmn waterPurifiers">Login</span>
+                            </a>
+                        </li>
+                        <li>
                             <a style="font-size:14px;" href="{{asset('')}}sitemap">
                                 <span data-lang="" class="cmn waterPurifiers">Sitemap</span>
                             </a>

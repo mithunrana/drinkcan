@@ -29,7 +29,7 @@ class UserForgetPasswordToken extends Mailable
      */
     public function build()
     {
-        $subject = "Soshine Forget Password Verification Code";
+        $subject = "Drinkcan Forget Password Verification Code";
         $code = $this->code;
         return $this->view('Mail.userforgetpasswordtoken',compact('code'))->subject($subject);
     }

@@ -29,7 +29,7 @@ class RegisterSendMail extends Mailable
      */
     public function build()
     {
-        $subject = "Soshine Mail Verification";
+        $subject = "Drinkcan Mail Verification";
         $code = $this->code;
         return $this->view('Mail.register-user-mail-verification',compact('code'))->subject($subject);
     }

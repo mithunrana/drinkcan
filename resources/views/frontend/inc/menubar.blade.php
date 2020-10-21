@@ -7,9 +7,19 @@
                 <div class="col">
                     <div class="ht-contact">
                         <ul class="ht-ul">
-                            <li><a href="javascript:;"></i>{{$SiteProfile->CorporateEmail}}</a></li>
                             <li><a href="javascript:;"><i class="fa fa-phone mr-1"></i>{{$SiteProfile->CorporatePhone}}</a></li>
                             <li><a href="{{asset('')}}contact">Support</a></li>
+                            @if(!Auth::check())
+                                <li><a style="color: #fff;display: inline-block;" href="{{asset('')}}register">Register</a></li>
+                                <li><a style="color: #fff;display: inline-block;" href="{{asset('')}}login">Login</a></li>
+                            @endif
+                            @if(Auth::check())
+                                <li>
+                                    <a style="color: #fff;margin-top: 5px;display: inline-block;text-decoration: none;color:white;" href="{{asset('')}}admin/admin-panel">
+                                        {{Auth::user()->name}}
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
