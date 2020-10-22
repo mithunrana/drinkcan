@@ -10,6 +10,7 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
 
 <div style="margin-top: 30px;margin-bottom: 20px;" class="container">
     <div class="row">
@@ -47,5 +48,10 @@
 
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+@if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+    @endif
 </body>
 </html>

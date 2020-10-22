@@ -57,7 +57,7 @@
                                             <label for="CategorySeoDescription">SEO Description</label>
                                             <textarea type="text" class="form-control{{$errors->has('CategorySeoDescription') ? ' is-invalid' : ''}}"  id="CategorySeoDescription" name="CategorySeoDescription" placeholder="Enter SEO Description....">{{old('CategorySeoDescription')}}</textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
                                 </div>
                                 <div class="col-sm-5">

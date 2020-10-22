@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">Product Primary Category</div>
+                        <div class="card-header">Store Location Manage</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-7">

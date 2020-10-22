@@ -10,6 +10,7 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
 
 <style>
     .box-8 {
@@ -414,5 +415,10 @@
 </section>
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+@if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+    @endif
 </body>
 </html>

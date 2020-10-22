@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Electroporno Slider Add</div>
+                        <div class="card-header">Client Feedback Edit</div>
                         <div class="card-body">
                             <form action="{{url('admin/client-feedback-update',[$feedback->id])}}" method="post">
                                 @csrf

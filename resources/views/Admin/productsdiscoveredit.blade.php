@@ -57,7 +57,7 @@
                                     <input type="hidden" value="{{$Discover->ImageTitleText}}" name="ImageTitleText" id="setImageTitleText"/>
                                     <input type="hidden" value="{{$Discover->ImageAltText}}"  name="ImageAltText" id="setImageAltText"/>
                                 </div>
-                                <button type="submit" class="btn btn-success">Save</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </form>
                         </div>
                     </div>

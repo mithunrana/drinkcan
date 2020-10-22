@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Order Checking</div>
+                        <div class="card-header">Complain Checking</div>
                         <div class="card-body">
                             <form action="{{url('admin/complain-update',[$Order->id])}}" method="post">
                                 @csrf

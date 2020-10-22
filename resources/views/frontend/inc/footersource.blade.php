@@ -20,6 +20,7 @@
 <script src="{{asset('frontend')}}/js/uikit-icons.js"></script>
 <!--uikit.min.js-->
 <script src="{{asset('frontend')}}/js/uikit.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -27,7 +28,13 @@
         /*wow.js*/
         new WOW().init();
 
+        $('.fix-form-img').on('click', function () {
+            $('.fix-form').toggleClass('fix-form-block');
+            $('.form-close').fadeToggle();
+        });
+
     });
+
     $(document).ready(function() {
         $(".menu-icon").click(function() {
             $(".menu-icon").toggleClass("active");
@@ -75,3 +82,5 @@
         });
     });
 </script>
+
+

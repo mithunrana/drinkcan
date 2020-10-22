@@ -78,7 +78,7 @@
                         <p>Complain
                             <span class="right badge badge-success">
                                @php
-                                   echo count(App\Order::all());
+                                   echo count(App\Complain::all());
                                @endphp
                             </span>
                         </p>
@@ -214,6 +214,20 @@
                 </li>
 
 
+                <li class="nav-item">
+                    <a href="{{url('admin/homedemo-manage')}}" class="nav-link">
+                        <i class="fa fa-newspaper" style="font-size:18px"></i>
+                        <p>Home Demo
+                            <span class="right badge badge-success">
+                               @php
+                                   echo count(App\HomeDemo::all());
+                               @endphp
+                            </span>
+                        </p>
+                    </a>
+                </li>
+
+
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-plus-square"></i>
@@ -289,12 +303,6 @@
                             <a href="{{url('admin/topic')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Website Topic</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{url('admin/siteprofile')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Site Profile</p>
                             </a>
                         </li>
                     </ul>

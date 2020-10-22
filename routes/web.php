@@ -34,8 +34,8 @@ Route::get('/districtby-thana','StoreLocationController@districtByThana');
 Route::get('/thanaby-store','StoreLocationController@thanaByStoreLocation');
 
 Route::post('/search','ProductsController@bySearch');
-
-
+Route::post('order-gkk','OrderController@order');
+Route::post('home-demo','HomeDemoController@order');
 
 
 
@@ -104,12 +104,16 @@ Route::post('admin/store-location-update/{id}','StoreLocationController@storeLoc
 Route::get('admin/store-location-delete/{id}','StoreLocationController@storeLocationDelete')->middleware('AdminUser');
 
 
+Route::get('admin/homedemo-manage','HomeDemoController@manage')->middleware('AdminUser');
+Route::get('admin/homedemo-edit/{id}','HomeDemoController@demoEdit')->middleware('AdminUser');
+Route::post('admin/homedemo-update/{id}','HomeDemoController@demoUpdate')->middleware('AdminUser');
+Route::get('admin/homedemo-delete/{id}','HomeDemoController@demoDelete')->middleware('AdminUser');
 
-Route::post('order-gkk','OrderController@order');
+
 Route::get('admin/order-manage','OrderController@orderManage')->middleware('AdminUser');
 Route::get('admin/order-edit/{id}','OrderController@orderEdit')->middleware('AdminUser');
 Route::post('admin/order-update/{id}','OrderController@orderUpdate')->middleware('AdminUser');
-Route::post('admin/order-delete/{id}','OrderController@orderDelete')->middleware('AdminUser');
+Route::get('admin/order-delete/{id}','OrderController@orderDelete')->middleware('AdminUser');
 Route::post('admin/order-export', 'OrderController@orderExport');
 
 

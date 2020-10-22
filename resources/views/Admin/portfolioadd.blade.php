@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Blog Add Here</div>
+                        <div class="card-header">Portfolio Add</div>
                         <div class="card-body">
                             <form action="{{url('admin/portfolio-store')}}" method="POST">
                                 @csrf
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Save</button>
                             </form>
                         </div>
                     </div>

@@ -740,3 +740,38 @@ table {
     color: #ffffff;
     font-weight: 600;
 }
+
+/********************** **************************
+				Fix Form Style START
+*********************** *************************/
+
+  .fix-form {
+    position: fixed;
+    right: -245px;
+    top: 20%;
+    width: 290px;
+    transition: .5s;
+  }
+
+  .fix-form-block {
+      right: 0;
+  }
+
+  .fix-form-img {
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 5px 0 0 5px;
+  }
+
+  .form-close {
+      background: blue;
+      text-align: center;
+      color: #fff;
+      padding: 4px;
+      display: none;
+
+  }
+
+/********************** **************************
+             Fix Form Style END
+*********************** *************************/

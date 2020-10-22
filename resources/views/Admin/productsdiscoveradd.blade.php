@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Add Technology</div>
+                        <div class="card-header">Discover Product Add</div>
                         <div class="card-body">
                             <form action="{{url('admin/discoverproducts-store')}}" method="post">
                                 @csrf

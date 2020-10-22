@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">Blog Category</div>
+                        <div class="card-header">Blog Category Edit</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-7">

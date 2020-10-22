@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Blog Add Here</div>
+                        <div class="card-header">Authorised Certification Add</div>
                         <div class="card-body">
                             <form action="{{url('admin/authorised-store')}}" method="POST">
                                 @csrf

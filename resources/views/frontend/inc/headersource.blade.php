@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="{{asset('frontend')}}/css/animate.css">
     <!--bootstrap.min.css-->
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
     <!--style.css-->
     <link rel="stylesheet" href="{{asset('frontend')}}/css/style.css">
     <!--responsive.css-->

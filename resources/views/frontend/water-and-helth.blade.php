@@ -10,6 +10,8 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
+
     <!--start section header area-->
     <section class="section-header clearfix">
         <div class="about-header">
@@ -40,9 +42,13 @@
             @foreach($Blogs as $Blog)
             <div style="margin-top: 8px;" class="col-md-4">
                 <div class="water-helth-item">
+                    <a href="{{asset('')}}blog/{{$Blog->Permalink}}">
                     <img src="{{asset('')}}{{$Blog->featuredimage->imageurl}}" class="img-fluid" alt="{{$Blog->ImageAltText}}">
+                    </a>
                     <div class="water-item-txt">
-                        <h4 class="m-0">{{$Blog->BlogName}}</h4>
+                        <a href="{{asset('')}}blog/{{$Blog->Permalink}}">
+                        <h4 style="color:white;" class="m-0">{{$Blog->BlogName}}</h4>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -52,17 +58,13 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col align-self-center">
-            <div class="boxes-txt">
-                <p class="mb-0">Today’s Tip: <span>
-                        Pregnant women should stay hydrated always, as it will lower their risk of having a C-section, and complications in the unborn baby’s health.</span>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+@if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+    @endif
+  </body>
+</html>

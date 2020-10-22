@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2020 at 09:04 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Oct 22, 2020 at 03:55 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.2.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -73,7 +74,7 @@ CREATE TABLE `authorization_certificates` (
 
 INSERT INTO `authorization_certificates` (`id`, `CertificateName`, `certificatedetails`, `FeaturedImage1`, `FeaturedImage2`, `ImageAltText`, `ImageTitleText`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
 (1, 'Avtech Sole Agency Certificate', 'Avtech Bangladesh Sole Agency Products include professional surveillance CCTV & IP Products.', 42, 42, NULL, NULL, '1', '2020-09-09 00:54:13', '2020-10-03 07:35:34'),
-(2, 'Electronics Safety & Security Association Of Bangladesh', 'Soshine Marketing company certify of Electronics Safety & Security Association Of Bangladesh.', 42, 42, NULL, NULL, '1', '2020-09-09 01:24:01', '2020-10-03 07:35:23');
+(2, 'Electronics Safety & Security Association Of Bangladesh', 'Soshine Marketing company certify of Electronics Safety & Security Association Of Bangladesh.', 45, 45, NULL, NULL, '1', '2020-09-09 01:24:01', '2020-10-22 05:13:56');
 
 -- --------------------------------------------------------
 
@@ -364,6 +365,34 @@ INSERT INTO `faqs` (`id`, `Question`, `Answer`, `ProductId`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `home_demos`
+--
+
+CREATE TABLE `home_demos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `Name` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Mobile` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `checkstatus` int(11) NOT NULL DEFAULT 0,
+  `orderstatus` int(11) NOT NULL DEFAULT 2,
+  `Address` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Comment` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `home_demos`
+--
+
+INSERT INTO `home_demos` (`id`, `Name`, `Mobile`, `Email`, `checkstatus`, `orderstatus`, `Address`, `Comment`, `created_at`, `updated_at`) VALUES
+(1, 'fasdf', 'asdfsdaf', 'adsfadsf', 0, 2, 'fasdfadsf', NULL, NULL, '2020-10-22 02:27:00'),
+(2, 'mithun rana', '01797744248', 'mithunrana.developer@gmail.com', 1, 1, 'mithun ranana', NULL, '2020-10-22 03:13:13', '2020-10-22 03:13:39'),
+(3, 'mithun rana', 'mithun rana', 'mithun rana', 0, 2, 'mithun rana', NULL, '2020-10-22 03:42:01', '2020-10-22 03:42:01');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `images`
 --
 
@@ -441,9 +470,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (71, '2020_10_04_155519_create_orders_table', 23),
 (72, '2020_10_07_124858_create_complains_table', 24),
 (74, '2020_10_03_061008_create_product_features_table', 25),
-(76, '2020_10_11_152658_create_thana_names_table', 27),
 (77, '2020_10_11_152601_create_districts_table', 28),
-(80, '2020_10_14_072116_create_client_feed_backs_table', 29);
+(80, '2020_10_14_072116_create_client_feed_backs_table', 29),
+(82, '2020_10_22_045710_create_home_demos_table', 30),
+(83, '2020_10_13_051352_create_store_locations_table', 31),
+(84, '2020_10_11_152658_create_thana_names_table', 32);
 
 -- --------------------------------------------------------
 
@@ -509,15 +540,7 @@ INSERT INTO `orders` (`id`, `Name`, `Mobile`, `ProductId`, `checkstatus`, `order
 (3, 'fadf', 'asdffasdffa', 377, 0, 2, 'asdfasdffa', 'order confirm', '2020-10-05 03:56:35', '2020-10-05 03:56:56'),
 (4, 'Test', '01797744248', 375, 0, 0, 'dhaka bangladesh', NULL, '2020-10-16 08:59:19', '2020-10-16 08:59:49'),
 (5, 'Mithun Rana', '01797744248', 377, 0, 2, 'dhaka, bangladesh', NULL, '2020-10-16 09:03:08', '2020-10-16 09:03:08'),
-(6, 'Mithun Rana', '01797744248', 377, 0, 2, 'Dhaka Bangladesh', NULL, '2020-10-16 10:12:08', '2020-10-16 10:12:08'),
-(7, 'Mithun Rana', '01797744248', 375, 0, 2, 'dhaka bangladesh', NULL, '2020-10-16 10:13:11', '2020-10-16 10:13:11'),
-(8, 'Mithun Rana', '01797744248', 373, 0, 2, 'Dhaka Bangladesh', NULL, '2020-10-16 10:15:43', '2020-10-16 10:15:43'),
-(9, 'Mithun Rana', '01797744248', 377, 0, 2, 'dhaka bangladesh', NULL, '2020-10-16 10:18:48', '2020-10-16 10:18:48'),
-(10, 'mithun rana', '01797744248', 375, 0, 2, 'dhaka banghladesh', NULL, '2020-10-17 03:02:19', '2020-10-17 03:02:19'),
-(11, 'Mithun Rana', '01797744248', 375, 0, 2, 'dhaka bangladesh', NULL, '2020-10-17 04:37:24', '2020-10-17 04:37:24'),
-(12, 'Mithun Rana', '01797744248', 375, 0, 2, 'dhaka bangladesh', NULL, '2020-10-17 04:38:45', '2020-10-17 04:38:45'),
-(13, 'Mithun Rana', '01797744248', 375, 0, 2, 'dhaka bangladesh', NULL, '2020-10-17 04:39:42', '2020-10-17 04:39:42'),
-(14, 'Mithun Rana', '01797744248', 375, 0, 2, 'dhaka bangladesh', NULL, '2020-10-20 14:11:36', '2020-10-20 14:11:36');
+(6, 'Mithun Rana', '01797744248', 377, 0, 2, 'Dhaka Bangladesh', NULL, '2020-10-16 10:12:08', '2020-10-16 10:12:08');
 
 -- --------------------------------------------------------
 
@@ -610,9 +633,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `Model`, `Name`, `Datasheet`, `ProductShortDescription`, `Specification`, `FeaturedImage`, `Permalink`, `Category`, `SeoHeading`, `MegaPixelId`, `BrandId`, `ProductsType`, `BrowserTitle`, `SeoKeyword`, `SeoDescription`, `ImageAltText`, `ImageTitleText`, `StructuredData`, `RegularPrice`, `CurrentPrice`, `PartnerPrice`, `PriceStatus`, `ActiveStatus`, `created_at`, `updated_at`) VALUES
-(375, 'GRAND', 'Grand RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification :&nbsp;15 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">20* Liters / Hour</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">200 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">10 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Memberance</td>\r\n<td class=\"value\">1812-75 GDP (Made in USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adgestable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Input Voltage</td>\r\n<td class=\"value\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Operating Voltage</td>\r\n<td class=\"value\">24 V DC</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Dimensions</td>\r\n<td class=\"value\">L 395 W 256 H 551</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Net Weight</td>\r\n<td class=\"value\">10.5 Kg.</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Price</td>\r\n<td class=\"value\">22,500.00 MRP BDT</td>\r\n</tr>\r\n</tbody>\r\n</table>', 440, 'drinkcan-grand-water-purifier-price-bangladesh', 19, 'Drinkcan Grand Water purifier Price In Bangladesh', NULL, 4, 1, 'Drinkcan Grand Water purifier Price In Bangladesh', 'Drinkcan Grand Water purifier Price In Bangladesh', 'Drinkcan Grand Water purifier Price In Bangladesh', 'drinkcan grand', 'Grand', NULL, '0.00', '0.00', '0.00', '0.00', '1', '2020-07-02 00:57:58', '2020-10-21 11:20:02'),
-(376, 'PREMIO', 'Premio RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification :&nbsp;15 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">20* Liters / Hour</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">200 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">10 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Memberance</td>\r\n<td class=\"value\">1812-75 GDP (Made in USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adgestable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Input Voltage</td>\r\n<td class=\"value\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Operating Voltage</td>\r\n<td class=\"value\">24 V DC</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Dimensions</td>\r\n<td class=\"value\">L 395 W 256 H 551</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Net Weight</td>\r\n<td class=\"value\">10.5 Kg.</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Price</td>\r\n<td class=\"value\">22,500.00 MRP BDT</td>\r\n</tr>\r\n</tbody>\r\n</table>', 441, 'drinkcan-premio-water-purifier-price-bangladesh', 19, 'Drinkcan Premio Water purifier Price In Bangladesh', NULL, 4, 1, 'Drinkcan Premio Water purifier Price In Bangladesh', 'Drinkcan Premio Water purifier Price In Bangladesh', 'Drinkcan Premio Water purifier Price In Bangladesh', 'drinkcan premio', 'Premio', NULL, '0.00', '0.00', '0.00', '0.00', '1', '2020-07-02 01:02:57', '2020-10-21 11:19:59'),
-(377, 'SUPREME', 'Supreme RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification :&nbsp;15 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">20* Liters / Hour</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">200 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">10 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Memberance</td>\r\n<td class=\"value\">1812-75 GDP (Made in USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adgestable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Input Voltage</td>\r\n<td class=\"value\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Operating Voltage</td>\r\n<td class=\"value\">24 V DC</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Dimensions</td>\r\n<td class=\"value\">L 395 W 256 H 551</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Net Weight</td>\r\n<td class=\"value\">10.5 Kg.</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Price</td>\r\n<td class=\"value\">22,500.00 MRP BDT</td>\r\n</tr>\r\n</tbody>\r\n</table>', 442, 'supreme-water-purifier-price-bangladesh', 19, 'Drinkcan Supreme water purifier price in bangladesh', NULL, 4, 1, 'Drinkcan Supreme water purifier price in bangladesh', 'Drinkcan, Supreme water purifier price in bangladesh', 'Drinkcan Supreme water purifier price in bangladesh', NULL, NULL, NULL, '0.00', '0.00', '0.00', '0.00', '1', '2020-07-02 01:08:18', '2020-10-21 11:20:53');
+(375, 'GRAND', 'Grand RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification : 20 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Technology: USA (United State America)</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">20* Liters / Hour</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">200 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">10 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Membrane</td>\r\n<td class=\"value\">1812-75 GDP (Made in the USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adjustable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Input Voltage</td>\r\n<td class=\"value\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Operating Voltage</td>\r\n<td class=\"value\">24 V DC</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Dimensions</td>\r\n<td class=\"value\">L 395 W 256 H 551</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Net Weight</td>\r\n<td class=\"value\">10.5 Kg.</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Price</td>\r\n<td class=\"value\">19000.00 MRP BDT</td>\r\n</tr>\r\n</tbody>\r\n</table>', 440, 'drinkcan-grand-water-purifier-price-bangladesh', 19, 'Drinkcan Grand Water purifier Price In Bangladesh', NULL, 4, 1, 'Drinkcan Grand Water purifier Price In Bangladesh', 'Drinkcan Grand Water purifier Price In Bangladesh', 'Drinkcan Grand Water purifier Price In Bangladesh', 'drinkcan grand', 'Grand', NULL, '20500.00', '19000.00', '0.00', '0.00', '1', '2020-07-02 00:57:58', '2020-10-22 07:47:14'),
+(376, 'PREMIO', 'Premio RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification :&nbsp;12-13 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Technology: USA</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">Up to 12-13 Ltr. /Hr</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">75 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">12 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Membrane</td>\r\n<td class=\"value\">1812-75 GDP (Made in the USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adjustable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Input Voltage</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Operating Voltage</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">24 V DC</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Dimensions mm</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">420(L) x (W) 572x (H) 235</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Net Weight</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">9.190 Kg.</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td class=\"name\" style=\"height: 18px; width: 179px;\">Booster Pump</td>\r\n<td class=\"value\" style=\"height: 18px; width: 393px;\">100gpd 24v. DC</td>\r\n</tr>\r\n<tr style=\"height: 36px;\">\r\n<td class=\"name\" style=\"width: 179px; height: 36px;\">Membrane Type</td>\r\n<td class=\"value\" style=\"width: 393px; height: 36px;\">Membrane Type Pzone 100gpd TFC (Thin Film Composite Ro)</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 179px; height: 18px;\">Product Model</td>\r\n<td style=\"width: 393px; height: 18px;\">Premio</td>\r\n</tr>\r\n<tr style=\"height: 18px;\">\r\n<td style=\"width: 179px; height: 18px;\">Product Code</td>\r\n<td style=\"width: 393px; height: 18px;\">PZ16005</td>\r\n</tr>\r\n</tbody>\r\n</table>', 441, 'drinkcan-premio-water-purifier-price-bangladesh', 19, 'Drinkcan Premio Water purifier Price In Bangladesh', NULL, 4, 1, 'Drinkcan Premio Water purifier Price In Bangladesh', 'Drinkcan Premio Water purifier Price In Bangladesh', 'Drinkcan Premio Water purifier Price In Bangladesh', 'drinkcan premio', 'Premio', NULL, '24000.00', '23000.00', '0.00', '0.00', '1', '2020-07-02 01:02:57', '2020-10-22 07:45:45'),
+(377, 'SUPREME', 'Supreme RO + UV + TDS + UF Water purifier', '#', '<ul>\r\n<li>Strorage tank capacify: 15 Liters</li>\r\n<li>Purification :&nbsp;15 Liters / hour</li>\r\n<li>Dimensions: L 395 W 256 H 551</li>\r\n<li>Inpur Voltage: 160 - 300V AV (50HZ)</li>\r\n<li>Made In India</li>\r\n</ul>', '<table class=\"data-table\" cellspacing=\"0\" cellpadding=\"0\">\r\n<thead>\r\n<tr>\r\n<td class=\"heading-row\" colspan=\"3\">Display Features</td>\r\n</tr>\r\n</thead>\r\n<tbody>\r\n<tr>\r\n<td class=\"name\">Technology</td>\r\n<td class=\"value\">RO+UV+ TDS CONTROLLER + UF + MINERAL CARTAGE</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Purification Capacity</td>\r\n<td class=\"value\">15* Liters / Hour</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Max. Duty Cycle</td>\r\n<td class=\"value\">200 Liters / Day</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Storage Tank Capacity</td>\r\n<td class=\"value\">15 Liters</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Filter Cartridges</td>\r\n<td class=\"value\">Sediment, Activated Carbon,</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Ro Memberance</td>\r\n<td class=\"value\">1812-75 GDP (Made in USA)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">TDS Adjustable</td>\r\n<td class=\"value\">Total Device of Solid Adgestable</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">UV Lamp Power</td>\r\n<td class=\"value\">11 W</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Min. Inlet Water Pressure</td>\r\n<td class=\"value\">0.3 Kg / cm2</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Input Voltage</td>\r\n<td class=\"value\">160 &ndash; 300 V AC (50 Hz)</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Operating Voltage</td>\r\n<td class=\"value\">24 V DC</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Dimensions</td>\r\n<td class=\"value\">L 395 W 256 H 551</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Net Weight</td>\r\n<td class=\"value\">8.00 Kg.</td>\r\n</tr>\r\n<tr>\r\n<td class=\"name\">Price</td>\r\n<td class=\"value\">21,000.00 MRP BDT</td>\r\n</tr>\r\n</tbody>\r\n</table>', 442, 'supreme-water-purifier-price-bangladesh', 19, 'Drinkcan Supreme water purifier price in bangladesh', NULL, 4, 1, 'Drinkcan Supreme water purifier price in bangladesh', 'Drinkcan, Supreme water purifier price in bangladesh', 'Drinkcan Supreme water purifier price in bangladesh', NULL, NULL, NULL, '22500.00', '2100.00', '0.00', '0.00', '1', '2020-07-02 01:08:18', '2020-10-22 07:33:22');
 
 -- --------------------------------------------------------
 
@@ -831,7 +854,7 @@ CREATE TABLE `site_profiles` (
 --
 
 INSERT INTO `site_profiles` (`id`, `ShortDescription`, `SiteName`, `EditorPublisher`, `CorporateAddress`, `HeadAddress`, `CorporatePhone`, `Phone1`, `phone2`, `phone3`, `CorporateEmail`, `Email2`, `Email3`, `MainLogo`, `MainLogoTitleText`, `MainLogoAltText`, `CopyRightText`, `DomainName`, `DesignerDeveloperName`, `DesignerDeveloperDomain`, `GoogleMap`, `created_at`, `updated_at`) VALUES
-(3, NULL, 'Drinkcan', 'Shain Ahmed', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '41/8, (Gr. & 1st Floor), Box Culvert Road, Purana Paltan, Dhaka-1000', '01611830852', '01611830852', NULL, NULL, 'drinkcanbd@gmail.com', 'drinkcanbd@gmail.com', NULL, 44, 'DrinkCan', 'drink Can', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-10-20 13:44:12');
+(3, NULL, 'Drinkcan', 'Shain Ahmed', 'CHA- 68, Kuwati Mosque Road, North Badda, Dhaka 1212', 'CHA- 68, Kuwati Mosque Road, North Badda, Dhaka 1212', '01730555099', '01611830852', NULL, NULL, 'drinkcanbd@gmail.com', 'drinkcanbd@gmail.com', NULL, 44, 'DrinkCan', 'drink Can', '© 2020 Copyright: www.soshinebd.com', 'ww.soshinebd.com', 'Md. Mithun Rana', 'https://www.techhelpinfo.com', NULL, NULL, '2020-10-22 04:44:38');
 
 -- --------------------------------------------------------
 
@@ -887,6 +910,28 @@ INSERT INTO `software_lists` (`id`, `SoftwareName`, `DownloadLink`, `ActiveStatu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `store_locations`
+--
+
+CREATE TABLE `store_locations` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ThanaId` bigint(20) UNSIGNED NOT NULL,
+  `LocationName` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FullAddress` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `store_locations`
+--
+
+INSERT INTO `store_locations` (`id`, `ThanaId`, `LocationName`, `FullAddress`, `created_at`, `updated_at`) VALUES
+(1, 3, 'Badda Drinkcan Office', 'CHA- 68, Kuwati Mosque Road, North Badda, Dhaka 1212', '2020-10-22 05:55:25', '2020-10-22 05:55:25');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `support_models`
 --
 
@@ -904,10 +949,20 @@ CREATE TABLE `support_models` (
 
 CREATE TABLE `thana_names` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `DistrictId` bigint(20) UNSIGNED NOT NULL,
   `Name` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `thana_names`
+--
+
+INSERT INTO `thana_names` (`id`, `DistrictId`, `Name`, `created_at`, `updated_at`) VALUES
+(1, 3, 'barguna', '2020-10-22 05:51:36', '2020-10-22 05:51:36'),
+(2, 1, 'Patharghata', '2020-10-22 05:51:46', '2020-10-22 05:51:46'),
+(3, 12, 'Dhaka', '2020-10-22 05:52:51', '2020-10-22 05:52:51');
 
 -- --------------------------------------------------------
 
@@ -1019,6 +1074,12 @@ ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `home_demos`
+--
+ALTER TABLE `home_demos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -1127,6 +1188,12 @@ ALTER TABLE `software_lists`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `store_locations`
+--
+ALTER TABLE `store_locations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `support_models`
 --
 ALTER TABLE `support_models`
@@ -1216,6 +1283,12 @@ ALTER TABLE `faqs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `home_demos`
+--
+ALTER TABLE `home_demos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
@@ -1225,7 +1298,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -1312,6 +1385,12 @@ ALTER TABLE `software_lists`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `store_locations`
+--
+ALTER TABLE `store_locations`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `support_models`
 --
 ALTER TABLE `support_models`
@@ -1321,7 +1400,7 @@ ALTER TABLE `support_models`
 -- AUTO_INCREMENT for table `thana_names`
 --
 ALTER TABLE `thana_names`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

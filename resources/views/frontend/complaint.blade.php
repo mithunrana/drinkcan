@@ -10,6 +10,7 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
 
 <div class="about-header">
     <img src="{{asset('frontend')}}/images/about-drinkcan.jpg" class="img-fluid" alt="drinkcan">
@@ -136,5 +137,10 @@
         });
     });
 </script>
+@if(Session::has('demo-message'))
+   <script>
+       toastr.success("{{ Session::get('demo-message') }}");
+  </script>
+@endif
 </body>
 </html>

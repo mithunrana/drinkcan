@@ -51,7 +51,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{asset('')}}portfolio/{{$Certificate->Permalink}}" target="_blank" class="btn btn-success"><i style="font-size:17px;" class="fa fa-eye"></i></a>
+                                            <a href="#" target="_blank" class="btn btn-success"><i style="font-size:17px;" class="fa fa-eye"></i></a>
                                             <a href="{{url('admin/authorised-edit',[$Certificate->id])}}" class="btn btn-info"> <i style="font-size:17px;" class="fa fa-edit"></i></a>
                                             <a href="{{url('admin/authorised-delete',[$Certificate->id])}}" class="btn btn-danger" onclick="return ConfirmDelete();" ><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
@@ -67,7 +67,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2014-2019 <a href="https://drinkcan.com.bd">drinkcan.com.bd</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 3.0.3-pre

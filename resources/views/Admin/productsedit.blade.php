@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">News Add Here</div>
+                        <div class="card-header">Product Edit</div>
                         <div class="card-body">
                             <form enctype="multipart/form-data" action="{{url('admin/products-update',[$Products->id])}}" method="post">
                                 @csrf
@@ -163,7 +163,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                             </form>
                         </div>
                     </div>

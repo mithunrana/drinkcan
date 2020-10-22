@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">Produt About Added Panel</div>
+                        <div class="card-header">Product Feature</div>
                         <div class="card-body">
                             <div class="row">
                                 <div id="app" class="col-sm-6">

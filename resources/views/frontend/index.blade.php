@@ -11,6 +11,7 @@
 
 
 
+
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
 @include('frontend.inc.slider')
@@ -161,7 +162,7 @@
 </section>
 <!--end product section-->
 
-
+@include('frontend.inc.homedemo')
 
 <!--start sticky post section-->
 <section class="sticky-post clearifix py-4 text-center">
@@ -252,5 +253,10 @@
 <!--end home contact section-->
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+@if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+@endif
 </body>
 </html>

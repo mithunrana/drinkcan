@@ -23,7 +23,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">CCTV Brand</div>
+                        <div class="card-header">CCTV Brand Edit</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-5">

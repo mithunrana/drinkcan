@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">Events Edit Here</div>
+                        <div class="card-header">Events Edit System</div>
                         <div class="card-body">
                             <form action="{{url('admin/events-update',[$Event->id])}}" method="post">
                                 @csrf

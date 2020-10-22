@@ -8,6 +8,8 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
+
 <!--start news section-->
 <section class="water-news clearfix " style="padding-bottom: 30px;">
 
@@ -66,5 +68,10 @@
 
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
+@if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+    @endif
 </body>
 </html>

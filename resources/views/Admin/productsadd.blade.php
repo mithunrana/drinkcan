@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="card">
-                        <div class="card-header">News Add Here</div>
+                        <div class="card-header">Products Add</div>
                         <div class="card-body">
                             <form enctype="multipart/form-data" action="{{url('admin/products-store')}}" method="post">
                                 @csrf

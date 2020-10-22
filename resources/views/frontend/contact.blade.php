@@ -11,6 +11,8 @@
 
 @include('frontend.inc.headersource')
 @include('frontend.inc.menubar')
+@include('frontend.inc.homedemo')
+
     <div class="contact-header">
         <img style="width:100%;" src="{{asset('frontend')}}/images/drinkcan-water-purifier.jpg" class="img-fluid" alt="Drinkcan Water Purifier">
     </div>
@@ -110,5 +112,12 @@
             </div>
         </div>
     </section>
-@include('frontend.inc.footer')
-@include('frontend.inc.footersource')
+    @include('frontend.inc.footer')
+    @include('frontend.inc.footersource')
+    @if(Session::has('demo-message'))
+    <script>
+        toastr.success("{{ Session::get('demo-message') }}");
+    </script>
+    @endif
+  </body>
+</html>
