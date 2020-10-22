@@ -300,9 +300,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{url('admin/topic')}}" class="nav-link">
+                            <a href="{{url('admin/siteprofile')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Website Topic</p>
+                                <p>Site Profile</p>
                             </a>
                         </li>
                     </ul>
