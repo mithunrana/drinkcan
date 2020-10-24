@@ -59,7 +59,7 @@
 <!--start mobile menu-->
 <div class="mobile-menu">
     <div class="mm-logo">
-        <a style="color: #fff; font-size: 20px;" href="#">
+        <a style="color: #fff; font-size: 20px;" href="{{asset('')}}">
             <img src="{{asset('')}}{{$SiteProfile->logo->imageurl}}" class="logo" alt="drinkcan" title="Drinkcan">
         </a>
         <div style="margin:6px 15px;" class="menu-icon res-menu-icon">
@@ -77,22 +77,27 @@
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('')}}">Water And Health</a>
+                    <a href="{{asset('')}}water-filter-price-bangladesh">Water Purifier</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('')}}">Water Purifier</a>
+                    <a href="{{asset('')}}water-purifier-kit-price-bangladesh">Purifier Kit</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="{{asset('')}}">Order GKK</a>
+                    <a href="{{asset('')}}contact">Contact</a>
                 </div>
             </div>
             <div class="menu-box">
                 <div class="menu-link">
-                    <a href="#">Water In News</a>
+                    <a href="{{asset('')}}about-us">About Us</a>
+                </div>
+            </div>
+            <div class="menu-box">
+                <div class="menu-link">
+                    <a href="{{asset('')}}drinkcan-office-address-bangladesh">Store Location</a>
                 </div>
             </div>
         </div>
