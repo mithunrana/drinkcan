@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\HomeDemo;
 use Illuminate\Http\Request;
-
+use Mail;
+use App\Mail\HomeDemoIncomingMail;
 class HomeDemoController extends Controller
 {
     public function manage(){
@@ -24,6 +25,12 @@ class HomeDemoController extends Controller
             'Address'=> $request->Address,
             'Email'=> $request->Email,
         ]);
+        $incomeMailAddress = "drinkcanbd@gmail.com";
+        $Name = $request->Name;
+        $Mobile = $request->Mobile;
+        $Address = $request->Address;
+        $Email = $request->Email;
+        Mail::to($incomeMailAddress)->send(new HomeDemoIncomingMail($Name,$Mobile,$Address,$Email));
         return redirect()->back()->with('demo-message','Free Home Demo Order Successfully Submitted');
     }
 

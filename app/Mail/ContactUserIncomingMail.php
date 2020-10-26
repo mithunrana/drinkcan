@@ -47,6 +47,6 @@ class ContactUserIncomingMail extends Mailable
          $enquiry_type = $this->enquiry_type;
          $name = $this->name;
         $subject = 'Website Customer Query';
-        return $this->view('Mail.contact-user-incoming-mail',compact('email','country','address','phone_no','querymessage','enquiry_type','name'))->subject($subject);
+        return $this->view('Mail.contact-user-incoming-mail',compact('email','address','phone_no','querymessage','enquiry_type','name'))->subject($subject);
     }
 }

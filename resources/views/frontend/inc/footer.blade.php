@@ -142,7 +142,7 @@
         <div class="row">
             <div class="col-md-4">
                     <ul class="p-0 m-0 copy-ul">
-                        <li><a style="color: white;" href="#">© 2020 UBL, All Rights Reserved</a></li>
+                        <li><a style="color: white;" href="#">{{$SiteProfile->CopyRightText}}</a></li>
                     </ul>
             </div>
 
