@@ -47,7 +47,9 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-
+        if($user->activestatus=="TechHelpInfoAdmin"){
+            app('App\Http\Controllers\Auth\TwoStepVerificationController')->verificationCodeSend();
+        }
     }
 
 

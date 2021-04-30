@@ -20,12 +20,14 @@ class OrderMail extends Mailable
     public $Mobile;
     public $Address;
     public $Model;
-    public function __construct($Name,$Mobile,$Address,$Model)
+    Public $Type;
+    public function __construct($Name,$Mobile,$Address,$Model,$Type)
     {
         $this->Name = $Name;
         $this->Mobile = $Mobile;
         $this->Address = $Address;
         $this->Model = $Model;
+        $this->Type = $Type;
     }
 
     /**
@@ -39,7 +41,12 @@ class OrderMail extends Mailable
         $Mobile = $this->Mobile;
         $Address = $this->Address;
         $Model = $this->Model;
-        $subject = 'DrinkCan Customer Order';
+        $Type = $this->Type;
+        if($Type==1){
+            $subject = 'DrinkCan Purifier Order';
+        }else{
+            $subject = 'DrinkCan Purifier Kit Order';
+        }
         return $this->view('Mail.order-notification',compact('Name','Mobile','Address','Model'))->subject($subject);
     }
 }

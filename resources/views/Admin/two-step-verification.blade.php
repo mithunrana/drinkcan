@@ -3,9 +3,7 @@
 @endphp
 
 @php
-    $title = "Login | Drinkcan Bangladesh";
-    $keywords =  "registration, login, signup, user panel, dirnkcan, how to login, how to registraion in drinkcan";
-    $description =  "Drinkcan Bangladesh Login Here get more user facilities from user site. if you don't have account in drinkcan bangladesh easily signup";
+    $title = "Two Step Verification | Drinkcan Bangladesh";
 @endphp
 
 @include('frontend.inc.headersource')
@@ -31,30 +29,24 @@
                     @endif
                     <div class="login-main-form">
                         <div class="log" style="padding: 40px 10px;padding-left: 0;padding-right: 15px;">
-                            <h5 class="mb-4" style="font-size: 22px;">Login</h5>
-                            <form action="{{ route('login') }}" method="POST">
+                            <h5 class="mb-4" style="font-size: 22px;">Two Step Verification</h5>
+                            <form action="{{url('two-factor-verification') }}" method="POST">
                                 @csrf
-                                <input id="email" type="email" class="form-control mb-3 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email address">
-                                @error('email')
+                                <input id="two_factor_code" type="number" class="form-control mb-3 @error('two_factor_code') is-invalid @enderror" name="two_factor_code" placeholder="Two Factor Code">
+                                @error('two_factor_code')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                                <input  id="password" type="password" class="form-control mb-3 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder=" Enter Your Password" >
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                     <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                                <input style="background-color: #35b5dc;border-color: #35b5dc;" class="btn btn-danger btn-block" type="submit" value="Login">
+                                <input style="background-color: #35b5dc;border-color: #35b5dc;" class="btn btn-danger btn-block" type="submit" value="Verify">
                                 <div class="row mt-3">
+                                    <p style="padding:15px;">you have receive an email which contains two factor login code. if you haven't receive it pres</p>
                                     <div class="col-6">
-                                        <a style="font-size: 14px;" href="{{asset('')}}password/reset">Forgot Password?</a>
+                                        <a style="font-size: 14px;" href="{{asset('')}}resend-factor-verification">Resent Verification Code</a>
                                     </div>
                                 </div>
                                 <div class="register-now mt-4">
-                                    <label style="font-size: 15px;"><strong>Don't have an account? Register Now</strong></label>
-                                    <a style="background-color: #35b5dc;border-color: #35b5dc;" class="btn btn-danger btn-block" href="{{asset('')}}register">Register</a>
+                                    <a style="background-color: #35b5dc;" class="btn btn-danger btn-block" href="{{url('logout')}}">Logout</a>
                                 </div>
                             </form>
                         </div>
@@ -68,10 +60,10 @@
 @include('frontend.inc.footer')
 @include('frontend.inc.footersource')
 @if(Session::has('demo-message'))
-    <script>
-        toastr.success("{{ Session::get('demo-message') }}");
-    </script>
-    @endif
+<script>
+   toastr.success("{{ Session::get('demo-message') }}");
+</script>
+@endif
 @include('frontend.inc.messenger')
 </body>
 </html>

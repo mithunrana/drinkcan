@@ -20,7 +20,7 @@
 <script src="{{asset('frontend')}}/js/uikit-icons.js"></script>
 <!--uikit.min.js-->
 <script src="{{asset('frontend')}}/js/uikit.min.js"></script>
-<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
 <script>
     $(document).ready(function() {

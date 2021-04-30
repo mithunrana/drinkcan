@@ -38,7 +38,8 @@ class OrderController extends Controller
         $Mobile = $request->Mobile;
         $Address = $request->Address;
         $Model = $Products->Model;
-        Mail::to($incomeMailAddress)->send(new OrderMail($Name,$Mobile,$Address,$Model));
+        $Type = $Products->ProductsType;
+        Mail::to($incomeMailAddress)->send(new OrderMail($Name,$Mobile,$Address,$Model,$Type));
        return redirect()->back()->with('message','Order Successfully Submitted');
     }
 

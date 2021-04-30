@@ -1,14 +1,16 @@
 <!--start footer section-->
-<footer style="background:#0049bc" class="footer-section clearfix">
+<footer style="background:#0049bc;padding: 5px 0;" class="footer-section clearfix">
     <div class="container">
         <div class="row">
             <div style="margin-top: 10px;" class="col-md-3">
                 <div class="footer-item">
                     <h5 style="margin-bottom: 2px;">Products</h5>
                     <ul class="m-0 p-0">
-                        @foreach(\App\Products::all() as $Products)
+                        @foreach(\App\Products::where('ActiveStatus',1)->get() as $Products)
                         <a style="font-size:14px;" href="{{asset('')}}{{$Products->Permalink}}">
-                            <span data-lang="" class="cmn waterPurifiers">{{$Products->Name}}</span>
+                            <p style="margin-bottom: 2px;">
+                                <span data-lang="" class="cmn waterPurifiers">{{$Products->Model}}</span>
+                            </p>
                         </a>
                         @endforeach
                     </ul>
@@ -46,11 +48,6 @@
                     <ul class="m-0 p-0">
                         <li>
                             <a style="font-size:14px;" href="{{asset('')}}contact">
-                                <span data-lang="" class="cmn waterPurifiers">Support</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a style="font-size:14px;" href="{{asset('')}}contact">
                                 <span data-lang="" class="cmn waterPurifiers">Contact</span>
                             </a>
                         </li>
@@ -72,21 +69,6 @@
                         <li>
                             <a style="font-size:14px;" href="{{asset('')}}drinkcan-office-address-bangladesh">
                                 <span data-lang="" class="cmn waterPurifiers">Store Location</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a style="font-size:14px;" href="{{asset('')}}register">
-                                <span data-lang="" class="cmn waterPurifiers">Register</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a style="font-size:14px;" href="{{asset('')}}login">
-                                <span data-lang="" class="cmn waterPurifiers">Login</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a style="font-size:14px;" href="{{asset('')}}sitemap">
-                                <span data-lang="" class="cmn waterPurifiers">Sitemap</span>
                             </a>
                         </li>
                     </ul>
@@ -137,7 +119,7 @@
     </div>
 </section>
 
-<section style="background:#0049bc" class="copyright-section clearfix py-4">
+<section style="background:#0049bc" class="copyright-section clearfix">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -157,4 +139,21 @@
             </div>
         </div>
     </div>
+</section>
+
+<section style="background-color: #0049bc;">
+<div style="text-align: center;color: white;font-size: 14px;" class="container">
+    <div  class="row">
+        <div style="text-align: right;" class="col-sm-12">
+            <p style="margin-bottom: 0px;">
+               <a rel="nofollow" style="color:white;" href="https://www.facebook.com/imran.emonn" target="_blank">
+                   <span>Design By: Imran Ahmed</span>
+               </a>  |
+                <a style="color:white;" href="{{$SiteProfile->DesignerDeveloperDomain}}" target="_blank">
+                    <span>Development: {{$SiteProfile->DesignerDeveloperName}}</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
 </section>

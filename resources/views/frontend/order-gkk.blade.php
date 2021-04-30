@@ -42,9 +42,9 @@
                             <small style="color:red;"> Must Select Someone Product</small>
                         @endif
                         <select id="categorychange" name="category" class="form-control mb-3">
-                            <option value="" selected disabled>====SELECT OPTIONS====</option>
-                            @foreach(\App\ProductsPrimaryCategory::orderBy('id','DESC')->get() as $Category)
-                            <option value="{{$Category->id}}">{{$Category->CategoryName}}</option>
+                            <option value="" selected disabled>====SELECT KIT MODEL====</option>
+                            @foreach(\App\Products::orderBy('id','DESC')->where('ProductsType',2)->get() as $Category)
+                                <option value="{{$Category->id}}">{{$Category->Model}}</option>
                             @endforeach
                         </select>
                         <input type="hidden" class="form-control mb-3 py-2" name="ProductId" value="" id="setproductid">
@@ -67,10 +67,10 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="gkk-select-product card-body">
+                <div style="background: #f9f9f9;" class="gkk-select-product card-body">
                     <h4 style="border-bottom: 2px solid #ccc;color: #0049bc;" class="pt-3 pb-2 mb-5">Select Product</h4>
                     @php
-                    $Products = \App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->get()
+                        $Products = \App\Products::where('ActiveStatus',1)->where('ProductsType',2)->orderBy('id','DESC')->get()
                     @endphp
                     <div id="productsection">
                         @foreach($Products as $Product)
@@ -85,7 +85,7 @@
                                                 <div class="select-product-title">
                                                     <h4 style="color:#0049bc;font-size: 23px;">{{$Product->Model}}</h4>
                                                     <h5 style="color:#002661;">{{$Product->Name}}</h5>
-                                                    <h5>৳ {{$Product->CurrentPrice}}</h5>
+                                                    @if($Product->PriceStatus == 1)<h5>৳ {{$Product->CurrentPrice}}</h5>@endif
                                                     <p class="text-muted">Standard Delivery Charge Applicable</p>
                                                 </div>
                                             </div>
@@ -118,12 +118,13 @@
         });
 
         $('#categorychange').change(function(){
-            var CategoryId = $('#categorychange').val();
+            var ProductId = $('#categorychange').val();
+            $('#setproductid').prop('value',ProductId);
             $.ajax({
                 dataType: 'html',
                 url:"{{ url('categoryproduct') }}",
                 method:'GET',
-                data:{CategoryId:CategoryId},
+                data:{ProductId:ProductId},
                 success:function(response){
                     console.log(response);
                     $("#productsection").html(response);
@@ -137,6 +138,6 @@
         toastr.success("{{ Session::get('demo-message') }}");
     </script>
     @endif
-
+    @include('frontend.inc.messenger')
 </body>
 </html>

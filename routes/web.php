@@ -41,6 +41,9 @@ Route::post('home-demo','HomeDemoController@order');
 
 
 Auth::routes();
+Route::get('/two-factor-verification', 'Auth\TwoStepVerificationController@verification');
+Route::post('/two-factor-verification', 'Auth\TwoStepVerificationController@verificationCheck');
+Route::get('/resend-factor-verification', 'Auth\TwoStepVerificationController@verificationCodeSend')->middleware('AdminUser');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/admin/admin-panel', 'HomeController@index')->middleware('AdminUser');
 Route::post('admin/userregister','UserDataController@selfUserRegister');
@@ -295,7 +298,7 @@ Route::post('admin/products-update/{id}','ProductsController@update')->middlewar
 Route::get('admin/products-delete/{id}','ProductsController@delete')->middleware('AdminUser');
 Route::get('admin/products-active-deactive/{status}/{postid}','ProductsController@activeDeactive')->middleware('AdminUser');
 Route::get('admin/products-price-active-deactive/{status}/{postid}','ProductsController@priceActiveDeactive')->middleware('AdminUser');
-
+Route::get('admin/products-datasheet-remove/{id}','ProductsController@dataSheetRemove')->middleware('AdminUser');
 
 
 Route::get('admin/authorised-manage','AuthorizationController@manage')->middleware('AdminUser');

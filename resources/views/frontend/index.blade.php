@@ -19,7 +19,7 @@
 <section style="background-color: #f6f6f6;margin-top:30px;" class="product-area clearfix py-5">
     <div class="container">
         <p style="text-align: center">
-            Drinkcan is one of the leading brands in water purification machines in Bangladesh introduced by Syntax Technology. The brand,
+            Drinkcan is one of the leading brands in water purification machines in Bangladesh. The brand,
             Drinkcan is designed and configured with the latest water purification technology to deliver the best drinkable water for our consumers.
             It is stylish and lucrative at outlook that can add an extra move for your aesthetic sense among your community and at the same time it will
             ensure best purified water without everyday hassle like boiling water or pouring water in existing filter machine.  It is empowered with Reverse
@@ -45,7 +45,7 @@
         @php
         $Counter = 0;
         @endphp
-        @foreach(\App\Products::orderBy('id','ASC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Product)
+        @foreach(\App\Products::orderBy('id','ASC')->where('ActiveStatus',1)->where('ProductsType',1)->skip(0)->take(4)->get() as $Product)
 
             @php
                 $check = App\AboutProduct::where('products_id',$Product->id)->first();
@@ -128,7 +128,7 @@
     <div style="width: 90%;" class="container-fluid">
         <h2 style="text-align: center;color: grey">Drinkcan Discover Water Purifier Filter</h2>
         <div class="row d-flex justify-content-center">
-            @foreach(\App\Products::orderBy('id','DESC')->where('ActiveStatus',1)->skip(0)->take(4)->get() as $Products)
+            @foreach(\App\Products::orderBy('id','DESC')->where('ActiveStatus',1)->where('ProductsType',1)->skip(0)->take(4)->get() as $Products)
             <div style="margin-top: 20px;" class="col-xl-3 col-lg-3  col-md-4 col-sm-6 col-12">
                 <div style="border: 1px solid #e9e9e9;background-color: #fff;position:relative;" class="product-box">
                     <!--<div style="height:50px;width:50px;position:absolute;border-radius: 50%;background-color: red;top:-15px;right:-15px;" class="price-box">
@@ -139,14 +139,19 @@
                         </a>
                     </div>
                     <div class="product-txt text-center">
-                        <div class="product-title">
-                            <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
-                            <h5 style="font-size: 15px;" class="my-2">
-                                <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Name}}</a>
-                            </h5>
-                        </div>
+                            <div class="product-title">
+                                <h4><a style="color:#0049bc" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Model}}</a></h4>
+                                <h5 style="font-size: 15px;" class="my-2">
+                                    <a style="color:#00adee" href="{{asset('')}}{{$Products->Permalink}}">{{$Products->Name}}</a>
+                                </h5>
+                            </div>
                         <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del> | <span>{{$Products->CurrentPrice}}</span></p>
+                            @if($Products->PriceStatus == 1)
+                                <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del> | <span>{{$Products->CurrentPrice}}</span></p>
+                            @endif
+                            @if(Auth::check() && Auth::user()->partner=='yes')
+                                <p class="prodcut-sell-price mb-1">Partner Price: <span>{{$Products->PartnerPrice}}</span></p>
+                            @endif
                         </div>
                     </div>
                     <div style="text-align: center;padding: 10px;background-color: #0049bc;" class="details-button">
@@ -161,6 +166,10 @@
     </div>
 </section>
 <!--end product section-->
+
+
+
+
 
 @include('frontend.inc.homedemo')
 
@@ -214,11 +223,15 @@
                 <div class="hc-box text-center">
                     <div class="hc-img">
                         <div class="hc-img-box">
+                            <a href="https://www.facebook.com/drinkcanbd" target="_blank">
                             <img src="{{asset('')}}frontend/images/support.png" class="img-fluid" alt="EASY TO REACH">
+                            </a>
                         </div>
                     </div>
                     <div class="hc-txt">
+                        <a href="https://www.facebook.com/drinkcanbd" target="_blank">
                         <h5 class="mt-2">24/7 Quick Support</h5>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -258,5 +271,6 @@
         toastr.success("{{ Session::get('demo-message') }}");
     </script>
 @endif
+@include('frontend.inc.messenger')
 </body>
 </html>

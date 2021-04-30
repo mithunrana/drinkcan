@@ -12,6 +12,9 @@
 @include('frontend.inc.menubar')
 @include('frontend.inc.homedemo')
 
+
+      
+      
     <div class="about-header">
         <img src="{{asset('frontend')}}/images/about-drinkcan.jpg" class="img-fluid" alt="">
     </div>
@@ -126,6 +129,6 @@
         toastr.success("{{ Session::get('demo-message') }}");
     </script>
     @endif
-
+    @include('frontend.inc.messenger')
 </body>
 </html>

@@ -54,7 +54,7 @@
 
     <div class="container">
         <div class="row d-flex justify-content-center">
-            @foreach(\App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->get() as $Products)
+            @foreach(\App\Products::where('ActiveStatus',1)->orderBy('id','DESC')->where('ProductsType',1)->get() as $Products)
             <div style="margin-top: 10px;" class="col-md-4">
                 <div class="product-box">
                     <div class="product-img">
@@ -70,7 +70,12 @@
                             </h5>
                         </div>
                         <div class="product-price">
-                            <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del> | <span>{{$Products->CurrentPrice}}</span></p>
+                            @if($Products->PriceStatus == 1)
+                                <p class="prodcut-sell-price mb-1"><del>{{$Products->RegularPrice}}</del> | <span>{{$Products->CurrentPrice}}</span></p>
+                            @endif
+                            @if(Auth::check() && Auth::user()->partner=='yes')
+                                <p class="prodcut-sell-price mb-1">Partner Price: <span>{{$Products->PartnerPrice}}</span></p>
+                            @endif
                         </div>
                     </div>
                     <div style="text-align: center;padding: 10px;background-color: #0049bc;" class="details-button">
@@ -122,6 +127,7 @@
     <script>
         toastr.success("{{ Session::get('demo-message') }}");
     </script>
-    @endif
-    </body>
+@endif
+@include('frontend.inc.messenger')
+</body>
 </html>

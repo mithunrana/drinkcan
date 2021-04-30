@@ -49,7 +49,7 @@
 
                                         <div class="form-group">
                                             <label for="Category">Category</label>
-                                            <select id="Category" class="form-control" id="Category">
+                                            <select id="Category" name="Category" class="form-control{{$errors->has('Category') ? ' is-invalid' : ''}}" id="Category">
                                                 <option value="" selected disabled>=============Products Primary Category===========</option>
                                                 @foreach(App\ProductsPrimaryCategory::all() as $cat)
                                                     <option value="{{$cat->id}}">{{$cat->CategoryName}}</option>

@@ -31,6 +31,14 @@ return [
 
     'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer'       => false,
+            'verify_peer_name'  => false,
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port

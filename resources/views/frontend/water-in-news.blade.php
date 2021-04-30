@@ -80,6 +80,7 @@
     <script>
         toastr.success("{{ Session::get('demo-message') }}");
     </script>
-    @endif
-   </body>
+@endif
+@include('frontend.inc.messenger')
+</body>
 </html>

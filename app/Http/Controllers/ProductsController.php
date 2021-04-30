@@ -30,8 +30,8 @@ class ProductsController extends Controller
 
     public function categoryProduct(Request $request){
         $output='';
-        $CategoryId = $request->get('CategoryId');
-        $Products = Products::where('Category',$CategoryId)->where('ActiveStatus',1)->get();
+        $ProductId= $request->get('ProductId');
+        $Products = Products::where('id',$ProductId)->where('ActiveStatus',1)->get();
         foreach($Products as $Product){
             $output .='<div style="border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 30px;" class="select-pro-item">
                         <div class="row">
@@ -414,6 +414,15 @@ class ProductsController extends Controller
 
 
 
+    public function dataSheetRemove($productId){
+        $Product = Products::findOrFail($productId);
+        if(File::exists($Product->Datasheet)){
+            unlink($Product->Datasheet);
+        }
+        $Product->Datasheet = '#';
+        $Product->save();
+        return redirect()->to('admin/products-manage')->with('message','Product Datasheet Remove Successfully');
+    }
 
 
 
@@ -717,7 +726,7 @@ class ProductsController extends Controller
 
 
     public function aboutProduct(){
-        return view('admin.productaboutmanage');
+        return view('Admin.productaboutmanage');
     }
 
     public function aboutProductStore(Request $request){
@@ -743,7 +752,7 @@ class ProductsController extends Controller
 
     public function aboutProductEdit($id){
         $About = AboutProduct::where('id',$id)->first();
-        return view('admin.productaboutedit',compact('About'));
+        return view('Admin.productaboutedit',compact('About'));
     }
 
     public function aboutProductUpdate(Request $request,$id){
@@ -777,7 +786,7 @@ class ProductsController extends Controller
 
 
     public function featureProduct(){
-        return view('admin.produtfeaturemanage');
+        return view('Admin.produtfeaturemanage');
     }
 
     public function featureProductStore(Request $request){
@@ -803,7 +812,7 @@ class ProductsController extends Controller
 
     public function featureProductEdit($id){
         $Feature = ProductFeature::where('id',$id)->first();
-        return view('admin.productfeatureedit',compact('Feature'));
+        return view('Admin.productfeatureedit',compact('Feature'));
     }
 
     public function featureProductUpdate(Request $request,$id){
