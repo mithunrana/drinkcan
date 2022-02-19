@@ -1,0 +1,193 @@
+@media all and (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media all and (max-width: 1450px) {
+
+
+    .search-item {
+        left: 67%;
+        width: 30% !important;
+    }
+
+    .mega-corporate {
+        left: 79%;
+        width: 16% !important;
+
+    }
+
+    .mega-trainings {
+        width: 16% !important;
+    }
+
+    .mega-partners {
+        width: 16% !important;
+        left: 71%;
+    }
+
+    .mega-content {
+        width: 52%;
+    }
+
+    .mega-corporate {
+        left: 74%;
+
+    }
+
+}
+
+
+@media all and (max-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+
+    .icon-div ul {
+        display: block;
+    }
+
+    .search-item {
+        left: 0%;
+        width: 100% !important;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .country-btn {
+        display: none !important;
+    }
+}
+
+@media all and (max-width: 1080px) {
+
+    .news-events-box {
+        height: 150px;
+    }
+
+    .tn-img {
+        display: none;
+    }
+
+}
+
+
+@media all and (max-width: 992px) {
+    .product-category {
+        height: 0;
+        opacity: 0;
+
+    }
+
+    .cat-btn {
+        display: block;
+    }
+
+    .no-padding {
+        padding-right: 15px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .login-main-form {
+        background: url(img/loginbg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+
+    .login-img {
+        display: none;
+    }
+
+    .log {
+        padding-left: 15px !important;
+        background: rgba(255, 255, 255, 0.80);
+    }
+
+    .short-width {
+        width: 100% !important;
+    }
+
+    .mission-vission {
+        background-image: none;
+    }
+
+    .career-bg {
+        background-image: none;
+    }
+
+    .footer-map img {
+        width: 100%;
+    }
+
+    .designer {
+        margin-top: 5px;
+    }
+
+    .our-certification-area {
+        margin-bottom: 20px;
+    }
+
+    .fm {
+        width: 33%;
+        margin-bottom: 15px;
+    }
+
+    .footer-map {
+        margin-bottom: 15px;
+    }
+
+    .fix-social {
+        display: none;
+    }
+
+
+}
+
+@media all and (max-width: 576px) {
+
+    .dp-img img {
+        width: 100%;
+    }
+
+    .cart-plus {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-minus {
+        display: block;
+        width: 100%;
+    }
+
+
+    .cart-input {
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+}
+
+
+@media all and (max-width: 400px) {
+    .fm {
+        width: 50% !important;
+        text-align: center;
+    }
+}
+
+
+.mm-logo .logo {
+    max-width: 186px;
+    padding: 10px 15px;
+}

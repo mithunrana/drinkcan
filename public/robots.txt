@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /search
+Disallow: /logout
+Disallow: /user-panel
+Disallow: /user-panel-pass-edit
+Disallow: /user-panel-info-edit
+Disallow: /user-panel-info-update
